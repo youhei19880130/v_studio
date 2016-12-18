@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161218163129) do
+ActiveRecord::Schema.define(version: 20161218170255) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20161218163129) do
     t.string   "address"
     t.string   "nearest_station_1"
     t.string   "nearest_station_2"
-    t.string   "nearest_staion_3"
+    t.string   "nearest_station_3"
     t.string   "tel"
     t.time     "start_hours"
     t.time     "end_hours"

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'studios#index'
   resources :rooms
   resources :studios
   resources :accounts

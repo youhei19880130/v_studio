@@ -10,7 +10,7 @@ RSpec.describe 'studios/new', type: :view do
                       address: 'MyString',
                       nearest_station_1: 'MyString',
                       nearest_station_2: 'MyString',
-                      nearest_staion_3: 'MyString',
+                      nearest_station_3: 'MyString',
                       tel: 'MyString',
                       late_night: false,
                       locker_room: false,
@@ -39,7 +39,7 @@ RSpec.describe 'studios/new', type: :view do
 
       assert_select 'input#studio_nearest_station_2[name=?]', 'studio[nearest_station_2]'
 
-      assert_select 'input#studio_nearest_staion_3[name=?]', 'studio[nearest_staion_3]'
+      assert_select 'input#studio_nearest_station_3[name=?]', 'studio[nearest_station_3]'
 
       assert_select 'input#studio_tel[name=?]', 'studio[tel]'
 

@@ -10,7 +10,7 @@ RSpec.describe 'studios/show', type: :view do
                                 address: 'Address',
                                 nearest_station_1: 'Nearest Station 1',
                                 nearest_station_2: 'Nearest Station 2',
-                                nearest_staion_3: 'Nearest Staion 3',
+                                nearest_station_3: 'Nearest Staion 3',
                                 tel: 'Tel',
                                 late_night: false,
                                 locker_room: false,
