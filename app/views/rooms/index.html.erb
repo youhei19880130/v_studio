@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rooms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Studio</th>
+      <th>Name</th>
+      <th>Size</th>
+      <th>Capacity</th>
+      <th>Mirror</th>
+      <th>Floor</th>
+      <th>Speaker</th>
+      <th>Mixer</th>
+      <th>Cd</th>
+      <th>Md</th>
+      <th>Mp3</th>
+      <th>Other source</th>
+      <th>Dimmable</th>
+      <th>Wifi</th>
+      <th>Image</th>
+      <th>Feature</th>
+      <th>Remarks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td><%= room.studio_id %></td>
+        <td><%= room.name %></td>
+        <td><%= room.size %></td>
+        <td><%= room.capacity %></td>
+        <td><%= room.mirror %></td>
+        <td><%= room.floor %></td>
+        <td><%= room.speaker %></td>
+        <td><%= room.mixer %></td>
+        <td><%= room.cd %></td>
+        <td><%= room.md %></td>
+        <td><%= room.mp3 %></td>
+        <td><%= room.other_source %></td>
+        <td><%= room.dimmable %></td>
+        <td><%= room.wifi %></td>
+        <td><%= room.image %></td>
+        <td><%= room.feature %></td>
+        <td><%= room.remarks %></td>
+        <td><%= link_to 'Show', room %></td>
+        <td><%= link_to 'Edit', edit_room_path(room) %></td>
+        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Room', new_room_path %>

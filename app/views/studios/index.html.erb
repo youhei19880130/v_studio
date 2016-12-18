@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Studios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Prefecture</th>
+      <th>City</th>
+      <th>Address</th>
+      <th>Nearest station 1</th>
+      <th>Nearest station 2</th>
+      <th>Nearest staion 3</th>
+      <th>Tel</th>
+      <th>Start hours</th>
+      <th>End hours</th>
+      <th>Late night</th>
+      <th>Locker room</th>
+      <th>Parking</th>
+      <th>Cancell deadline</th>
+      <th>Image</th>
+      <th>Url</th>
+      <th>Feature</th>
+      <th>Remarks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @studios.each do |studio| %>
+      <tr>
+        <td><%= studio.name %></td>
+        <td><%= studio.prefecture %></td>
+        <td><%= studio.city %></td>
+        <td><%= studio.address %></td>
+        <td><%= studio.nearest_station_1 %></td>
+        <td><%= studio.nearest_station_2 %></td>
+        <td><%= studio.nearest_staion_3 %></td>
+        <td><%= studio.tel %></td>
+        <td><%= studio.start_hours %></td>
+        <td><%= studio.end_hours %></td>
+        <td><%= studio.late_night %></td>
+        <td><%= studio.locker_room %></td>
+        <td><%= studio.parking %></td>
+        <td><%= studio.cancell_deadline %></td>
+        <td><%= studio.image %></td>
+        <td><%= studio.url %></td>
+        <td><%= studio.feature %></td>
+        <td><%= studio.remarks %></td>
+        <td><%= link_to 'Show', studio %></td>
+        <td><%= link_to 'Edit', edit_studio_path(studio) %></td>
+        <td><%= link_to 'Destroy', studio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Studio', new_studio_path %>
