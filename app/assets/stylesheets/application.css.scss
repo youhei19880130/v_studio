@@ -10,7 +10,7 @@
 // And finally bootswatch style itself
 @import "bootswatch/simplex/bootswatch";
 
-div .studio-box {
-  border: solid 1px black;
+div.studio-box {
+  margin-bottom: 20px;
   .left { float: left; }
 }

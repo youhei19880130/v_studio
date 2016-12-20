@@ -1,94 +1,61 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @studio.name %>
-</p>
+<h1><%= @studio.name %></h1>
+<p><%= @studio.feature %></p>
 
-<p>
-  <strong>Prefecture:</strong>
-  <%= @studio.prefecture %>
-</p>
+<div class="studio-box">
+  <div class="left">
+    <%= image_tag 'studio', height: '240px' %>
+  </div>
+  <div>
+    <p><%= @studio.area.prefecture %><%= @studio.area.city %><%= @studio.address %></p>
+    <p><%= @studio.nearest_station_1 %>,<%= @studio.nearest_station_2 %>,<%= @studio.nearest_station_3 %></p>
+    <p>電話番号:<%= @studio.tel %></p>
+    <p>営業時間:<%= "#{@studio.start_hours.strftime("%H:%M")} - #{@studio.end_hours.strftime("%H:%M")}" %></p>
+    <p>
+      <strong>深夜レンタル</strong>
+      <%= @studio.late_night %>
+    </p>
+    <p>
+      <strong>更衣室</strong>
+      <%= @studio.locker_room %>
+    </p>
+    <p>
+      <strong>駐車場</strong>
+      <%= @studio.parking %>
+    </p>
+    <p>
+      <strong>キャンセル期限</strong>
+      <%= @studio.cancell_deadline %>
+    </p>
+    <p>
+      <strong>備考</strong>
+      <%= @studio.remarks %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <strong>City:</strong>
-  <%= @studio.city %>
-</p>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>スタジオ名</th>
+      <th>広さ(㎡)</th>
+      <th>最大人数</th>
+      <th>床材</th>
+      <th>鏡</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @studio.rooms.each do |room| %>
+    <tr>
+      <td><%= room.name %></td>
+      <td><%= room.size %></td>
+      <td><%= room.capacity %></td>
+      <td><%= room.floor %></td>
+      <td><%= room.mirror %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table> 
 
-<p>
-  <strong>Address:</strong>
-  <%= @studio.address %>
-</p>
-
-<p>
-  <strong>Nearest station 1:</strong>
-  <%= @studio.nearest_station_1 %>
-</p>
-
-<p>
-  <strong>Nearest station 2:</strong>
-  <%= @studio.nearest_station_2 %>
-</p>
-
-<p>
-  <strong>Nearest staion 3:</strong>
-  <%= @studio.nearest_station_3 %>
-</p>
-
-<p>
-  <strong>Tel:</strong>
-  <%= @studio.tel %>
-</p>
-
-<p>
-  <strong>Start hours:</strong>
-  <%= @studio.start_hours %>
-</p>
-
-<p>
-  <strong>End hours:</strong>
-  <%= @studio.end_hours %>
-</p>
-
-<p>
-  <strong>Late night:</strong>
-  <%= @studio.late_night %>
-</p>
-
-<p>
-  <strong>Locker room:</strong>
-  <%= @studio.locker_room %>
-</p>
-
-<p>
-  <strong>Parking:</strong>
-  <%= @studio.parking %>
-</p>
-
-<p>
-  <strong>Cancell deadline:</strong>
-  <%= @studio.cancell_deadline %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @studio.image %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @studio.url %>
-</p>
-
-<p>
-  <strong>Feature:</strong>
-  <%= @studio.feature %>
-</p>
-
-<p>
-  <strong>Remarks:</strong>
-  <%= @studio.remarks %>
-</p>
-
-<%= link_to 'Edit', edit_studio_path(@studio) %> |
-<%= link_to 'Back', studios_path %>
+<%= link_to "#{@studio.name}のWEBサイトはこちら", @studio.url, class: "btn btn-info btn-lg btn-block", target: "_blank" %>

@@ -1,19 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<% @studios.each do |studio| %>
-  <div class="studio-box">
-    <div class="left">
-      <%= image_tag 'studio' %>
-    </div>
-    <div class="right">
-      <p>店舗名:<%= studio.name %></p>
-      <p>営業時間:<%= "#{studio.start_hours.strftime("%H:%M")} - #{studio.end_hours.strftime("%H:%M")}" %></p>
-      <p>電話番号:<%= studio.tel %></p>
-      <p>最寄駅:<%= studio.nearest_station_1 %></p>
-      <p>スタジオ数:</p>
-      <p>広さ:</p>
-    </div>
-    <%= link_to '詳細はこちら', studio_path(studio.id), class: 'btn btn-default' %>
+<div class="row">
+  <div class="col-sm-4">
+    ここは広告枠
   </div>
-<% end %>
-<%= paginate @studios %>
+  <div class="col-sm-8">
+    <% @studios.each do |studio| %>
+      <div class="studio-box">
+        <div class="left">
+          <%= image_tag 'studio' %>
+        </div>
+        <div class="right">
+          <p>店舗名:<%= studio.name %></p>
+          <p>営業時間:<%= "#{studio.start_hours.strftime("%H:%M")} - #{studio.end_hours.strftime("%H:%M")}" %></p>
+          <p>電話番号:<%= studio.tel %></p>
+          <p>最寄駅:<%= studio.nearest_station_1 %></p>
+          <p>スタジオ数:</p>
+          <p>広さ:</p>
+        </div>
+        <%= link_to '詳細はこちら', studio_path(studio.id), class: 'btn btn-default' %>
+      </div>
+    <% end %>
+    <%= paginate @studios %>
+  </div>
+</div>
