@@ -2,5 +2,5 @@
 class Room < ApplicationRecord
   belongs_to :studio
 
-  enum floor: { flooring: 1, linoleum: 2, unknown: 99}
+  enum floor: { flooring: 1, linoleum: 2, unknown: 99 }
 end
