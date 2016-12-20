@@ -9,3 +9,8 @@
 
 // And finally bootswatch style itself
 @import "bootswatch/simplex/bootswatch";
+
+div .studio-box {
+  border: solid 1px black;
+  .left { float: left; }
+}
