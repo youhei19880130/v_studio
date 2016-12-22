@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-sm-12">
+    <% @studios.each do |studio| %>
+      <div class="studio-box col-sm-12">
+        <div class="left col-sm-12">
+          <%= image_tag 'studio' %>
+        </div>
+        <div class="right col-sm-12">
+          <p>店舗名:<%= studio.name %></p>
+          <p>営業時間:<%= "#{studio.start_hours.strftime("%H:%M")} - #{studio.end_hours.strftime("%H:%M")}" %></p>
+          <p>電話番号:<%= studio.tel %></p>
+          <p>最寄駅:<%= studio.nearest_station_1 %></p>
+          <p>スタジオ数:</p>
+          <p>広さ:</p>
+          <%= link_to '詳細はこちら', studio_path(studio.id), class: 'btn btn-default' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
