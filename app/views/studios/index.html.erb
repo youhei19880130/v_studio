@@ -4,13 +4,13 @@
   <div class="col-sm-4">
     ここは広告枠
   </div>
-  <div class="col-sm-8">
+  <div class="col-xs-12 col-sm-8">
     <% @studios.each do |studio| %>
       <div class="studio-box">
-        <div class="left">
-          <%= image_tag 'studio' %>
+        <div class="left col-xs-12">
+          <%= image_tag 'studio', width: '100%' %>
         </div>
-        <div class="right">
+        <div class="right col-xs-12">
           <p>店舗名:<%= studio.name %></p>
           <p>営業時間:<%= "#{studio.start_hours.strftime("%H:%M")} - #{studio.end_hours.strftime("%H:%M")}" %></p>
           <p>電話番号:<%= studio.tel %></p>
