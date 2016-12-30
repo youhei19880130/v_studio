@@ -1,0 +1,52 @@
+@import "bootstrap-sprockets";
+
+// Import cyborg variables
+@import "bootswatch/cyborg/variables";
+@import "bootstrap-custom";
+
+// Bootstrap body padding for fixed navbar
+body { padding-top: 50px; }
+
+// And finally bootswatch style itself
+@import "bootswatch/cyborg/bootswatch";
+
+div.content {
+  width: 100%;
+  background-image: url('/images/top_4.jpg');
+  background-size: cover;
+  padding-top: 8%;
+  padding-bottom: 8%;
+}
+
+p.lead {
+  width: 80%;
+  margin: 0 auto 20px auto;
+}
+
+form.form-horizontal {
+  width: 60%;
+  margin: 0 auto;
+}
+
+div.footer-copyright {
+  color: #FFFFFF;
+  text-align: center;
+  margin: 8px 0;
+}
+
+button.center {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+}
+
+div.ad-area {
+  margin: 20px auto;
+  div.ad-box3 {
+    margin: 20px auto;
+    img {
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}

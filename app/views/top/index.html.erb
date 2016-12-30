@@ -1,0 +1,37 @@
+<div class="content">
+  <p class="lead">ServiceNameはサーチエンジンの横断検索と厳選リンク、検索力調査、検索動向、検索の視点などをあつかう検索情報サイトです.</p>
+  <%= form_tag searches_path, class: "form-horizontal", method: :get do %>
+    <fieldset>
+      <div class="form-group">
+        <% if params[:area].present? %>
+          <%= select '', :area, Area.all.map{ |a| [a.city, a.id] }, {selected: params[:area]}, {class: 'form-control input-lg'} %>
+        <% else %>
+          <%= select '', :area, Area.all.map{ |a| [a.city, a.id] }, {prompt: 'エリア'}, {class: 'form-control input-lg'} %>
+        <% end %>
+      </div>
+      <div class="form-group">
+        <% if params[:people].present? %>
+          <%= select '', :people, [['〜5人', 1], ['〜10人', 2], ['〜20人', 3], ['21人〜', 4]], {selected: params[:people]}, {class: 'form-control input-lg'} %>
+        <% else %>
+          <%= select '', :people, [['〜5人', 1], ['〜10人', 2], ['〜20人', 3], ['21人〜', 4]], {prompt: '人数'}, {class: 'form-control input-lg'} %>
+        <% end %>
+      </div>
+      <div class="form-group">
+        <%= button_tag '探す', class: 'btn-lg btn-primary center', type: :submit %>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+<div class="container">
+  <div class="ad-area">
+    <div class="ad-box3 col-lg-4 col-sm-4">
+      <%= image_tag 'ad' %>
+    </div>
+    <div class="ad-box3 col-lg-4 col-sm-4">
+      <%= image_tag 'ad' %>
+    </div>
+    <div class="ad-box3 col-lg-4 col-sm-4">
+      <%= image_tag 'ad' %>
+    </div>
+  </div>
+</div>

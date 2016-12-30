@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VStudio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'top', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar-fixed-top navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%= link_to 'vintom_studio', root_path, class: 'navbar-brand' %>
+        </div>
+      </div>
+    </nav>
+    <%= yield %>
+    <div class="footer-copyright"><small>All Right Reserved. Vintom, Inc.</small></div>
+  </body>
+</html>

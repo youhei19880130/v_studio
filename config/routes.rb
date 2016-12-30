@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'studios#index'
+  root 'top#index'
   resources :rooms
   resources :studios
   resources :accounts
