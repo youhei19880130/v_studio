@@ -3,32 +3,32 @@ module Admin
   class StudiosController < ApplicationController
     layout 'admin'
     before_action :set_studio, only: [:show, :edit, :update, :destroy]
-  
+
     # GET /studios
     # GET /studios.json
     def index
       @studios = Studio.all
     end
-  
+
     # GET /studios/1
     # GET /studios/1.json
     def show
     end
-  
+
     # GET /studios/new
     def new
       @studio = Studio.new
     end
-  
+
     # GET /studios/1/edit
     def edit
     end
-  
+
     # POST /studios
     # POST /studios.json
     def create
       @studio = Studio.new(studio_params)
-  
+
       respond_to do |format|
         if @studio.save
           format.html { redirect_to @studio, notice: 'Studio was successfully created.' }
@@ -39,7 +39,7 @@ module Admin
         end
       end
     end
-  
+
     # PATCH/PUT /studios/1
     # PATCH/PUT /studios/1.json
     def update
@@ -53,7 +53,7 @@ module Admin
         end
       end
     end
-  
+
     # DELETE /studios/1
     # DELETE /studios/1.json
     def destroy
@@ -63,14 +63,14 @@ module Admin
         format.json { head :no_content }
       end
     end
-  
+
     private
-  
+
     # Use callbacks to share common setup or constraints between actions.
     def set_studio
       @studio = Studio.find(params[:id])
     end
-  
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def studio_params
       params.require(:studio).permit(:name, :area_id, :address, :nearest_station_1,
