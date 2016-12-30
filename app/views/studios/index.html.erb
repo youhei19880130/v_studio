@@ -1,22 +1,32 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-  <div class="col-xs-12 col-sm-12">
+  <div class="hit-count col-xs-12 col-sm-12"><%= @studios.count %>件がヒットしました</div>
+  <div class="col-xs-12 col-sm-8">
     <% @studios.each do |studio| %>
-      <div class="studio-box col-xs-12 col-sm-12">
-        <div class="left col-xs-12 col-sm-12">
+      <%= link_to studio_path(studio.id) do %>
+      <div class="studio-box">
+        <div class="left">
           <%= image_tag 'studio' %>
         </div>
-        <div class="right col-xs-12 col-sm-12">
-          <p>店舗名:<%= studio.name %></p>
-          <p>営業時間:<%= "#{studio.start_hours.strftime("%H:%M")} - #{studio.end_hours.strftime("%H:%M")}" %></p>
-          <p>電話番号:<%= studio.tel %></p>
-          <p>最寄駅:<%= studio.nearest_station_1 %></p>
-          <p>スタジオ数:</p>
-          <p>広さ:</p>
-          <%= link_to '詳細はこちら', studio_path(studio.id), class: 'btn btn-default' %>
+        <div class="right">
+          <ul>
+            <li>店舗名:<%= studio.name %></li>
+            <li>営業時間:<%= "#{studio.start_hours.strftime("%H:%M")} - #{studio.end_hours.strftime("%H:%M")}" %></li>
+            <li>電話番号:<%= studio.tel %></li>
+            <li>最寄駅:<%= studio.nearest_station_1 %></li>
+            <li>スタジオ数:</li>
+            <li>広さ:</li>
+          </ul>
+          <div class="bottom">
+            <%= button_tag '詳細はこちら>>', class: 'btn-lg btn-primary' %>
+          </div>
         </div>
       </div>
     <% end %>
+    <% end %>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    navigation_area
   </div>
 </div>
