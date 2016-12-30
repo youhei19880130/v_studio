@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :rooms
   resources :studios
   resources :accounts
-  resources :searches, only: :index
   resources :admin, only: :index
   namespace :admin do
     resources :studios

@@ -1,26 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-  <div class="col-sm-4">
-    ここは広告枠
-  </div>
-  <div class="col-xs-12 col-sm-8">
+  <div class="col-xs-12 col-sm-12">
     <% @studios.each do |studio| %>
-      <div class="studio-box">
-        <div class="left col-xs-12">
-          <%= image_tag 'studio', width: '100%' %>
+      <div class="studio-box col-xs-12 col-sm-12">
+        <div class="left col-xs-12 col-sm-12">
+          <%= image_tag 'studio' %>
         </div>
-        <div class="right col-xs-12">
+        <div class="right col-xs-12 col-sm-12">
           <p>店舗名:<%= studio.name %></p>
           <p>営業時間:<%= "#{studio.start_hours.strftime("%H:%M")} - #{studio.end_hours.strftime("%H:%M")}" %></p>
           <p>電話番号:<%= studio.tel %></p>
           <p>最寄駅:<%= studio.nearest_station_1 %></p>
           <p>スタジオ数:</p>
           <p>広さ:</p>
+          <%= link_to '詳細はこちら', studio_path(studio.id), class: 'btn btn-default' %>
         </div>
-        <%= link_to '詳細はこちら', studio_path(studio.id), class: 'btn btn-default' %>
       </div>
     <% end %>
-    <%= paginate @studios %>
   </div>
 </div>

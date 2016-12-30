@@ -5,7 +5,7 @@ class StudiosController < ApplicationController
   # GET /studios
   # GET /studios.json
   def index
-    @studios = Studio.page(params[:page])
+    @studios = Studio.by_area(params[:area]).by_people(params[:people].to_i)
   end
 
   # GET /studios/1
