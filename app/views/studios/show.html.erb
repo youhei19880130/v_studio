@@ -11,7 +11,7 @@
     <p><%= @studio.area.prefecture %><%= @studio.area.city %><%= @studio.address %></p>
     <p><%= @studio.nearest_station_1 %>,<%= @studio.nearest_station_2 %>,<%= @studio.nearest_station_3 %></p>
     <p>電話番号:<%= @studio.tel %></p>
-    <p>営業時間:<%= "#{@studio.start_hours.strftime("%H:%M")} - #{@studio.end_hours.strftime("%H:%M")}" %></p>
+    <p>営業時間:<%= "#{@studio.start_hours&.strftime("%H:%M")} - #{@studio.end_hours&.strftime("%H:%M")}" %></p>
     <p>
       <strong>深夜レンタル</strong>
       <%= @studio.late_night %>

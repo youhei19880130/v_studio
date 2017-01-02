@@ -12,7 +12,7 @@
           <div class="right col-xs-12 col-sm-6">
             <ul>
               <li>店舗名:<%= studio.name %></li>
-              <li>営業時間:<%= "#{studio.start_hours.strftime("%H:%M")} - #{studio.end_hours.strftime("%H:%M")}" %></li>
+              <li>営業時間:<%= "#{studio.start_hours&.strftime("%H:%M")} - #{studio.end_hours&.strftime("%H:%M")}" %></li>
               <li>電話番号:<%= studio.tel %></li>
               <li>最寄駅:<%= studio.nearest_station_1 %></li>
               <li>スタジオ数:</li>

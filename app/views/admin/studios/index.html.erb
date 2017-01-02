@@ -25,7 +25,7 @@
         <td><%= studio.address %></td>
         <td><%= "#{studio.nearest_station_1}, #{studio.nearest_station_2}, #{studio.nearest_station_3}" %></td>
         <td><%= studio.tel %></td>
-        <td><%= "#{studio.start_hours.strftime("%H:%M")} - #{studio.end_hours.strftime("%H:%M")}" %></td>
+        <td><%= "#{studio.start_hours&.strftime("%H:%M")} - #{studio.end_hours&.strftime("%H:%M")}" %></td>
         <!--
         <td><%= link_to 'Show', admin_studio_path(studio) %></td>
         -->
