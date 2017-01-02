@@ -1,0 +1,95 @@
+<%= form_for [:admin, room], class: 'form-horizontal' do |f| %>
+  <% if room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+      <ul>
+      <% room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label 'スタジオ', class: 'control-label' %>
+    <%= f.select :studio_id, Studio.all.map{ |s| [s.name, s.id]}, {prompt: 'スタジオを選択する'}, class: 'form-control' %>
+  </div>
+
+  <div class="from-group">
+    <%= f.label 'ルーム名', class: 'control-label' %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label '広さ(㎡)', class: 'control-label' %>
+    <%= f.number_field :size, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label '人数', class: 'control-label' %>
+    <%= f.select :capacity, [['〜5人', 1], ['〜10人', 2], ['〜20人', 3], ['21人〜', 4]], {prompt: '人数を選択する'}, {class: 'form-control'} %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label '鏡', class: 'control-label' %>
+    <%= f.text_field :mirror, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label '床材', class: 'control-label' %>
+    <%= f.select :floor, Room.floors.keys.to_a, {prompt: '床材を選択する'}, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    音響
+    <table class="table">
+      <tr>
+        <td>スピーカー</td>
+        <td><%= f.check_box :speaker, class: 'checkbox' %></td>
+        <td>ミキサー</td>
+        <td><%= f.check_box :mixer, class: 'checkbox' %></td>
+      </tr>
+      <tr>
+        <td>CD</td>
+        <td><%= f.check_box :cd, class: 'checkbox' %></td>
+        <td>MD</td>
+        <td><%= f.check_box :md, class: 'checkbox' %></td>
+        <td>MP3</td>
+        <td><%= f.check_box :mp3, class: 'checkbox' %></td>
+      </tr>
+      <tr>
+        <td colspan="6"><%= f.label 'その他音源', class: 'control-label' %></td>
+      </tr>
+      <tr>
+        <td colspan="6"><%= f.text_field :other_source, class: 'form-control' %></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="form-group">
+    その他
+    <table class="table">
+      <tr>
+        <td>調光</td>
+        <td><%= f.check_box :dimmable, class: 'checkbox' %></td>
+        <td>Wi-Fi</td>
+        <td><%= f.check_box :wifi, class: 'checkbox' %></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="form-group">
+    <%= f.label '特徴', class: 'control-label' %>
+    <%= f.text_area :feature, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label '備考', class: 'control-label' %>
+    <%= f.text_area :remarks, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
