@@ -1,14 +1,14 @@
 @import "bootstrap-sprockets";
 
-// Import cyborg variables
-@import "bootswatch/cyborg/variables";
+// Import sandstone variables
+@import "bootswatch/sandstone/variables";
 @import "bootstrap-custom";
 
 // Bootstrap body padding for fixed navbar
 body { padding-top: 60px; }
 
 // And finally bootswatch style itself
-@import "bootswatch/cyborg/bootswatch";
+@import "bootswatch/sandstone/bootswatch";
 
 a {
   color: #888;
@@ -31,7 +31,6 @@ div.studio-box {
     }
   }
   .right {
-    background-color: #1b1b1b;
     margin: 0 0 8px 0;
     height: 216px;
     position: relative;
