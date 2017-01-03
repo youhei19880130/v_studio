@@ -17,6 +17,9 @@ class Studio < ApplicationRecord
       end
     end
   }
+  scope :by_late_night, ->(late_night) { where(late_night: late_night) if late_night.present? }
+  scope :by_locker_room, ->(locker_room) { where(locker_room: locker_room) if locker_room.present? }
+  scope :by_parking, ->(parking) { where(parking: parking) if parking.present? }
 
   def max_capacity
     rooms.maximum(:capacity)

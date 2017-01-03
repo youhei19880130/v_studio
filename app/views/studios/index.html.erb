@@ -26,7 +26,14 @@
       <% end %>
     <% end %>
   </div>
-  <div class="col-xs-12 col-sm-4">
-    navigation_area
+  <div class="col-xs-12 col-sm-4 panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">詳細絞込み</h3>
+    </div>
+    <div class="panel-body">
+      <p>深夜レンタル(<%= link_to @studios.select{ |s| s.late_night }.size ,studios_path(area: params[:area], people: params[:people], late_night: 1) %>)</p>
+      <p>ロッカールーム(<%= link_to @studios.select{ |s| s.locker_room }.size ,studios_path(area: params[:area], people: params[:people], locker_room: 1) %>)</p>
+      <p>駐車場(<%= link_to @studios.select{ |s| s.parking }.size ,studios_path(area: params[:area], people: params[:people], parking: 1) %>)</p>
+    </div>
   </div>
 </div>
