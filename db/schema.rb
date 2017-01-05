@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161220164329) do
+ActiveRecord::Schema.define(version: 20170105171130) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20161220164329) do
     t.string   "name"
     t.integer  "size"
     t.integer  "capacity"
-    t.boolean  "mirror",                     null: false
+    t.boolean  "mirror",                                 null: false
     t.integer  "floor"
     t.boolean  "speaker"
     t.boolean  "mixer"
@@ -45,8 +45,9 @@ ActiveRecord::Schema.define(version: 20161220164329) do
     t.string   "image"
     t.text     "feature",      limit: 65535
     t.text     "remarks",      limit: 65535
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.integer  "status",       limit: 1,     default: 0
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
   end
 
   create_table "stations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -74,8 +75,9 @@ ActiveRecord::Schema.define(version: 20161220164329) do
     t.string   "url"
     t.text     "feature",           limit: 65535
     t.text     "remarks",           limit: 65535
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.integer  "status",            limit: 1,     default: 0
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
   end
 
 end
