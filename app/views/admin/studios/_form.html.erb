@@ -91,6 +91,11 @@
     <%= f.text_area :remarks, class: 'form-control' %>
   </div>
 
+  <div class="form-group">
+    <%= f.label 'ステータス', class: 'control-label' %>
+    <%= f.select :status, Studio.statuses.keys.to_a, {}, class: 'form-control' %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -31,7 +31,7 @@ module Admin
 
       respond_to do |format|
         if @studio.save
-          format.html { redirect_to @studio, notice: 'Studio was successfully created.' }
+          format.html { redirect_to admin_studios_path, notice: 'Studio was successfully created.' }
           format.json { render :index }
         else
           format.html { render :new }

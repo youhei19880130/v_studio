@@ -46,7 +46,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @studio.rooms.each do |room| %>
+    <% @studio.rooms.active.each do |room| %>
     <tr>
       <td><%= room.name %></td>
       <td><%= room.size %></td>

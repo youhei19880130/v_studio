@@ -5,7 +5,7 @@ class StudiosController < ApplicationController
   # GET /studios
   # GET /studios.json
   def index
-    @studios = Studio.by_late_night(params[:late_night]&.to_i).by_locker_room(params[:locker_room])
+    @studios = Studio.active.by_late_night(params[:late_night]&.to_i).by_locker_room(params[:locker_room])
                      .by_parking(params[:parking]).by_area(params[:area]).by_people(params[:people].to_i)
   end
 
