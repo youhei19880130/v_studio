@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class ChangeBooleanColumnFromRoom < ActiveRecord::Migration[5.0]
   def change
     change_column :rooms, :capacity, :integer, default: 0, nil: false

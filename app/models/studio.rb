@@ -4,7 +4,7 @@ class Studio < ApplicationRecord
   belongs_to :area
   has_many :rooms
 
-  scope :active, -> {where(status: Studio.statuses[:active])}
+  scope :active, -> { where(status: Studio.statuses[:active]) }
   scope :by_area, ->(area) { where(area_id: area) if area.present? }
   scope :by_people, lambda { |people|
     select do |s|
@@ -22,7 +22,7 @@ class Studio < ApplicationRecord
   scope :by_locker_room, ->(locker_room) { where(locker_room: locker_room) if locker_room.present? }
   scope :by_parking, ->(parking) { where(parking: parking) if parking.present? }
 
-  enum status: { inactive: 0, active:1 }
+  enum status: { inactive: 0, active: 1 }
 
   def max_capacity
     rooms.maximum(:capacity)
