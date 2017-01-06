@@ -9,8 +9,8 @@
         <li>営業時間:<%= "#{studio.start_hours&.strftime("%H:%M")} - #{studio.end_hours&.strftime("%H:%M")}" %></li>
         <li>電話番号:<%= studio.tel %></li>
         <li>最寄駅:<%= studio.nearest_station_1 %></li>
-        <li>スタジオ数:</li>
-        <li>広さ:</li>
+        <li>スタジオ数:<%= studio.rooms.size %></li>
+        <li>広さ:<%= "#{studio.rooms.minimum(:size)} 〜 #{studio.rooms.maximum(:size)}㎡" %></li>
       </ul>
       <div class="bottom">
         <%= button_tag '詳 細 は こ ち ら >>', class: 'btn btn-info' %>

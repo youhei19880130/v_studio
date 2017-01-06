@@ -14,15 +14,15 @@
     <p>営業時間:<%= "#{@studio.start_hours&.strftime("%H:%M")} - #{@studio.end_hours&.strftime("%H:%M")}" %></p>
     <p>
       <strong>深夜レンタル</strong>
-      <%= @studio.late_night %>
+      <%= @studio.late_night ? 'あり' : 'なし' %>
     </p>
     <p>
       <strong>更衣室</strong>
-      <%= @studio.locker_room %>
+      <%= @studio.locker_room ? 'あり' : 'なし' %>
     </p>
     <p>
       <strong>駐車場</strong>
-      <%= @studio.parking %>
+      <%= @studio.parking ? 'あり' : 'なし' %>
     </p>
     <p>
       <strong>キャンセル期限</strong>
