@@ -1,30 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-  <div class="hit-count col-xs-12 col-sm-12"><%= @studios.count %>件がヒットしました</div>
-  <div class="col-xs-12 col-sm-8">
-    <% @studios.each do |studio| %>
-      <%= link_to studio_path(studio.id) do %>
-        <div class="studio-box">
-          <div class="left col-xs-12 col-sm-6">
-            <%= image_tag 'studio' %>
-          </div>
-          <div class="right col-xs-12 col-sm-6">
-            <ul>
-              <li>店舗名:<%= studio.name %></li>
-              <li>営業時間:<%= "#{studio.start_hours&.strftime("%H:%M")} - #{studio.end_hours&.strftime("%H:%M")}" %></li>
-              <li>電話番号:<%= studio.tel %></li>
-              <li>最寄駅:<%= studio.nearest_station_1 %></li>
-              <li>スタジオ数:</li>
-              <li>広さ:</li>
-            </ul>
-            <div class="bottom">
-              <%= button_tag '詳細はこちら>>', class: 'btn-lg btn-info' %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
+  <div class="hit-count col-xs-12 col-sm-12"><%= @studios.total_count %>件がヒットしました</div>
+  <div id="studios" class="col-xs-12 col-sm-8">
+    <div class="page">
+      <%= render @studios %>
+    </div>
+    <%= paginate @studios %>
   </div>
   <div class="col-xs-12 col-sm-4 panel panel-info">
     <div class="panel-heading">

@@ -4,10 +4,10 @@ class Studio < ApplicationRecord
   belongs_to :area
   has_many :rooms
 
-  scope :active, -> { where(status: Studio.statuses[:active]) }
+  scope :displayed, -> { where(status: Studio.statuses[:active]) }
   scope :by_area, ->(area) { where(area_id: area) if area.present? }
   scope :by_people, lambda { |people|
-    select do |s|
+    array = select do |s|
       case people
       when 1..3
         (people * 5).between?(s.min_capacity, s.max_capacity)
@@ -17,6 +17,7 @@ class Studio < ApplicationRecord
         true
       end
     end
+    Studio.where(id: array.map(&:id))
   }
   scope :by_late_night, ->(late_night) { where(late_night: late_night) if late_night.present? }
   scope :by_locker_room, ->(locker_room) { where(locker_room: locker_room) if locker_room.present? }
