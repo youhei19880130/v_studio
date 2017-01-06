@@ -9,7 +9,7 @@
   </div>
   <div>
     <p><%= @studio.area.prefecture %><%= @studio.area.city %><%= @studio.address %></p>
-    <p><%= @studio.nearest_station_1 %>,<%= @studio.nearest_station_2 %>,<%= @studio.nearest_station_3 %></p>
+    <p><%= "#{@studio.nearest_station_1}駅" %>,<%= "#{@studio.nearest_station_2}駅" %>,<%= "#{@studio.nearest_station_3}駅" %></p>
     <p>電話番号:<%= @studio.tel %></p>
     <p>営業時間:<%= "#{@studio.start_hours&.strftime("%H:%M")} - #{@studio.end_hours&.strftime("%H:%M")}" %></p>
     <p>
