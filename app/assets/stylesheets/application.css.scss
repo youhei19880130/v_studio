@@ -8,7 +8,7 @@
 body { padding-top: 60px; }
 
 // And finally bootswatch style itself
-@import "bootswatch/sandstone/bootswatch";
+//@import "bootswatch/sandstone/bootswatch";
 
 a {
   color: #888;
@@ -55,10 +55,12 @@ div.hit-count {
   font-size: large;
 }
 
-button.center {
-  display: block;
-  width: 60%;
-  margin: 0 auto;
+button {
+  .center {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+  }
 }
 
 div.col-xs-12.col-sm-4.panel.panel-info {
