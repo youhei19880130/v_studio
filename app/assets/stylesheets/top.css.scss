@@ -10,6 +10,11 @@ body { padding-top: 50px; }
 // And finally bootswatch style itself
 @import "bootswatch/cyborg/bootswatch";
 
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+* {
+  font-family: 'Noto Sans Japanese', Meiryo, 'Noto Sans', Calibri, 'Open Sans', sans-serif;
+}
+
 div.content {
   width: 100%;
   background-image: url('/images/top.jpg');
