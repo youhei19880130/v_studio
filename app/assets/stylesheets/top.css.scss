@@ -12,14 +12,17 @@ body { padding-top: 50px; }
 
 div.content {
   width: 100%;
-  background-image: url('/images/top_4.jpg');
+  background-image: url('/images/top.jpg');
   background-size: cover;
-  padding-top: 8%;
-  padding-bottom: 8%;
+  padding-top: 12%;
+  padding-bottom: 12%;
 }
 
 p.lead {
+  color: #121212;
+  text-shadow: white 2px 2px 20px;
   width: 80%;
+  font-weight: bold;
   margin: 0 auto 20px auto;
 }
 
