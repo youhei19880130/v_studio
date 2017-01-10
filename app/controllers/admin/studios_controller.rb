@@ -22,6 +22,7 @@ module Admin
 
     # GET /studios/1/edit
     def edit
+      set_studio
     end
 
     # POST /studios
