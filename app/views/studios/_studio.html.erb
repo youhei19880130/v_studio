@@ -6,18 +6,17 @@
     <div class="right col-xs-12 col-sm-6">
       <ul>
         <li><h3><%= studio.name %></h3></li>
-        <li>営業時間:<%= "#{studio.start_hours&.strftime("%H:%M")} - #{studio.end_hours&.strftime("%H:%M")}" %></li>
-        <li>電話番号:<%= studio.tel %></li>
-        <li>最寄駅:
+        <li>
           <%= "#{studio.nearest_station_1}駅" -%>
           <%= " 他" if studio.nearest_station_2.present? %>
         </li>
-        <li>スタジオ数:<%= studio.rooms.size %></li>
-        <li>広さ:<%= "#{studio.rooms.minimum(:size)} 〜 #{studio.rooms.maximum(:size)}㎡" %></li>
+        <li>
+          <%= button_tag '詳細はこちら >>', class: 'btn btn-info' %>
+        </li>
+        <li>
+          <%= button_tag sanitize("<i class='fa fa-phone'></i>#{studio.tel}"), class: 'btn btn-success' %>
+        </li>
       </ul>
-      <div class="bottom">
-        <%= button_tag '詳細はこちら >>', class: 'btn btn-info' %>
-      </div>
     </div>
   </div>
 <% end %>
