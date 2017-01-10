@@ -43,9 +43,9 @@
             &nbsp;
             <div class="form-group">
               <% if params[:people].present? %>
-                <%= select '', :people, [['〜5人', 1], ['〜10人', 2], ['〜20人', 3], ['21人〜', 4]], {selected: params[:people]}, {class: 'form-control'} %>
+                <%= select '', :people, [['〜5人', 1], ['6〜10人', 2], ['〜11〜20人', 3], ['21人〜', 4]], {selected: params[:people]}, {class: 'form-control'} %>
               <% else %>
-                <%= select '', :people, [['〜5人', 1], ['〜10人', 2], ['〜20人', 3], ['21人〜', 4]], {prompt: '人数'}, {class: 'form-control'} %>
+                <%= select '', :people, [['〜5人', 1], ['6〜10人', 2], ['〜11〜20人', 3], ['21人〜', 4]], {prompt: '人数'}, {class: 'form-control'} %>
               <% end %>
             </div>
             &nbsp;
