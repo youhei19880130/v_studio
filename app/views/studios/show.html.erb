@@ -50,7 +50,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @studio.rooms.displayed.each do |room| %>
+    <% @studio.rooms.displayed.order('capacity desc').each do |room| %>
     <tr>
       <td><%= room.name %></td>
       <td><%= room.size %></td>
