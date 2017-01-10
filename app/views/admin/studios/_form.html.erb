@@ -96,6 +96,11 @@
     <%= f.select :status, Studio.statuses.keys.to_a, {}, class: 'form-control' %>
   </div>
 
+  <div class="form-group">
+    <%= f.label 'キャプチャ', class: 'control-label' %>
+    <%= f.file_field :image, accept: 'image/jpeg', class: 'filestyle' %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -28,6 +28,7 @@ module Admin
     # POST /studios.json
     def create
       @studio = Studio.new(studio_params)
+      @studio.image = params[:studio][:image].read
 
       respond_to do |format|
         if @studio.save
@@ -43,6 +44,7 @@ module Admin
     # PATCH/PUT /studios/1
     # PATCH/PUT /studios/1.json
     def update
+      @studio.image = params[:studio][:image].read
       respond_to do |format|
         if @studio.update(studio_params)
           format.html { redirect_to @studio, notice: 'Studio was successfully updated.' }
@@ -76,7 +78,7 @@ module Admin
       params.require(:studio).permit(:name, :area_id, :address, :nearest_station_1,
                                      :nearest_station_2, :nearest_station_3, :tel, :start_hours,
                                      :end_hours, :late_night, :locker_room, :parking,
-                                     :cancell_deadline, :image, :url, :feature, :remarks)
+                                     :cancell_deadline, :url, :feature, :remarks, :status)
     end
   end
 end

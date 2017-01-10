@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   root 'top#index'
   resources :rooms
   resources :studios
+  resources :studios do
+    member do
+      get 'studio_image'
+    end
+  end
   resources :accounts
   resources :admin, only: :index
   namespace :admin do
