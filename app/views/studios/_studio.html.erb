@@ -1,22 +1,16 @@
-<%= link_to studio_path(studio.id), class: 'studio' do %>
-  <div class="studio-box">
-    <div class="left col-xs-12 col-sm-6">
+<div class="studio studio-box col-xs-12 col-sm-6">
+  <div class="left">
+    <%= link_to studio_path(studio.id) do %>
       <%= image_tag studio_image_studio_path(studio) %>
-    </div>
-    <div class="right col-xs-12 col-sm-6">
-      <ul>
-        <li><h3><%= studio.name %></h3></li>
-        <li>
-          <%= "#{studio.nearest_station_1}駅" -%>
-          <%= " 他" if studio.nearest_station_2.present? %>
-        </li>
-        <li>
-          <%= button_tag '詳細はこちら >>', class: 'btn btn-info' %>
-        </li>
-        <li>
-          <%= button_tag sanitize("<i class='fa fa-phone'></i>#{studio.tel}"), class: 'btn btn-success' %>
-        </li>
-      </ul>
-    </div>
+    <% end %>
   </div>
-<% end %>
+  <div class="right">
+    <div class="studio-name"><strong><%= studio.name %></strong></div>
+    <div class="station">
+      <%= "#{studio.nearest_station_1}駅" -%>
+      <%= " 他" if studio.nearest_station_2.present? %>
+    </div>
+    <div class="studio-button"><%= link_to '詳細はこちら >>', studio_path(studio.id), class: 'btn-sm btn-info btn-block' %></div>
+    <div class="studio-button"><%= button_tag sanitize("<i class='fa fa-phone'></i> #{studio.tel}"), class: 'btn-sm btn-success btn-block' %></div>
+  </div>
+</div>
