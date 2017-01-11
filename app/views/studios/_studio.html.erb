@@ -11,6 +11,6 @@
       <%= " 他" if studio.nearest_station_2.present? %>
     </div>
     <div class="studio-button"><%= link_to '詳細はこちら >>', studio_path(studio.id), class: 'btn-sm btn-info btn-block' %></div>
-    <div class="studio-button"><%= button_tag sanitize("<i class='fa fa-phone'></i> #{studio.tel}"), class: 'btn-sm btn-success btn-block' %></div>
+    <div class="studio-button"><%= tel_to studio.tel, sanitize("<i class='fa fa-phone'></i> #{studio.tel}"), class: 'btn-sm btn-success btn-block' %></div>
   </div>
 </div>

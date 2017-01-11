@@ -29,9 +29,12 @@ div.studio-box {
   margin-bottom: 24px;
   color: #484848;
   .left {
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
     img {
+      height: 180px;
       width: 100%;
-      height: 100%;
     }
   }
   .right {
@@ -43,6 +46,7 @@ div.studio-box {
       width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
     }
     div.station {
       font-size: small;
