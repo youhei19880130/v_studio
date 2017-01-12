@@ -1,6 +1,10 @@
 <div class="studio-detail">
   <div class="studio-detail-top">
-    <%= image_tag studio_image_studio_url(@studio) %>
+    <% if @studio.image %>
+      <%= image_tag studio_image_studio_path(@studio) %>
+    <% else %>
+      <%= image_tag '/images/no_image.jpg' %>
+    <% end %>
     <h1><%= @studio.name %></h1>
     <%= "#{@studio.nearest_station_1}駅" -%>
     <%= ", #{@studio.nearest_station_2}駅" if @studio.nearest_station_2.present? -%>
