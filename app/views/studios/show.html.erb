@@ -36,8 +36,8 @@
       <li class="item-list list">深夜レンタル: <strong><%= @studio.late_night ? 'あり' : 'なし' %></strong></li>
       <li class="item-list list">更衣室: <strong><%= @studio.locker_room ? 'あり' : 'なし' %></strong></li>
       <li class="item-list list">駐車場: <strong><%= @studio.parking ? 'あり' : 'なし' %></strong></li>
-      <li class="item-list list">キャンセル期限: <strong><%= @studio.cancell_deadline %></strong></li>
-      <li class="item-list list">備考: <strong><%= @studio.remarks %></strong></li>
+      <li class="item-list list">キャンセル期限: <strong><%= @studio.cancell_deadline || '特になし' %></strong></li>
+      <li class="item-list list">備考: <strong><%= @studio.remarks || '特になし' %></strong></li>
     </ul>
     <%= link_to "#{@studio.name}のWEBサイトへ", @studio.url, class: "btn btn-info btn-lg btn-block", target: "_blank" %>
   </div>
