@@ -65,3 +65,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # for heroku
 gem 'rails_12factor', group: :production
+
+# for provisioning
+gem 'rb-readline'
+gem 'unicorn'
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
+gem 'capistrano-rbenv', github: "capistrano/rbenv"
