@@ -7,7 +7,7 @@ class StudiosController < ApplicationController
   def index # rubocop:disable Metrics/AbcSize
     @studios = Studio.displayed.by_late_night(params[:late_night]&.to_i).by_locker_room(params[:locker_room])
                      .by_parking(params[:parking]).by_area(params[:area]).by_people(params[:people].to_i)
-                     .page(params[:page])
+                     .order_by_room_count.page(params[:page])
   end
 
   # GET /studios/1

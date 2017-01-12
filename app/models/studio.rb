@@ -22,6 +22,10 @@ class Studio < ApplicationRecord
   scope :by_late_night, ->(late_night) { where(late_night: late_night) if late_night.present? }
   scope :by_locker_room, ->(locker_room) { where(locker_room: locker_room) if locker_room.present? }
   scope :by_parking, ->(parking) { where(parking: parking) if parking.present? }
+  scope :order_by_room_count, lambda {
+    ids = joins(:rooms).group(:id).order('count_studios_id desc').count('studios.id').keys
+    Studio.where(id: ids).order(['field(id, ?)', ids])
+  }
 
   enum status: { inactive: 0, active: 1 }
 
