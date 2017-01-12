@@ -135,4 +135,12 @@ div.studio-detail-list {
   } 
 }
 
+.navbar-brand {
+  background: url("/images/vintom_logo.png") no-repeat left center;
+  background-size: contain;
+  height: 50px;
+  width: 250px;
+  margin: 5px 0 5px 20px;
+}
+
 .fa-phone:before { color: white; }
