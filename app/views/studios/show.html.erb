@@ -31,7 +31,7 @@
   <div class="studio-detail-list">
     <h4>スタジオ情報</h4>
     <ul>
-      <li class="item-list list">電話番号: <strong><%= link_to @studio.tel, @studio.tel %></strong></li>
+      <li class="item-list list">電話番号: <strong><%= tel_to @studio.tel, @studio.tel %></strong></li>
       <li class="item-list list">営業時間: <strong><%= "#{@studio.start_hours&.strftime("%H:%M")} - #{@studio.end_hours&.strftime("%H:%M")}" %></strong></li>
       <li class="item-list list">深夜レンタル: <strong><%= @studio.late_night ? 'あり' : 'なし' %></strong></li>
       <li class="item-list list">更衣室: <strong><%= @studio.locker_room ? 'あり' : 'なし' %></strong></li>
