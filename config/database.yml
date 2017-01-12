@@ -49,4 +49,6 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  username: root
+  password: dnuLet5F5iAWrt8x
+  database: v_studio_production
