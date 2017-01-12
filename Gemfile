@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "~> 2.3.0"
+ruby "~> 2.3.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -72,4 +72,4 @@ gem 'unicorn'
 gem 'capistrano'
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
-gem 'capistrano-rbenv', github: "capistrano/rbenv"
+gem 'capistrano-rbenv', git: "https://github.com/capistrano/rbenv.git"
