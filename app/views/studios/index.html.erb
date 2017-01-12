@@ -2,12 +2,13 @@
 
 <div class="row">
   <div class="hit-count col-xs-12 col-sm-12"><%= @studios.total_count %>件がヒットしました</div>
-  <div id="studios" class="col-xs-12 col-sm-8">
+  <div id="studios" class="col-xs-12 col-sm-12">
     <div class="page">
       <%= render @studios %>
     </div>
     <%= paginate @studios %>
   </div>
+<!--
   <div class="col-xs-12 col-sm-4 panel panel-info">
     <div class="panel-heading">
       <h3 class="panel-title">詳細絞込み</h3>
@@ -19,3 +20,4 @@
     </div>
   </div>
 </div>
+-->
