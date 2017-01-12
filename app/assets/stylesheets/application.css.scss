@@ -27,7 +27,7 @@ a {
 
 div.studio-box {
   margin-bottom: 24px;
-  color: #484848;
+  color: #3E3F3A;
   .left {
     height: 180px;
     width: 100%;
@@ -37,6 +37,7 @@ div.studio-box {
     }
   }
   .right {
+    width: 50%;
     margin: 0 0 24px 0;
     padding: 0;
     position: relative;
@@ -71,7 +72,7 @@ div.studio-box {
 }
 
 div.hit-count {
-  margin: 8px auto;
+  margin: 8px 15px;
   font-size: large;
 }
 
@@ -88,17 +89,14 @@ div.col-xs-12.col-sm-4.panel.panel-info {
   padding-right: 0;
 }
 
-p.right {
-  text-align: right;
-  font-size: smaller;
-}
+p.right { text-align: right;}
+.smaller { font-size: x-small; }
 
 div.footer-copyright {
-  background-color: #000000;
+  background-color: #3E3F3A;
   color: #FFFFFF;
   text-align: center;
-  margin-top: 20px;
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
 #infscr-loading {
@@ -110,3 +108,32 @@ div.footer-copyright {
     text-align: center;
   }
 }
+
+div.studio-detail {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+div.studio-detail-top {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  img {
+    width: 100%;
+  }
+}
+
+div.studio-detail-description {
+  margin: 4% 16px;
+}
+
+div.studio-detail-list {
+  margin: 4% 16px;
+  text-align: center;
+  li.item-list.list {
+    text-align: left;
+    list-style: none;
+  } 
+}
+
+.fa-phone:before { color: white; }

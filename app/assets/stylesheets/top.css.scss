@@ -1,14 +1,14 @@
 @import "bootstrap-sprockets";
 
-// Import cyborg variables
-@import "bootswatch/cyborg/variables";
+// Import sandstone variables
+@import "bootswatch/sandstone/variables";
 @import "bootstrap-custom";
 
 // Bootstrap body padding for fixed navbar
 body { padding-top: 50px; }
 
 // And finally bootswatch style itself
-@import "bootswatch/cyborg/bootswatch";
+@import "bootswatch/sandstone/bootswatch";
 
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 * {
@@ -37,11 +37,10 @@ form.form-horizontal {
 }
 
 div.footer-copyright {
-  background-color: #000000;
+  background-color: #3E3F3A;
   color: #FFFFFF;
   text-align: center;
-  margin: 20px 0;
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
 button.center {
