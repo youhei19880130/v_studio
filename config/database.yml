@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   username: root
-  password: dnuLet5F5iAWrt8x
+  password: 3dw1n<pyEYff
   database: v_studio_production
