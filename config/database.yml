@@ -52,3 +52,4 @@ production:
   username: root
   password: 3dw1n<pyEYff
   database: v_studio_production
+  socket: /var/run/mysqld/mysqld.pid
