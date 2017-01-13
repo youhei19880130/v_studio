@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 worker_processes 2
 
-listen  Dir.pwd + '/tmp/unicorn.sock'
-pid     Dir.pwd + '/tmp/unicorn.pid'
+app_path = '/var/www/app/v_studio'
+app_shared_path = "#{app_path}/shared"
+listen = "#{app_shared_path}/tmp/unicorn.sock"
+pid = "#{app_shared_path}/tmp/unicorn.pid"
 
 log = Dir.pwd + '/log/unicorn.log'
 stderr_path File.expand_path('log/unicorn.log', ENV['RAILS_ROOT'])
