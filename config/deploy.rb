@@ -15,5 +15,10 @@ set :default_env, { path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" }
 set :keep_releases, 5
 
 namespace :deploy do
-    after :finishing, 'deploy:cleanup'
+  after :finishing, 'deploy:cleanup'
+
+  desc 'Restart application'
+  task :restart do 
+    invoke 'unicorn:restart'
+  end
 end
