@@ -29,7 +29,7 @@ module Admin
     # POST /studios.json
     def create
       @studio = Studio.new(studio_params)
-      @studio.image = params[:studio][:image].read
+      @studio.image = params[:studio][:image].read if params[:studio][:image]
 
       respond_to do |format|
         if @studio.save
@@ -45,7 +45,7 @@ module Admin
     # PATCH/PUT /studios/1
     # PATCH/PUT /studios/1.json
     def update
-      @studio.image = params[:studio][:image].read
+      @studio.image = params[:studio][:image].read if params[:studio][:image]
       respond_to do |format|
         if @studio.update(studio_params)
           format.html { redirect_to @studio, notice: 'Studio was successfully updated.' }
