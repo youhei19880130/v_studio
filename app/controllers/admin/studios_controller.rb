@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Admin
-  class StudiosController < ApplicationController
+  class StudiosController < Admin::ApplicationController
     layout 'admin'
     before_action :set_studio, only: [:show, :edit, :update, :destroy]
 

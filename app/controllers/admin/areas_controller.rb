@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Admin
-  class AreasController < ApplicationController
+  class AreasController < Admin::ApplicationController
     layout 'admin'
     before_action :set_area, only: [:show, :edit, :update, :destroy]
 

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Admin
-  class RoomsController < ApplicationController
+  class RoomsController < Admin::ApplicationController
     layout 'admin'
     before_action :set_room, only: [:show, :edit, :update, :destroy]
 
