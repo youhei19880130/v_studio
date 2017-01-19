@@ -75,7 +75,7 @@ module Admin
     def room_params
       params.require(:room).permit(:studio_id, :name, :size, :capacity, :mirror, :floor,
                                    :speaker, :mixer, :cd, :md, :mp3, :other_source,
-                                   :dimmable, :wifi, :image, :feature, :remarks)
+                                   :dimmable, :wifi, :image, :feature, :remarks, :status)
     end
   end
 end
