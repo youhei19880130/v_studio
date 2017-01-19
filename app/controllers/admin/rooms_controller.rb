@@ -45,7 +45,7 @@ module Admin
     def update
       respond_to do |format|
         if @room.update(room_params)
-          format.html { redirect_to @room, notice: 'Room was successfully updated.' }
+          format.html { redirect_to admin_rooms_path, notice: 'Room was successfully updated.' }
           format.json { render :show, status: :ok, location: @room }
         else
           format.html { render :edit }

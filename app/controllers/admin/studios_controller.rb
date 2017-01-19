@@ -48,7 +48,7 @@ module Admin
       @studio.image = params[:studio][:image].read if params[:studio][:image]
       respond_to do |format|
         if @studio.update(studio_params)
-          format.html { redirect_to @studio, notice: 'Studio was successfully updated.' }
+          format.html { redirect_to admin_studios_path, notice: 'Studio was successfully updated.' }
           format.json { render :show, status: :ok, location: @studio }
         else
           format.html { render :edit }
