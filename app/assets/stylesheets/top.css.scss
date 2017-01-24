@@ -10,7 +10,7 @@ body { padding-top: 50px; }
 // And finally bootswatch style itself
 @import "bootswatch/sandstone/bootswatch";
 
-@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+@import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 * {
   font-family: 'Noto Sans Japanese', Meiryo, 'Noto Sans', Calibri, 'Open Sans', sans-serif;
 }
