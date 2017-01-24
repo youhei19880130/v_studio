@@ -4,7 +4,7 @@
 $ ->
   $("#studios .page").infinitescroll
     loading: {
-      img:     "//www.mytreedb.com/uploads/mytreedb/loader/ajax_loader_blue_48.gif"
+      img:     "//sagasu.space/images/loader.gif"
       msgText: "loading..."
     }
     navSelector: "nav.pagination" # selector for the paged navigation (it will be hidden)
