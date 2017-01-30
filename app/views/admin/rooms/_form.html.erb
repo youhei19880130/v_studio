@@ -91,7 +91,7 @@
 
   <div class="form-group">
     <%= f.label 'ステータス', class: 'control-label' %>
-    <%= f.select :status, Room.statuses.keys.to_a, {}, class: 'form-control' %>
+    <%= f.select :status, Room.statuses.keys.to_a, {}, prompt: @room.status, class: 'form-control' %>
   </div>
 
   <div class="actions">
