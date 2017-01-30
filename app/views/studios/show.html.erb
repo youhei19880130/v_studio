@@ -43,7 +43,7 @@
       <li class="item-list list">キャンセル期限: <strong><%= @studio.cancell_deadline.blank? ? '特になし' : @studio.cancell_deadline %></strong></li>
       <li class="item-list list">備考: <strong><%= @studio.remarks.blank? ? '特になし' : @studio.remarks %></strong></li>
     </ul>
-    <%= link_to "#{@studio.name}のWEBサイトへ", @studio.url, class: "btn btn-info btn-lg btn-block", target: "_blank" %>
-    <%= tel_to @studio.tel, sanitize("<i class='fa fa-phone'></i> #{@studio.tel}"), class: 'btn btn-success btn-lg btn-block' if @studio.tel%>
+    <%= link_to "#{@studio.name}のWEBサイトへ", @studio.url, class: "btn btn-info btn-lg btn-block", target: "_blank" if @studio.url.present? %>
+    <%= tel_to @studio.tel, sanitize("<i class='fa fa-phone'></i> #{@studio.tel}"), class: 'btn btn-success btn-lg btn-block' if @studio.tel.present? %>
   </div>
 </div>
