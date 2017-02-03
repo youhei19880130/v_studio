@@ -27,7 +27,7 @@ module Admin
 
     # POST /studios
     # POST /studios.json
-    def create
+    def create # rubocop:disable Metrics/AbcSize
       @studio = Studio.new(studio_params)
       @studio.image = params[:studio][:image].read if params[:studio][:image]
 
@@ -44,7 +44,7 @@ module Admin
 
     # PATCH/PUT /studios/1
     # PATCH/PUT /studios/1.json
-    def update
+    def update # rubocop:disable Metrics/AbcSize
       @studio.image = params[:studio][:image].read if params[:studio][:image]
       respond_to do |format|
         if @studio.update(studio_params)
