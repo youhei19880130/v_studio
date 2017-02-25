@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 class StudiosController < ApplicationController
-  layout 'studio', only: [:show]
-  layout 'studio_index', only: [:index]
+  layout :select_layout
   before_action :set_studio, only: [:show, :edit, :update, :destroy]
 
   # GET /studios
@@ -84,5 +83,13 @@ class StudiosController < ApplicationController
                                    :nearest_station_2, :nearest_station_3, :tel, :start_hours,
                                    :end_hours, :late_night, :locker_room, :parking,
                                    :cancell_deadline, :image, :url, :feature, :remarks)
+  end
+
+  def select_layout
+    if action_name == 'index'
+      'studio_index'
+    elsif action_name == 'show'
+      'studio'
+    end
   end
 end
