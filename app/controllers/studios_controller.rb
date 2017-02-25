@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 class StudiosController < ApplicationController
+  layout 'studio', only: [:show]
   before_action :set_studio, only: [:show, :edit, :update, :destroy]
 
   # GET /studios
