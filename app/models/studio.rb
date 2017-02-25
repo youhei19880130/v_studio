@@ -9,10 +9,12 @@ class Studio < ApplicationRecord
   scope :by_people, lambda { |people|
     array = select do |s|
       case people
-      when 1..3
+      when 1..2
         (people * 5).between?(s.min_capacity, s.max_capacity)
-      when 4
-        s.max_capacity > 20
+      when 3..4
+        (people * 10 - 10).between?(s.min_capacity, s.max_capacity)
+      when 5
+        s.max_capacity > 30
       else
         true
       end

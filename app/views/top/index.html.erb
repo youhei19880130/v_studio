@@ -10,9 +10,9 @@
       </div>
       <div class="form-group">
         <% if params[:people].present? %>
-          <%= select '', :people, [['〜5人', 1], ['6〜10人', 2], ['11〜20人', 3], ['21人〜', 4]], {selected: params[:people]}, {class: 'form-control input-lg'} %>
+          <%= select '', :people, People::LABELS.map{ |k,v| [v, k]}, {selected: params[:people]}, {class: 'form-control input-lg'} %>
         <% else %>
-          <%= select '', :people, [['〜5人', 1], ['6〜10人', 2], ['11〜20人', 3], ['21人〜', 4]], {prompt: '人数'}, {class: 'form-control input-lg'} %>
+          <%= select '', :people, People::LABELS.map{ |k,v| [v, k]}, {prompt: '人数'}, {class: 'form-control input-lg'} %>
         <% end %>
       </div>
       <div class="form-group">
