@@ -1,6 +1,6 @@
 <div class="studio studio-box col-xs-12 col-sm-4">
   <div class="left">
-    <%= link_to studio_path(studio.id) do %>
+    <%= link_to studio_path(studio) do %>
       <% if studio.image %>
         <%= image_tag studio_image_studio_path(studio) %>
       <% else %>
@@ -14,7 +14,7 @@
       <%= "#{studio.nearest_station_1}駅" -%>
       <%= " 他" if studio.nearest_station_2.present? %>
     </div>
-    <div class="studio-button"><%= link_to '詳細はこちら >>', studio_path(studio.id, area: params[:area], people: params[:people] ), class: 'btn btn-info btn-block' %></div>
+    <div class="studio-button"><%= link_to '詳細はこちら >>', studio_path(studio, area: params[:area], people: params[:people] ), class: 'btn btn-info btn-block' %></div>
     <div class="studio-button">
       <% if studio.tel.present? %>
         <%= tel_to studio.tel, sanitize("<i class='fa fa-phone'></i> #{studio.tel}"), class: 'btn btn-success btn-block' %>

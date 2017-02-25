@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 class Studio < ApplicationRecord
+  include FriendlyId
+  friendly_id :slug
+
   # belongs_to :account
   belongs_to :area
   has_many :rooms

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225063940) do
+ActiveRecord::Schema.define(version: 20170225092000) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -76,10 +76,10 @@ ActiveRecord::Schema.define(version: 20170225063940) do
     t.text     "feature",            limit: 65535
     t.text     "remarks",            limit: 65535
     t.integer  "status",             limit: 1,        default: 0
+    t.string   "slug"
     t.string   "meta_title"
     t.string   "meta_description"
     t.string   "meta_ogp_image_url"
-    t.string   "slug"
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
   end
