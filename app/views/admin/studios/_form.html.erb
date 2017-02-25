@@ -102,6 +102,24 @@
     <%= image_tag studio_image_studio_url(@studio), width: '30%', style: 'margin: 20px;text-align:right;' if @studio.image %>
   </div>
 
+  <div class="form-group">
+    metaデータ
+    <ul>
+      <li>
+        <%= f.label 'title', class: 'control-label' %>
+        <%= f.text_area :meta_title, class: 'form-control' %>
+      </li>
+      <li>
+        <%= f.label 'description', class: 'control-label' %>
+        <%= f.text_area :meta_description, class: 'form-control' %>
+      </li>
+      <li>
+        <%= f.label 'ogp_image', class: 'control-label' %>
+        <%= f.text_area :meta_ogp_image_url, class: 'form-control' %>
+      </li>
+    </ul>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
