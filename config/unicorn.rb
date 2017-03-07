@@ -20,15 +20,6 @@ after_fork do |server, worker|
     puts 'Unicorn worker intercepting TERM and doing nothing. Wait for master to send QUIT'
   end
 
-  old_pid = "#{_server.config[:pid]}.oldbin"
-  if old_pid != _server.pid
-    begin
-      sig = (_worker.nr + 1) >= _server.worker_processes ? :QUIT : :TTOU
-      Process.kill(sig, File.read(old_pid).to_i)
-    rescue Errno::ENOENT, Errno::ESRCH
-    end
-  end
-
   defined?(ActiveRecord::Base) and
     ActiveRecord::Base.establish_connection
 end
