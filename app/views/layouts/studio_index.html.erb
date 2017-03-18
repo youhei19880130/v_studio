@@ -35,16 +35,16 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
           <%= form_tag studios_path, class: "navbar-form navbar-right", role: "search", method: :get do %>
             <div class="form-group">
-              <% if params[:area].present? %>
-                <%= select '', :area, Area.all.map{ |a| [a.city, a.id] }, {selected: params[:area]}, {class: 'form-control'} %>
+              <% if session[:area].present? %>
+                <%= select '', :area, Area.all.map{ |a| [a.city, a.id] }, {selected: session[:area]}, {class: 'form-control'} %>
               <% else %>
                 <%= select '', :area, Area.all.map{ |a| [a.city, a.id] }, {prompt: 'エリア'}, {class: 'form-control'} %>
               <% end %>
             </div>
             &nbsp;
             <div class="form-group">
-              <% if params[:people].present? %>
-                <%= select '', :people, People::LABELS.map{ |k,v| [v, k]}, {selected: params[:people]}, {class: 'form-control'} %>
+              <% if session[:people].present? %>
+                <%= select '', :people, People::LABELS.map{ |k,v| [v, k]}, {selected: session[:people]}, {class: 'form-control'} %>
               <% else %>
                 <%= select '', :people, People::LABELS.map{ |k,v| [v, k]}, {prompt: '人数'}, {class: 'form-control'} %>
               <% end %>
