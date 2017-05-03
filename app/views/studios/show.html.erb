@@ -35,7 +35,7 @@
   <div class="studio-detail-list">
     <h4>スタジオ情報</h4>
     <ul>
-      <li class="item-list list">電話番号: <strong><%= tel_to @studio.tel, @studio.tel %></strong></li>
+      <li class="item-list list">電話番号: <strong><%= tel_to @studio.tel, @studio.tel, onclick: "ga('send', 'event', 'studio', 'tel', '#{studio.slug}', 0, {'nonInteraction': 1});" %></strong></li>
       <li class="item-list list">営業時間: 
         <strong>
           <% if @studio.late_night %>
@@ -52,6 +52,6 @@
       <li class="item-list list">備考: <strong><%= @studio.remarks.blank? ? '特になし' : @studio.remarks %></strong></li>
     </ul>
     <%= link_to "#{@studio.name}のWEBサイトへ", @studio.url, class: "btn btn-info btn-lg btn-block", target: "_blank", onclick: "ga('send', 'event', 'studio', 'click', '', 0, {'nonInteraction': 1});" if @studio.url.present? %>
-    <%= tel_to @studio.tel, sanitize("<i class='fa fa-phone'></i> #{@studio.tel}"), {class: 'btn btn-success btn-lg btn-block', onclick: "ga('send', 'event', 'studio', 'tel', '', 0, {'nonInteraction': 1});"} if @studio.tel.present? %>
+    <%= tel_to @studio.tel, sanitize("<i class='fa fa-phone'></i> #{@studio.tel}"), {class: 'btn btn-success btn-lg btn-block', onclick: "ga('send', 'event', 'studio', 'tel', '#{@studio.slug}', 0, {'nonInteraction': 1});"} if @studio.tel.present? %>
   </div>
 </div>
