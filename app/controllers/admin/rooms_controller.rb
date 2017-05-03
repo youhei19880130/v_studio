@@ -7,7 +7,7 @@ module Admin
     # GET /rooms
     # GET /rooms.json
     def index
-      @rooms = Room.all
+      @rooms = Room.by_studio(params[:studio_id])
     end
 
     # GET /rooms/1
