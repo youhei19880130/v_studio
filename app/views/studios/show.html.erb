@@ -11,7 +11,7 @@
     <%= ", #{@studio.nearest_station_3}駅" if @studio.nearest_station_3.present? -%>
   </div>
   <div class="studio-detail-description">
-    <p><%= simple_format(@studio.feature) %></p>
+    <p><%= simple_format(h(@studio.feature)) %></p>
     <table class="table table-striped table-hover">
       <thead>
         <tr>
