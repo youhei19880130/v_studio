@@ -2,12 +2,13 @@
 class StudiosController < ApplicationController
   layout :select_layout
   before_action :set_studio, only: [:show, :edit, :update, :destroy]
+  before_action :url_formatter, only: :index
 
   # GET /studios
   # GET /studios.json
   def index # rubocop:disable Metrics/AbcSize
     @studios = Studio.displayed.by_late_night(params[:late_night]&.to_i).by_locker_room(params[:locker_room])
-                     .by_parking(params[:parking]).by_area(params[:area]).by_people(params[:people].to_i)
+                     .by_parking(params[:parking]).by_area(params[:area]).by_people(params[:people])
                      .page(params[:page])
   end
 
@@ -91,5 +92,18 @@ class StudiosController < ApplicationController
     elsif action_name == 'show'
       'studio'
     end
+  end
+
+  def url_formatter
+    return if !params[:area].blank? && params[:area].to_i == 0 && params[:button].nil?
+    area = case
+           when params[:area].blank?
+             'all'
+           when params[:area].to_i == 0
+             params[:area]
+           else
+             Area.find_by(id: params[:area]).slug
+           end
+    redirect_to studios_path(area: area, people: params[:people])
   end
 end

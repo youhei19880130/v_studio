@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= "#{Area.find_by(id: params[:area]).city}の" if params[:area].present? %><%= "#{People::LABELS[params[:people].to_i]}で使える" if params[:people].present? %>レンタルダンススタジオまとめ</title>
-    <meta name="description"  content="<%= "#{Area.find_by(id: params[:area]).city}の" if params[:area].present? %><%= "#{People::LABELS[params[:people].to_i]}で使える" if params[:people].present? %>レンタル可能なダンススタジオをまとめました。「レンタルダンススタジオ検索」は更衣室の有無やwifi有無など、様々な条件であなたの目的にあったダンスの練習用貸しスタジオを検索できます。"/>
+    <title><%= "#{Area.find_by(slug: params[:area]).city}の" if params[:area] != 'all' %><%= "#{People::LABELS[params[:people]]}で使える" if params[:people] != 'all' %>レンタルダンススタジオまとめ</title>
+    <meta name="description"  content="<%= "#{Area.find_by(slug: params[:area]).city}の" if params[:area] != 'all' %><%= "#{People::LABELS[params[:people]]}で使える" if params[:people] != 'all' %>レンタル可能なダンススタジオをまとめました。「レンタルダンススタジオ検索」は更衣室の有無やwifi有無など、様々な条件であなたの目的にあったダンスの練習用貸しスタジオを検索できます。"/>
     <link rel="shortcut icon" href="https://sagasu.space/images/vintom.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:title" content="<%= "#{Area.find_by(id: params[:area]).city}の" if params[:area].present? %><%= "#{People::LABELS[params[:people].to_i]}で使える" if params[:people].present? %>レンタルダンススタジオまとめ" />
+    <meta property="og:title" content="<%= "#{Area.find_by(slug: params[:area]).city}の" if params[:area] != 'all' %><%= "#{People::LABELS[params[:people]]}で使える" if params[:people] != 'all' %>レンタルダンススタジオまとめ" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sagasu.space/" />
     <meta property="og:image" content="https://sagasu.space/images/top.jpg" />
     <meta property="og:site_name" content="レンタルダンススタジオ検索" />
-    <meta property="og:description" content="<%= "#{Area.find_by(id: params[:area]).city}の" if params[:area].present? %><%= "#{People::LABELS[params[:people].to_i]}で使える" if params[:people].present? %>レンタル可能なダンススタジオをまとめました。「レンタルダンススタジオ検索」は更衣室の有無やwifi有無など、様々な条件であなたの目的にあったダンスの練習用貸しスタジオを検索できます。"/>
+    <meta property="og:description" content="<%= "#{Area.find_by(slug: params[:area]).city}の" if params[:area] != 'all' %><%= "#{People::LABELS[params[:people]]}で使える" if params[:people] != 'all' %>レンタル可能なダンススタジオをまとめました。「レンタルダンススタジオ検索」は更衣室の有無やwifi有無など、様々な条件であなたの目的にあったダンスの練習用貸しスタジオを検索できます。"/>
     <meta property="fb:app_id" content="1170194636409472">
     <%= csrf_meta_tags %>
 
@@ -36,9 +36,9 @@
           <%= form_tag studios_path, class: "navbar-form navbar-right", role: "search", method: :get do %>
             <div class="form-group">
               <% if session[:area].present? %>
-                <%= select '', :area, Area.all.map{ |a| [a.city, a.id] }, {selected: session[:area]}, {class: 'form-control'} %>
+                <%= select '', :area, Area.all.map{ |a| [a.city, a.slug] }, {selected: session[:area]}, {class: 'form-control'} %>
               <% else %>
-                <%= select '', :area, Area.all.map{ |a| [a.city, a.id] }, {prompt: 'エリア'}, {class: 'form-control'} %>
+                <%= select '', :area, Area.all.map{ |a| [a.city, a.slug] }, {prompt: 'エリア'}, {class: 'form-control'} %>
               <% end %>
             </div>
             &nbsp;

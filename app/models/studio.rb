@@ -8,14 +8,15 @@ class Studio < ApplicationRecord
   has_many :rooms
 
   scope :displayed, -> { where(status: Studio.statuses[:active]) }
-  scope :by_area, ->(area) { where(area_id: area) if area.present? }
+  scope :by_area, ->(area) { where(area_id: Area.find_by(slug: area).id) if area != 'all' }
   scope :by_people, lambda { |people|
+    logger.info("people is #{people}")
     array = select do |s|
-      case people
+      case People::VALUES[people]
       when 1..2
-        (people * 5).between?(s.min_capacity, s.max_capacity)
+        (People::VALUES[people] * 5).between?(s.min_capacity, s.max_capacity)
       when 3..4
-        (people * 10 - 10).between?(s.min_capacity, s.max_capacity)
+        (People::VALUES[people] * 10 - 10).between?(s.min_capacity, s.max_capacity)
       when 5
         s.max_capacity > 30
       else
