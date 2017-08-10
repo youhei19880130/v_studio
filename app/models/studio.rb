@@ -14,9 +14,11 @@ class Studio < ApplicationRecord
     array = select do |s|
       case People::VALUES[people]
       when 1..2
-        (People::VALUES[people] * 5).between?(s.min_capacity, s.max_capacity)
+        (People::VALUES[people] * 5).between?(s.min_capacity, s.max_capacity) ||
+          (s.min_capacity).between?(People::VALUES[people] * 5 - 4, People::VALUES[people] * 5)
       when 3..4
-        (People::VALUES[people] * 10 - 10).between?(s.min_capacity, s.max_capacity)
+        (People::VALUES[people] * 10 - 10).between?(s.min_capacity, s.max_capacity) ||
+          (s.min_capacity).between?(People::VALUES[people] * 10 - 19, People::VALUES[people] * 10 - 10)
       when 5
         s.max_capacity > 30
       else
