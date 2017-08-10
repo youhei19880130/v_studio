@@ -97,6 +97,11 @@
   </div>
 
   <div class="form-group">
+    <%= f.label '事務局メモ', class: 'control-label' %>
+    <%= f.text_area :memo, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
     <%= f.label 'キャプチャ', class: 'control-label' %>
     <%= f.file_field :image, accept: 'image/jpeg', class: 'filestyle', width: '50%' %>
     <%= image_tag studio_image_studio_url(@studio), width: '30%', style: 'margin: 20px;text-align:right;' if @studio.image %>
