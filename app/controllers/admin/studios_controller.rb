@@ -80,7 +80,7 @@ module Admin
                                      :nearest_station_2, :nearest_station_3, :tel, :start_hours,
                                      :end_hours, :late_night, :locker_room, :parking,
                                      :cancell_deadline, :url, :feature, :remarks, :memo, :status,
-                                     :meta_title, :meta_description, :meta_ogp_image_url)
+                                     :slug, :meta_title, :meta_description, :meta_ogp_image_url)
     end
   end
 end
