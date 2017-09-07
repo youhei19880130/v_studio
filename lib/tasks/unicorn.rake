@@ -37,7 +37,7 @@ namespace :unicorn do
 
   def unicorn_pid
     begin
-      File.read("/var/www/app/v_studio/tmp/unicorn.pid").to_i
+      File.read("/var/www/app/v_studio/shared/tmp/pids/unicorn.pid").to_i
     rescue Errno::ENOENT
       raise "Unicorn does not seem to be running"
     end

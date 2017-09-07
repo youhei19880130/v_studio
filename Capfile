@@ -1,12 +1,12 @@
-require 'capistrano/setup'
-
-require 'capistrano/deploy'
+require "capistrano/setup"
+require "capistrano/deploy"
+require "capistrano/scm/git"
+install_plugin Capistrano::SCM::Git
 
 require 'capistrano/rbenv'
-set :rbenv_type, :user
-set :rbenv_ruby, '2.3.1'
-require 'capistrano/bundler'
-require 'capistrano/rails/assets'
-require 'capistrano/rails/migrations'
+require 'capistrano/rails'
+require 'capistrano3/unicorn'
 
-Dir.glob('lib/capistrano/tasks/*.cap').each { |r| import r }
+set :linked_files, %w{config/secrets.yml}
+# Load custom tasks from `lib/capistrano/tasks` if you have any defined
+Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }

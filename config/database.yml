@@ -47,6 +47,13 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+staging:
+  <<: *default
+  username: root
+  password: R85iYlhjL7*=
+  database: v_studio_staging
+  socket: /var/lib/mysql/mysql.sock
+
 production:
   <<: *default
   username: root

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "~> 2.3.1"
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -64,6 +64,16 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-rubocop'
   gem 'guard-migrate'
+  # for provisioning
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-unicorn', :git => 'git@github.com:noppefoxwolf/capistrano3-unicorn.git'
+end
+
+group :production, :staging do
+  gem 'unicorn'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -74,8 +84,3 @@ gem 'rails_12factor', group: :production
 
 # for provisioning
 gem 'rb-readline'
-gem 'unicorn'
-gem 'capistrano'
-gem 'capistrano-rails'
-gem 'capistrano-bundler'
-gem 'capistrano-rbenv', git: "https://github.com/capistrano/rbenv.git"

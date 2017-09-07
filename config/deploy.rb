@@ -1,24 +1,17 @@
-lock '3.7.1'
+lock '3.9.0'
 
 set :application, 'v_studio'
-set :repo_url, 'git@github.com:youhei19880130/v_studio.git'
-
-set :branch, 'master'
+set :repo_url, 'git@github.com:Vintom/studio-sagasu.git'
 set :deploy_to, '/var/www/app/v_studio'
-set :scm, :git
-set :log_level, :debug
 set :pty, true
+set :git
+set :rbenv_ruby, '2.3.1'
+set :rbenv_type, :system
 
-set :bundle_binstubs, nil
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets bundle public/system public/assets}
-set :default_env, { path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" }
-set :keep_releases, 5
-
+after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
-  after :finishing, 'deploy:cleanup'
-
   desc 'Restart application'
-  task :restart do 
+  task :restart do
     invoke 'unicorn:restart'
   end
 end
