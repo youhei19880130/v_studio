@@ -10,6 +10,8 @@ class StudiosController < ApplicationController
     @studios = Studio.displayed.by_late_night(params[:late_night]&.to_i).by_locker_room(params[:locker_room])
                      .by_parking(params[:parking]).by_area(params[:area]).by_people(params[:people])
                      .page(params[:page])
+    @area = params[:area] == 'all' ? '首都圏' : Area.find_by(slug: params[:area]).city
+    @people = params[:people].blank? ? '' : "#{People::LABELS[params[:people]]}で使える"
   end
 
   # GET /studios/1
