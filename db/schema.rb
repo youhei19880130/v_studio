@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810142800) do
+ActiveRecord::Schema.define(version: 20171026155849) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170810142800) do
     t.string   "name"
     t.integer  "size"
     t.integer  "capacity",                   default: 0
+    t.integer  "price",                      default: 0
     t.string   "mirror"
     t.integer  "floor"
     t.boolean  "speaker",                    default: false

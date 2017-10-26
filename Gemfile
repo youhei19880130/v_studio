@@ -84,3 +84,5 @@ gem 'rails_12factor', group: :production
 
 # for provisioning
 gem 'rb-readline'
+
+gem 'redis-rack'

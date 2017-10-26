@@ -73,7 +73,7 @@ module Admin
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:studio_id, :name, :size, :capacity, :mirror, :floor,
+      params.require(:room).permit(:studio_id, :name, :size, :capacity, :price, :mirror, :floor,
                                    :speaker, :mixer, :cd, :md, :mp3, :other_source,
                                    :dimmable, :wifi, :image, :feature, :remarks, :memo, :status)
     end
