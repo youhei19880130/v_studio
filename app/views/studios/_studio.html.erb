@@ -7,6 +7,11 @@
         <%= image_tag 'no_image.jpg' %>
       <% end %>
     <% end %>
+    <% if studio.rooms.size == 1 %>
+      <p class="price_unit"><%= format_jpy(studio.rooms.first.price) %> <small>/h</small></p>
+    <% else %>
+      <p class="price_unit"><%= format_jpy(studio.rooms.pluck(:price).min) %> ~ <%= format_jpy(studio.rooms.pluck(:price).max) %> <small>/h</small></p> 
+    <% end %>
   </div>
   <div class="right">
     <div class="studio-name"><strong><%= studio.name %></strong></div>

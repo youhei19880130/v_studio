@@ -1,3 +1,12 @@
 // Place all the styles related to the studios controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.price_unit {
+  color: white;
+  position: absolute;
+  background-color: black;
+  bottom: 0;
+  right: 12px;
+  padding: 4px 8px;
+}

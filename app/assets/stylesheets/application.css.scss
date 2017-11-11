@@ -34,9 +34,9 @@ div.studio-box {
     overflow: hidden;
     position: relative;
     img {
-      height: 100%;
-      width: auto;
-      top: 50%;
+      height: auto;
+      width: 100%;
+      top: 45%;
       left: 50%;
       -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
@@ -144,3 +144,6 @@ div.studio-detail-list {
 }
 
 .fa-phone:before { color: white; }
+
+// Import each page css
+@import "studios"
