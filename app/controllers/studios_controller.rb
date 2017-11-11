@@ -11,7 +11,7 @@ class StudiosController < ApplicationController
                      .by_parking(params[:parking]).by_area(params[:area]).by_people(params[:people])
                      .page(params[:page])
     @area = params[:area] == 'all' ? '首都圏' : Area.find_by(slug: params[:area]).city
-    @people = params[:people].blank? ? '' : "#{People::LABELS[params[:people]]}で使える"
+    @people = params[:people].blank? || params[:people] == 'all' ? '' : "#{People::LABELS[params[:people]]}で使える"
   end
 
   # GET /studios/1
