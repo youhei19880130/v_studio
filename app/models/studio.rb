@@ -10,7 +10,6 @@ class Studio < ApplicationRecord
   scope :displayed, -> { where(status: Studio.statuses[:active]) }
   scope :by_area, ->(area) { where(area_id: Area.find_by(slug: area).id) if area != 'all' }
   scope :by_people, lambda { |people|
-    logger.info("people is #{people}")
     array = select do |s|
       case People::VALUES[people]
       when 1..2
