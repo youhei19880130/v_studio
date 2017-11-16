@@ -11,7 +11,7 @@
     <%= ", #{@studio.nearest_station_3}駅" if @studio.nearest_station_3.present? -%>
   </div>
   <div class="studio-detail-description">
-    <p><%= simple_format(h(@studio.feature)) %></p>
+    <p><%== @studio.feature %></p>
     <% if @studio.rooms.displayed.present? %>
       <table class="table table-striped table-hover">
         <thead>
@@ -33,29 +33,29 @@
         <% end %>
         </tbody>
       </table> 
-      <p class="right smaller">※最大人数、料金は目安です。詳細は各スタジオにお問い合わせください。</p>
+      <p class="right smaller">※最大人数、料金は目安です。詳細はスタジオにお問い合わせください。</p>
     <% end %>
   </div>
   <div class="studio-detail-list">
-    <h4>スタジオ情報</h4>
-    <ul>
-      <li class="item-list list">電話番号: <strong><%= tel_to @studio.tel, @studio.tel, onclick: "ga('send', 'event', 'studio', 'tel', '#{@studio.slug}', 0, {'nonInteraction': 1});" %></strong></li>
-      <li class="item-list list">営業時間: 
-        <strong>
-          <% if @studio.late_night %>
-            <%= "#{@studio.start_hours&.strftime("%H:%M")} - #{(@studio.end_hours.hour + 24 ).to_s + @studio.end_hours&.strftime(":%M")}" %>
-          <% else %>
-            <%= "#{@studio.start_hours&.strftime("%H:%M")} - #{@studio.end_hours&.strftime("%H:%M")}" %>
-          <% end %>
-        </strong>
-      </li>
-      <li class="item-list list">深夜レンタル: <strong><%= @studio.late_night ? 'あり' : 'なし' %></strong></li>
-      <li class="item-list list">更衣室: <strong><%= @studio.locker_room ? 'あり' : 'なし' %></strong></li>
-      <li class="item-list list">駐車場: <strong><%= @studio.parking ? 'あり' : 'なし' %></strong></li>
-      <li class="item-list list">キャンセル期限: <strong><%= @studio.cancell_deadline.blank? ? '特になし' : @studio.cancell_deadline %></strong></li>
-      <li class="item-list list">備考: <strong><%= @studio.remarks.blank? ? '特になし' : @studio.remarks %></strong></li>
-    </ul>
-    <%= link_to "#{@studio.name}のWEBサイトへ", @studio.url, class: "btn btn-info btn-lg btn-block", target: "_blank", onclick: "ga('send', 'event', 'studio', 'click', '', 0, {'nonInteraction': 1});" if @studio.url.present? %>
+    <h2>スタジオ情報</h2>
+    <p class="studio-list">電話番号: <strong><%= tel_to @studio.tel, @studio.tel, onclick: "ga('send', 'event', 'studio', 'tel', '#{@studio.slug}', 0, {'nonInteraction': 1});" %></strong></p>
+    <p class="studio-list">営業時間:
+       <strong>
+         <% if @studio.late_night %>
+           <%= "#{@studio.start_hours&.strftime("%H:%M")} - #{(@studio.end_hours.hour + 24 ).to_s + @studio.end_hours&.strftime(":%M")}" %>
+         <% else %>
+           <%= "#{@studio.start_hours&.strftime("%H:%M")} - #{@studio.end_hours&.strftime("%H:%M")}" %>
+         <% end %>
+       </strong>
+    </p>
+    <p class="studio-list">深夜レンタル: <strong><%= @studio.late_night ? 'あり' : 'なし' %></strong></p>
+    <p class="studio-list">更衣室: <strong><%= @studio.locker_room ? 'あり' : 'なし' %></strong></p>
+    <p class="studio-list">駐車場: <strong><%= @studio.parking ? 'あり' : 'なし' %></strong></p>
+    <p class="studio-list">キャンセル期限: <strong><%= @studio.cancell_deadline.blank? ? '特になし' : @studio.cancell_deadline %></strong></p>
+    <p class="studio-list">備考: <strong><%= @studio.remarks.blank? ? '特になし' : @studio.remarks %></strong></p>
+  </div>
+  <div class="studio-detail-list">
+    <%= link_to "スタジオのWEBサイトへ", @studio.url, class: "btn btn-info btn-lg btn-block", target: "_blank", onclick: "ga('send', 'event', 'studio', 'click', '', 0, {'nonInteraction': 1});" if @studio.url.present? %>
     <%= tel_to @studio.tel, sanitize("<i class='fa fa-phone'></i> #{@studio.tel}"), {class: 'btn btn-success btn-lg btn-block', onclick: "ga('send', 'event', 'studio', 'tel', '#{@studio.slug}', 0, {'nonInteraction': 1});"} if @studio.tel.present? %>
   </div>
 </div>

@@ -118,7 +118,7 @@ div.footer-copyright {
 
 div.studio-detail {
   max-width: 480px;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
 }
 
 div.studio-detail-top {
@@ -131,16 +131,15 @@ div.studio-detail-top {
 }
 
 div.studio-detail-description {
-  margin: 4% 16px;
+  margin: 4% 20px;
 }
 
 div.studio-detail-list {
-  margin: 4% 16px;
+  padding: 4% 24px;
   text-align: center;
-  li.item-list.list {
+  p.studio-list {
     text-align: left;
-    list-style: none;
-  } 
+  }
 }
 
 .fa-phone:before { color: white; }
