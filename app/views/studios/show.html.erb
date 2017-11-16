@@ -12,27 +12,29 @@
   </div>
   <div class="studio-detail-description">
     <p><%= simple_format(h(@studio.feature)) %></p>
-    <table class="table table-striped table-hover">
-      <thead>
-        <tr>
-          <th class="text-center">スタジオ名</th>
-          <th class="text-center">広さ(㎡)</th>
-          <th class="text-center">最大人数</th>
-          <th class="text-center">料金(1h)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @studio.rooms.displayed.order('capacity desc').each do |room| %>
-        <tr>
-          <td align="center"><%= room.name %></td>
-          <td align="center"><%= room.size %></td>
-          <td align="center"><%= room.capacity %></td>
-          <td align="right"><%= room.price == 0 ? '※' : format_jpy(room.price) %></td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table> 
-    <p class="right smaller">※最大人数、料金は目安です。詳細は各スタジオにお問い合わせください。</p>
+    <% if @studio.rooms.displayed.present? %>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th class="text-center">スタジオ名</th>
+            <th class="text-center">広さ(㎡)</th>
+            <th class="text-center">最大人数</th>
+            <th class="text-center">料金(1h)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @studio.rooms.displayed.order('capacity desc').each do |room| %>
+          <tr>
+            <td align="center"><%= room.name %></td>
+            <td align="center"><%= room.size %></td>
+            <td align="center"><%= room.capacity %></td>
+            <td align="right"><%= room.price == 0 ? '※' : format_jpy(room.price) %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table> 
+      <p class="right smaller">※最大人数、料金は目安です。詳細は各スタジオにお問い合わせください。</p>
+    <% end %>
   </div>
   <div class="studio-detail-list">
     <h4>スタジオ情報</h4>
