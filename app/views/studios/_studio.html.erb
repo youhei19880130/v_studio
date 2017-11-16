@@ -3,14 +3,16 @@
     <%= link_to studio_path(studio) do %>
       <% if studio.image %>
         <%= image_tag studio_image_studio_path(studio) %>
+        <% if studio.rooms.first.price != 0 %>
+          <% if studio.rooms.size == 1 %>
+            <p class="price_unit"><%= format_jpy(studio.rooms.first.price) %> <small>/h</small></p>
+          <% else %>
+            <p class="price_unit"><%= format_jpy(studio.rooms.pluck(:price).min) %> ~ <%= format_jpy(studio.rooms.pluck(:price).max) %> <small>/h</small></p> 
+          <% end %>
+        <% end %>
       <% else %>
         <%= image_tag 'no_image.jpg' %>
       <% end %>
-    <% end %>
-    <% if studio.rooms.size == 1 %>
-      <p class="price_unit"><%= format_jpy(studio.rooms.first.price) %> <small>/h</small></p>
-    <% else %>
-      <p class="price_unit"><%= format_jpy(studio.rooms.pluck(:price).min) %> ~ <%= format_jpy(studio.rooms.pluck(:price).max) %> <small>/h</small></p> 
     <% end %>
   </div>
   <div class="right">
