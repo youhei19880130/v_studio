@@ -17,6 +17,7 @@ class StudiosController < ApplicationController
   # GET /studios/1
   # GET /studios/1.json
   def show
+    logger.info(request.variant)
   end
 
   # GET /studios/new

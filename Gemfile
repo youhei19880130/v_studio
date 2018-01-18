@@ -86,3 +86,7 @@ gem 'rails_12factor', group: :production
 gem 'rb-readline'
 
 gem 'redis-rack'
+
+# device detection
+gem 'woothee'
+gem 'device_detector'

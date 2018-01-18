@@ -117,13 +117,13 @@ div.footer-copyright {
 }
 
 div.studio-detail {
-  max-width: 480px;
+  max-width: 800px;
   margin: 0 auto 20px auto;
 }
 
 div.studio-detail-top {
   width: 100%;
-  overflow: hidden;
+  margin: 0 auto;
   text-align: center;
   img {
     width: 100%;
@@ -131,12 +131,48 @@ div.studio-detail-top {
 }
 
 div.studio-detail-description {
-  margin: 4% 20px;
+  min-width: 320px;
+  margin: 20px auto;
+  margin-top: 0px;
+  padding: 0px 4%;
+  text-align: left;
+  @media only screen and (max-width: 800px) {
+    width: 80%;
+  }
+  @media only screen and (min-width: 800px) {
+    width: 50%;
+    float: left;
+  }
+}
+
+div.studio-detail-btn-box {
+  min-width: 320px;
+  margin: 20px auto;
+  padding: 0px 4%;
+  text-align: center;
+  @media only screen and (max-width: 800px) {
+    width: 80%;
+  }
+  @media only screen and (min-width: 800px) {
+    width: 50%;
+  }
+  p.studio-list {
+    text-align: left;
+  }
 }
 
 div.studio-detail-list {
-  padding: 4% 24px;
+  min-width: 320px;
+  margin: 20px auto;
+  padding: 0px 4%;
   text-align: center;
+  @media only screen and (max-width: 800px) {
+    width: 80%;
+  }
+  @media only screen and (min-width: 800px) {
+    width: 50%;
+    margin-left: 50%;
+  }
   p.studio-list {
     text-align: left;
   }
