@@ -1,15 +1,11 @@
 worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
-timeout 15
+timeout 30
 preload_app true
 
 app_path = '/var/www/app/v_studio'
 app_shared_path = "#{app_path}/shared"
 current_path = "#{app_path}/current"
 working_directory current_path
-
-worker_processes 2
-preload_app true
-timeout 30
 
 listen "#{app_shared_path}/tmp/sockets/unicorn.sock"
 pid    "#{app_shared_path}/tmp/pids/unicorn.pid"
