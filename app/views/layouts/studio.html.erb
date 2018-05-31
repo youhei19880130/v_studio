@@ -8,7 +8,7 @@
     <meta property="og:title" content="<%= @studio.meta_title.presence || "#{@studio.name} ｜ レンタルダンススタジオ検索" %>"/>
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<%= studio_url(@studio.id) %>" />
-    <meta property="og:image" content="<%= @studio.image || image_url(studio_image_studio_path(@studio)) %>" />
+    <meta property="og:image" content="<%= @studio.meta_ogp_image_url || image_url(studio_image_studio_path(@studio)) %>" />
     <meta property="og:site_name" content="レンタルダンススタジオ検索" />
     <meta property="og:description" content="<%= @studio.meta_description.presence || "#{@studio.area.city}のレンタルスタジオ#{@studio.name}のページです。#{@studio.name}の広さ、料金、営業時間といった基本情報から更衣室や駐車場、wifiの有無まで様々な情報を掲載しています。" %>"/>
     <meta property="fb:app_id" content="1170194636409472">
