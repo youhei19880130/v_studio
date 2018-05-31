@@ -10,3 +10,21 @@
   right: 12px;
   padding: 4px 8px;
 }
+
+.col3 {
+  @media screen and (min-width: 768px) {
+    width: 33%;
+    float: left;
+  }
+  text-align: center;
+}
+
+div.recommend {
+  margin: 20px;
+}
+
+img.recommend {
+  width: 84%;
+  height: 100%;
+  object-fit: cover;
+}
