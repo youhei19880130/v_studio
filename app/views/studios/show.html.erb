@@ -95,4 +95,19 @@
     <%= link_to "スタジオのWEBサイトへ", @studio.url, class: "btn btn-info btn-lg btn-block", target: "_blank", onclick: "ga('send', 'event', 'studio', 'click', '', 0, {'nonInteraction': 1});" if @studio.url.present? %>
     <%= tel_to @studio.tel, sanitize("<i class='fa fa-phone'></i> #{@studio.tel}"), {class: 'btn btn-success btn-lg btn-block', onclick: "ga('send', 'event', 'studio', 'tel', '#{@studio.slug}', 0, {'nonInteraction': 1});"} if @studio.tel.present? %>
   </div>
+  <div class="recommend">
+    <h3>このスタジオを見ている人はこんなスタジオも見ています</h3>
+    <div style="display:inline-block;width: 100%;">
+      <% @recommend_studios.each do |studio| %>
+        <div class="col3">
+          <%= link_to studio do %>
+            <div style="height: 140px;">
+              <%= image_tag studio_image_studio_path(studio), class: "recommend" %>
+            </div>
+            <p><%= studio.name %></p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
