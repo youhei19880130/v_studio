@@ -96,7 +96,7 @@
     <%= tel_to @studio.tel, sanitize("<i class='fa fa-phone'></i> #{@studio.tel}"), {class: 'btn btn-success btn-lg btn-block', onclick: "ga('send', 'event', 'studio', 'tel', '#{@studio.slug}', 0, {'nonInteraction': 1});"} if @studio.tel.present? %>
   </div>
   <div class="recommend">
-    <p>このスタジオを見ている人はこんなスタジオも見ています</p>
+    <p style="text-align: center;">このスタジオを見ている人はこんなスタジオも見ています</p>
     <div style="display:inline-block;width: 100%;">
       <% @recommend_studios.each do |studio| %>
         <div class="col3">
