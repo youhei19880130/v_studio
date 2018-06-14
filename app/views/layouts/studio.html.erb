@@ -54,13 +54,12 @@
           <% end %>
         </div>
       </div>
-      <%= render '/shared/breadcrumb', crumbs: [
-        { name: 'ホーム', path: root_path },
-        { name: "#{@studio.area.prefecture}", path: ''},
-        { name: "#{@studio.area.city}", path: studios_path(area: @studio.area.slug, people: '')},
-        { name: "#{@studio.name}", path: request.original_url}
-      ] %>
     </nav>
+    <%= render '/shared/breadcrumb', crumbs: [
+      { name: 'ホーム', path: root_path },
+      { name: "#{@studio.area.city}", path: studios_path(area: @studio.area.slug, people: '')},
+      { name: "#{@studio.name}", path: request.original_url}
+    ] %>
     <%= yield %>
     <a href="http://vintom.co.jp/" target='_blank'>
       <div class="footer-copyright col-sm-12">

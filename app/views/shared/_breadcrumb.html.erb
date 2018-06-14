@@ -1,11 +1,7 @@
-<ol class="breadcrumb" style="margin-bottom: 0px;">
+<ol class="breadcrumb" style="margin-bottom: 0px;position: fixed;width: 100%;border-radius: 0px;">
   <% crumbs.each.with_index do |crumb, index| %>
     <li class="breadcrumb-item">
-      <% if crumb[:path].blank? %>
-        <%= crumb[:name] %>
-      <% else %>
-        <%= link_to crumb[:name], crumb[:path] %>
-      <% end %>
+      <%= link_to crumb[:name], crumb[:path] %>
     </li>
   <% end %>
 </ol>
