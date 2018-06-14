@@ -182,4 +182,5 @@ div.studio-detail-list {
 .fa-phone:before { color: white; }
 
 // Import each page css
-@import "studios"
+@import "studios";
+@import "breadcrumb";

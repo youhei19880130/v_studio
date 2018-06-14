@@ -1,3 +1,4 @@
+set :branch, ENV['BRANCH'] if ENV['BRANCH']
 set :pty, true
 server '160.16.204.145',
   user: 'root',
