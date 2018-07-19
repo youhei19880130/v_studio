@@ -108,8 +108,10 @@
 
   <div class="form-group">
     <%= f.label 'キャプチャ', class: 'control-label' %>
-    <%= f.file_field :image, accept: 'image/jpeg', class: 'filestyle', width: '50%' %>
-    <%= image_tag studio_image_studio_url(@studio), width: '30%', style: 'margin: 20px;text-align:right;' if @studio.image %>
+    <%= f.fields_for :studio_image do |image| %>
+      <%= image.file_field :url, class: 'filestyle', width: '50%' %>
+      <%= image_tag @studio.studio_image.url, width: '30%', style: 'margin: 20px;text-align:right;' if @studio.studio_image %>
+    <% end %>
   </div>
 
   <div class="form-group">
