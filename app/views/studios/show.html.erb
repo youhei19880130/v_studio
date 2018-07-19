@@ -1,6 +1,6 @@
 <div class="studio-detail">
   <div class="studio-detail-top">
-    <% if@studio.studio_image.present? %>
+    <% if @studio.studio_image.present? %>
       <%= image_tag @studio.studio_image.url %>
     <% else %>
       <% if @studio.image %>
