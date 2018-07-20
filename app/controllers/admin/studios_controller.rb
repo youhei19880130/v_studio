@@ -18,18 +18,20 @@ module Admin
     # GET /studios/new
     def new
       @studio = Studio.new
+      @studio.build_studio_image
     end
 
     # GET /studios/1/edit
     def edit
       set_studio
+      @studio.build_studio_image unless @studio.studio_image.present?
     end
 
     # POST /studios
     # POST /studios.json
     def create # rubocop:disable Metrics/AbcSize
       @studio = Studio.new(studio_params)
-      @studio.image = params[:studio][:image].read if params[:studio][:image]
+      # @studio.image = params[:studio][:image].read if params[:studio][:image]
 
       respond_to do |format|
         if @studio.save
@@ -45,7 +47,11 @@ module Admin
     # PATCH/PUT /studios/1
     # PATCH/PUT /studios/1.json
     def update # rubocop:disable Metrics/AbcSize
-      @studio.image = params[:studio][:image].read if params[:studio][:image]
+      if params[:studio][:studio_image_attributes].present?
+        @studio.image = nil
+      else
+        @studio.image = params[:studio][:image].read if params[:studio][:image]
+      end
       respond_to do |format|
         if @studio.update(studio_params)
           format.html { redirect_to admin_studios_path, notice: 'Studio was successfully updated.' }
@@ -80,7 +86,8 @@ module Admin
                                      :nearest_station_2, :nearest_station_3, :tel, :start_hours,
                                      :end_hours, :late_night, :locker_room, :parking,
                                      :cancell_deadline, :url, :feature, :remarks, :memo, :status,
-                                     :slug, :meta_title, :meta_description, :meta_ogp_image_url)
+                                     :slug, :meta_title, :meta_description, :meta_ogp_image_url,
+                                     studio_image_attributes: [:id, :studio_id, :url])
     end
   end
 end

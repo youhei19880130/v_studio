@@ -5,6 +5,8 @@ class Studio < ApplicationRecord
 
   # belongs_to :account
   belongs_to :area
+  has_one :studio_image
+  accepts_nested_attributes_for :studio_image
   has_many :rooms
 
   scope :displayed, -> { where(status: Studio.statuses[:active]) }
