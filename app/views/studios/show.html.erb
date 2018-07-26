@@ -106,7 +106,11 @@
         <div class="col3">
           <%= link_to studio do %>
             <div style="height: 140px;">
-              <%= image_tag studio_image_studio_path(studio), class: "recommend" %>
+              <% if studio.studio_image.present? %>
+                <%= image_tag studio.studio_image.url, class: "recommend" %>
+              <% else %>
+                <%= image_tag studio_image_studio_path(studio), class: "recommend" %>
+              <% end %>
             </div>
             <p><%= studio.name %></p>
           <% end %>
