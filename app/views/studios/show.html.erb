@@ -1,9 +1,13 @@
 <div class="studio-detail">
   <div class="studio-detail-top">
-    <% if @studio.image %>
-      <%= image_tag studio_image_studio_path(@studio) %>
+    <% if @studio.studio_image.present? %>
+      <%= image_tag @studio.studio_image.url %>
     <% else %>
-      <%= image_tag 'no_image.jpg' %>
+      <% if @studio.image %>
+        <%= image_tag studio_image_studio_path(@studio) %>
+      <% else %>
+        <%= image_tag 'no_image.jpg' %>
+      <% end %>
     <% end %>
     <h1><%= @studio.name %></h1>
     <%= "#{@studio.nearest_station_1}駅" -%>
@@ -102,15 +106,12 @@
       <% @recommend_studios.each do |studio| %>
         <div class="col3">
           <%= link_to studio do %>
-            <div style="height: 140px; position: relative;">
-		          <%= image_tag studio_image_studio_path(studio), class: "recommend" %>
-		          <% if studio.rooms.first.price != 0 %>			    
-		            <% if studio.rooms.size == 1 %>                            
-			            <p class="price_unit_recommend"><%= format_jpy(studio.rooms.first.price) %> <small>/h</small></p>
-			          <% else %>
-				          <p class="price_unit_recommend"><%= format_jpy(studio.rooms.pluck(:price).min) %> ~ <%= format_jpy(studio.rooms.pluck(:price).max) %> <small>/h</small></p>
-                <% end %>
-              <% end %>	
+            <div style="height: 140px;">
+              <% if studio.studio_image.present? %>
+                <%= image_tag studio.studio_image.url, class: "recommend" %>
+              <% else %>
+                <%= image_tag studio_image_studio_path(studio), class: "recommend" %>
+              <% end %>
             </div>
           <% end %>
           <div class="studio-name"><strong><%= studio.name %></strong></div>
