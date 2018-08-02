@@ -69,7 +69,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
-  gem 'capistrano3-unicorn', :git => 'git@github.com:tablexi/capistrano3-unicorn.git'
+  gem 'capistrano3-unicorn', :git => 'git@github.com:noppefoxwolf/capistrano3-unicorn.git'
 end
 
 group :production, :staging do
