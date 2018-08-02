@@ -38,3 +38,65 @@ img.recommend {
   height: 100%;
   object-fit: cover;
 }
+
+body {
+  div {
+    div.recommend {
+      div {
+        div:nth-child(1) {
+          div:nth-child(3) {
+            font-size: small;
+            margin: 8px 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+body {
+  div {
+    div.recommend {
+      div {
+        div:nth-child(2) {
+          div:nth-child(3) {
+            font-size: small;
+            margin: 8px 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+body {
+  div {
+    div.recommend {
+      div {
+        div:nth-child(3) {
+          div:nth-child(3) {
+            font-size: small;
+            margin: 8px 0px;
+          }
+        }
+      }
+    }   
+  }
+}
+
+body {
+  div {
+    div.recommend {
+      div {
+        div.studio-name {
+            margin: 8px 0px;
+        }
+      }
+    }
+  }
+}
+
+.fa-chevron-circle-right {
+  font-family: FontAwesome;
+  font-style: normal;
+}
