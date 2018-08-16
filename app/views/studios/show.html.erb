@@ -104,7 +104,7 @@
     <div style="display:inline-block;width: 100%;">
       <% @recommend_studios.each do |studio| %>
         <div class="col3">
-          <%= link_to studio_path(studio) do %>
+          <%= link_to studio do %>
             <div style="height: 140px;">
               <% if studio.studio_image || studio.image %>
                 <% if studio.studio_image.present? %>
