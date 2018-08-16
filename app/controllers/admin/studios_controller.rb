@@ -24,7 +24,7 @@ module Admin
     # GET /studios/1/edit
     def edit
       set_studio
-      @studio.build_studio_images unless @studio.studio_images.present?
+      @studio.studio_images.build unless @studio.studio_images.present?
     end
 
     # POST /studios
