@@ -104,12 +104,16 @@
     <div style="display:inline-block;width: 100%;">
       <% @recommend_studios.each do |studio| %>
         <div class="col3">
-          <%= link_to studio do %>
+          <%= link_to studio_path(studio) do %>
             <div style="height: 140px;">
-              <% if studio.studio_image.present? %>
-                <%= image_tag studio.studio_image.url, class: "recommend" %>
+              <% if studio.studio_image || studio.image %>
+                <% if studio.studio_image.present? %>
+                  <%= image_tag studio.studio_image.url.to_s, class: "recommend" %>
+                <% else %>
+                  <%= image_tag studio_image_studio_path(studio), class: "recommend" %>
+                <% end %>
               <% else %>
-                <%= image_tag studio_image_studio_path(studio), class: "recommend" %>
+                <%= image_tag 'no_image.jpg', class: "recommend" %>
               <% end %>
             </div>
           <% end %>
