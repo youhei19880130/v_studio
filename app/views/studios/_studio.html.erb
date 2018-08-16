@@ -1,9 +1,9 @@
 <div class="studio studio-box col-xs-12 col-sm-4">
   <div class="left">
     <%= link_to studio_path(studio) do %>
-      <% if studio.studio_image || studio.image %>
-        <% if studio.studio_image.present? %>
-          <%= image_tag studio.studio_image.url.to_s %>
+      <% if studio.studio_images || studio.image %>
+        <% if studio.studio_images.present? %>
+          <%= image_tag studio.studio_images.first.url.to_s %>
         <% else %>
           <%= image_tag studio_image_studio_path(studio) %>
         <% end %>

@@ -1,7 +1,7 @@
 <div class="studio-detail">
   <div class="studio-detail-top">
-    <% if @studio.studio_image.present? %>
-      <%= image_tag @studio.studio_image.url %>
+    <% if @studio.studio_images.present? %>
+      <%= image_tag @studio.studio_images.first.url %>
     <% else %>
       <% if @studio.image %>
         <%= image_tag studio_image_studio_path(@studio) %>
@@ -106,8 +106,8 @@
         <div class="col3">
           <%= link_to studio do %>
             <div style="height: 140px;">
-              <% if studio.studio_image.present? %>
-                <%= image_tag studio.studio_image.url, class: "recommend" %>
+              <% if studio.studio_images.present? %>
+                <%= image_tag studio.studio_images.first.url, class: "recommend" %>
               <% else %>
                 <%= image_tag studio_image_studio_path(studio), class: "recommend" %>
               <% end %>

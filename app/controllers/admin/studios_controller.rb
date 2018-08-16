@@ -18,13 +18,13 @@ module Admin
     # GET /studios/new
     def new
       @studio = Studio.new
-      @studio.build_studio_image
+      @studio.build_studio_images
     end
 
     # GET /studios/1/edit
     def edit
       set_studio
-      @studio.build_studio_image unless @studio.studio_image.present?
+      @studio.build_studio_images unless @studio.studio_images.present?
     end
 
     # POST /studios
@@ -47,7 +47,7 @@ module Admin
     # PATCH/PUT /studios/1
     # PATCH/PUT /studios/1.json
     def update # rubocop:disable Metrics/AbcSize
-      if params[:studio][:studio_image_attributes].present?
+      if params[:studio][:studio_images_attributes].present?
         @studio.image = nil
       else
         @studio.image = params[:studio][:image].read if params[:studio][:image]
@@ -91,7 +91,7 @@ module Admin
                                      :end_hours, :late_night, :locker_room, :parking,
                                      :cancell_deadline, :url, :feature, :remarks, :memo, :status,
                                      :slug, :meta_title, :meta_description, :meta_ogp_image_url,
-                                     studio_image_attributes: [:id, :studio_id, :url])
+                                     studio_images_attributes: [:id, :studio_id, :url])
     end
   end
 end
