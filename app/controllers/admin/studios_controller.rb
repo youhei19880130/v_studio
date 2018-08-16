@@ -73,6 +73,10 @@ module Admin
       end
     end
 
+    def upload
+      @studio = Studio.friendly.find(params[:studio_id])
+    end
+
     private
 
     # Use callbacks to share common setup or constraints between actions.

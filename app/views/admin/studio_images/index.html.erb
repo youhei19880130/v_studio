@@ -16,7 +16,7 @@
       <th>営業時間</th>
       <th>状態</th>
       <th>メモ</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -32,7 +32,9 @@
         <td><%= "#{studio.start_hours&.strftime("%H:%M")} - #{studio.end_hours&.strftime("%H:%M")}" %></td>
         <td><%= studio.status %></td>
         <td><%= studio.memo %></td>
-        <td><%= link_to 'Image edit', admin_studio_upload_path(studio) %></td>
+        <!--
+        <td><%= link_to 'Show', admin_studio_path(studio) %></td>
+        -->
         <td><%= link_to 'Edit', edit_admin_studio_path(studio) %></td>
         <td><%= link_to 'Destroy', admin_studio_path(studio), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

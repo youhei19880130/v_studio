@@ -3,4 +3,5 @@
 //= require bootstrap-sprockets-custom
 //= require jquery.infinitescroll
 //= require bootstrap-filestyle.min
+//= require dropzone
 //= require_tree .

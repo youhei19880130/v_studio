@@ -1,0 +1,10 @@
+<h1>Editing Studio</h1>
+
+<p><%= link_to "#{@studio.name}のroom編集へ", admin_rooms_path(studio_id: @studio.id) %></p>
+
+<%= render 'form', studio: @studio %>
+
+<p><%= link_to "#{@studio.name}のroom編集へ", admin_rooms_path(studio_id: @studio.id) %></p>
+
+<%= link_to 'Show', @studio, class: 'btn previous' %> |
+<%= link_to 'Back', admin_studios_path, class: 'btn' %>

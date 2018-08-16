@@ -10,7 +10,14 @@ Rails.application.routes.draw do
   resources :accounts
   resources :admin, only: :index
   namespace :admin do
-    resources :studios
+    resources :studios do
+      get :upload
+      resources :studio_images do
+        collection do
+          post :upload
+        end
+      end
+    end
     resources :rooms
     resources :areas
   end
