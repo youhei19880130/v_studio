@@ -117,6 +117,11 @@
           <div><%= "#{studio.nearest_station_1}駅" -%>
              <%= ",#{studio.nearest_station_2}駅" if studio.nearest_station_2.present? -%>
              <%= ",#{studio.nearest_station_3}駅" if studio.nearest_station_3.present? -%></div>
+           <p style="text-align: right">
+             <%= link_to studio_path(studio), method: :get do %>
+               <i class="fas fa-chevron-circle-right"></i> 詳細はこちら
+             <% end %>
+           </p>
         </div>
       <% end %>
     </div>
