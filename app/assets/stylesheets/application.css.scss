@@ -4,6 +4,20 @@
 @import "bootswatch/sandstone/variables";
 @import "bootstrap-custom";
 
+// Import dropzone
+@import "dropzone/basic";
+@import "dropzone/dropzone";
+
+.dropzone {
+  border: 2px dashed #b4bcc2;
+
+  .dz-message {
+    font-size: 16px;
+    text-align: center;
+    margin: 0
+  }
+}
+
 // Bootstrap body padding for fixed navbar
 body { padding-top: 60px; }
 

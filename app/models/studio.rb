@@ -5,9 +5,9 @@ class Studio < ApplicationRecord
 
   # belongs_to :account
   belongs_to :area
-  has_one :studio_image
-  accepts_nested_attributes_for :studio_image
+  has_many :studio_images
   has_many :rooms
+  accepts_nested_attributes_for :studio_images
 
   scope :displayed, -> { where(status: Studio.statuses[:active]) }
   scope :by_area, ->(area) { where(area_id: Area.find_by(slug: area).id) if area != 'all' }

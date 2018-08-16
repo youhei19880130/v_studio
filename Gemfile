@@ -94,3 +94,6 @@ gem 'device_detector'
 # for image uploader with AWS S3
 gem 'carrierwave'
 gem 'fog'
+
+# for dropzone
+gem 'dropzonejs-rails'
