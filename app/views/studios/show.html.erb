@@ -147,7 +147,13 @@ $(function() {
     nextArrow: '<button class="slide-arrow next-arrow"></button>',
     dots: true,
     arrows: true,
-    infinite: true
+    infinite: true,
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        arrows: false
+      }
+    }]
   });
 });
 </script>
