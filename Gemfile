@@ -97,3 +97,6 @@ gem 'fog'
 
 # for dropzone
 gem 'dropzonejs-rails'
+
+# for image carousel
+gem 'jquery-slick-rails'
