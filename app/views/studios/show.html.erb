@@ -103,7 +103,8 @@
     <%= link_to sanitize("<i class='fas fa-chevron-circle-right'></i> スタジオのWEBサイトへ"), @studio.url, class: "btn btn-info btn-lg btn-block", target: "_blank", onclick: "ga('send', 'event', 'studio', 'click', '', 0, {'nonInteraction': 1});" if @studio.url.present? %>
     <%= tel_to @studio.tel, sanitize("<i class='fa fa-phone'></i> #{@studio.tel}"), {class: 'btn btn-success btn-lg btn-block', onclick: "ga('send', 'event', 'studio', 'tel', '#{@studio.slug}', 0, {'nonInteraction': 1});"} if @studio.tel.present? %>
   </div>
-  <div class="recommend">
+  <% if @recommend_studios.present? %>
+  <div class="recommend"> 
     <p style="text-align: center;">このスタジオを見ている人はこんなスタジオも見ています</p>
     <div style="display:inline-block;width: 100%;">
       <% @recommend_studios.each do |studio| %>
@@ -136,6 +137,7 @@
       <% end %>
     </div>
   </div>
+  <% end %>
 </div>
 
 <script type="text/javascript">
