@@ -109,14 +109,21 @@
       <% @recommend_studios.each do |studio| %>
         <div class="col3">
           <%= link_to studio do %>
-            <div style="height: 140px;">
+            <div style="height: 140px; position: relative;">
               <% if studio.studio_images || studio.image %>
                 <% if studio.studio_images.present? %>
                   <%= image_tag studio.studio_images.first.url.to_s, class: "recommend" %>
                 <% else %>
                   <%= image_tag studio_image_studio_path(studio), class: "recommend" %>
                 <% end %>
-              <% else %>
+                <% if studio.rooms.first.price != 0 %>
+                  <% if studio.rooms.size == 1 %>
+                    <p class="price_unit_recommend"><%= format_jpy(studio.rooms.first.price) %> <small>/h</small></p>
+                  <% else %>
+                    <p class="price_unit_recommend"><%= format_jpy(studio.rooms.pluck(:price).min) %> ~ <%= format_jpy(studio.rooms.pluck(:price).max) %> <small>/h</small></p>
+                  <% end %>
+                <% end %>
+           AAAAAAAAAAA   <% else %>
                 <%= image_tag 'no_image.jpg', class: "recommend" %>
               <% end %>
             </div>
