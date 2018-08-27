@@ -123,7 +123,7 @@
                     <p class="price_unit_recommend"><%= format_jpy(studio.rooms.pluck(:price).min) %> ~ <%= format_jpy(studio.rooms.pluck(:price).max) %> <small>/h</small></p>
                   <% end %>
                 <% end %>
-           AAAAAAAAAAA   <% else %>
+              <% else %>
                 <%= image_tag 'no_image.jpg', class: "recommend" %>
               <% end %>
             </div>
