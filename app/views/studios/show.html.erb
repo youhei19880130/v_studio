@@ -108,7 +108,7 @@
       <p style="text-align: center;">このスタジオを見ている人はこんなスタジオも見ています</p>
       <div style="display:inline-block;width: 100%;">
         <% @recommend_studios.each do |studio| %>
-          <div class="col3">
+          <div class="col3" style="padding: 0px 15px;">
             <%= link_to studio do %>
               <div style="height: 140px; position: relative;">
                 <% if studio.studio_images || studio.image %>
