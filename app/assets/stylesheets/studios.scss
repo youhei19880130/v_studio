@@ -74,16 +74,13 @@ body {
   }
 }
 
-body {
-  div {
-    div.recommend {
-      div {
-        div.studio-name {
-            margin: 8px 0px;
-        }
-      }
-    }
-  }
+div.studio-name {
+   margin: 8px 0px;
+   width: 100%;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   text-align: left;
 }
 
 .fa-chevron-circle-right {
