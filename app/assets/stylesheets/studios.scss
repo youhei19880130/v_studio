@@ -21,6 +21,9 @@
 
 div.recommend {
   margin: 40px 4px 10px 4px;
+  p.recommend-more-info {
+    margin-bottom: 50px;
+  }
 }
 
 img.recommend {
@@ -100,4 +103,4 @@ div.recommend-block-each {
 div.recommend-img {
   height: 140px;
   position: relative;
-  }
+}
