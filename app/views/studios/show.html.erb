@@ -106,11 +106,11 @@
   <% if @recommend_studios.present? %>
     <div class="recommend"> 
       <p class="text-center">このスタジオを見ている人はこんなスタジオも見ています</p>
-      <div class="recommend_block">
+      <div class="recommend-block">
         <% @recommend_studios.each do |studio| %>
-          <div class="col3 recommend_block_each">
+          <div class="col3 recommend-block-each">
             <%= link_to studio do %>
-              <div class="recommend_img">
+              <div class="recommend-img">
                 <% if studio.studio_images || studio.image %>
                   <% if studio.studio_images.present? %>
                     <%= image_tag studio.studio_images.first.url.to_s, class: "recommend" %>
