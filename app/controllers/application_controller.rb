@@ -9,8 +9,8 @@ class ApplicationController < ActionController::Base
   private
 
   def set_search_info
-    session[:area] = params[:area] if params[:area]
-    session[:people] = params[:people] if params[:people]
+    session[:area] = params[:area] if params[:area].present?
+    session[:people] = params[:people] if params[:people].present?
   end
 
   def basic_auth
