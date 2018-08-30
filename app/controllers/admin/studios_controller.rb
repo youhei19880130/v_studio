@@ -18,7 +18,7 @@ module Admin
     # GET /studios/new
     def new
       @studio = Studio.new
-      @studio.build_studio_images
+      @studio.studio_images.build
     end
 
     # GET /studios/1/edit
