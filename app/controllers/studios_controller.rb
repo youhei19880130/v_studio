@@ -8,9 +8,9 @@ class StudiosController < ApplicationController
   # GET /studios.json
   def index # rubocop:disable Metrics/AbcSize
     @studios = Studio.displayed.by_late_night(params[:late_night]&.to_i).by_locker_room(params[:locker_room])
-                     .by_parking(params[:parking]).by_area(params[:area]).by_people(params[:people])
+                     .by_parking(params[:parking]).by_area(session[:area]).by_people(params[:people])
                      .page(params[:page])
-    @area = params[:area] == 'all' ? '首都圏' : Area.find_by(slug: params[:area]).city
+    @area = params[:area] == 'all' ? '首都圏' : Area.find_by(slug: session[:area]).city
     @people = params[:people].blank? || params[:people] == 'all' ? '' : "#{People::LABELS[params[:people]]}で使える"
   end
 
@@ -99,14 +99,14 @@ class StudiosController < ApplicationController
   end
 
   def url_formatter
-    return if !params[:area].blank? && params[:area].to_i == 0 && params[:button].nil?
+    return unless params[:button]
     area = case
-           when params[:area].blank?
+           when session[:area].blank? && params[:area].blank?
              'all'
-           when params[:area].to_i == 0
-             params[:area]
+           when session[:area].present? && params[:area].blank?
+             session[:area]
            else
-             Area.find_by(id: params[:area]).slug
+             params[:area]
            end
     redirect_to studios_path(area: area, people: params[:people])
   end
