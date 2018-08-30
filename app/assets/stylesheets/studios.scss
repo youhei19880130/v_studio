@@ -90,3 +90,17 @@ body {
   font-family: FontAwesome;
   font-style: normal;
 }
+
+div.recommend_block {
+  display: inline-block;
+  width: 100%;
+}
+
+div.recommend_block_each {
+  padding: 0px 15px;
+}
+
+div.recommend_img {
+  height: 140px;
+  position: relative;
+  }
