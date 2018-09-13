@@ -1,13 +1,15 @@
 <div class="studio-detail">
   <div class="studio-detail-top">
-    <% if @studio.studio_images.present? %>
+    <% if @studio.studio_images.size > 1 %>
       <div class="slick-box"%>
         <% @studio.studio_images.each do |image| %>
           <div><%= image_tag image.url %></div>
         <% end %>
       </div>
     <% else %>
-      <% if @studio.image %>
+      <% if @studio.studio_images.present? %>
+        <%= image_tag @studio.studio_images.first.url %>
+      <% elsif @studio.image %>
         <%= image_tag studio_image_studio_path(@studio) %>
       <% else %>
         <%= image_tag 'no_image.jpg' %>
