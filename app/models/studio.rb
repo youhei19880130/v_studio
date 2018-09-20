@@ -37,6 +37,7 @@ class Studio < ApplicationRecord
   }
 
   enum status: { inactive: 0, active: 1 }
+  validates :slug, uniqueness: true
 
   def max_capacity
     rooms.maximum(:capacity)
