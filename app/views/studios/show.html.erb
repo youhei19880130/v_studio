@@ -107,7 +107,7 @@
   </div>
   <% if @recommend_studios.present? %>
     <div class="recommend"> 
-      <p class="text-center"><%= @studio.name %>を見ている人は<br>こんなスタジオも検索して見ています</p>
+      <p class="text-center recommend-wordbreak"><%= @studio.name %>を見ている人は、こんなスタジオも検索して見ています</p>
       <div class="recommend-block">
         <% @recommend_studios.each do |studio| %>
           <div class="col3 recommend-block-each">
