@@ -18,27 +18,27 @@
 
   <div class="from-group">
     <%= f.label 'ルーム名', class: 'control-label' %>
-    <%= f.text_field :name, class: 'form-control' %>
+    <%= f.text_field :name, class: 'form-control', placeholder: '604' %>
   </div>
 
   <div class="form-group">
     <%= f.label '広さ(㎡)', class: 'control-label' %>
-    <%= f.number_field :size, class: 'form-control' %>
+    <%= f.number_field :size, class: 'form-control', placeholder: '52' %>
   </div>
 
   <div class="form-group">
     <%= f.label '人数', class: 'control-label' %>
-    <%= f.number_field :capacity, class: 'form-control' %>
+    <%= f.number_field :capacity, class: 'form-control', placeholder: '10' %>
   </div>
 
   <div class="form-group">
     <%= f.label '料金(円/時間)', class: 'control-label' %>
-    <%= f.number_field :price, class: 'form-control' %>
+    <%= f.number_field :price, class: 'form-control', placeholder: '3000' %>
   </div>
 
   <div class="form-group">
     <%= f.label '鏡', class: 'control-label' %>
-    <%= f.text_field :mirror, class: 'form-control' %>
+    <%= f.text_field :mirror, class: 'form-control', placeholder: '2面' %>
   </div>
 
   <div class="form-group">
@@ -67,7 +67,7 @@
         <td colspan="6"><%= f.label 'その他音源', class: 'control-label' %></td>
       </tr>
       <tr>
-        <td colspan="6"><%= f.text_field :other_source, class: 'form-control' %></td>
+        <td colspan="6"><%= f.text_field :other_source, class: 'form-control', placeholder: 'iPod' %></td>
       </tr>
     </table>
   </div>
