@@ -43,7 +43,7 @@ gem 'friendly_id'
 # Generate sitemap
 gem 'sitemap_generator'
 
-# Install Config Gem
+# Manage environment specific settings
 gem 'config'
 
 group :development, :test do
