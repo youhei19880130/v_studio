@@ -105,6 +105,11 @@ div.recommend-img {
   position: relative;
 }
 
-.u-inlineblock {
-    display: inline-block;
+.p-recommend__description {
+  word-break: keep-all;
+  text-align: center;
+}
+
+.u-display-inlineblock {
+  display: inline-block;
 }
