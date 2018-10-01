@@ -105,8 +105,6 @@ div.recommend-img {
   position: relative;
 }
 
-.recommend-wordbreak {
-    word-break: keep-all;
-    word-wrap: break-word;
-    text-align: center;
+.u-inlineblock {
+    display: inline-block;
 }
