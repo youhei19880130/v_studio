@@ -1,2 +1,2 @@
-googlemaps:
+google:
     api_key: <%= ENV["STUDIO_GOOGLEMAPS_API_KEY"] %>
