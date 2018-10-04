@@ -1,2 +1,2 @@
 googlemaps:
-    api: 'AIzaSyARzTt3V7kuMDej27fjPZoJjblKEfQJWlo'
+    api_key: <%= ENV["STUDIO_GOOGLEMAPS_API_KEY"] %>
