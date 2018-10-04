@@ -105,6 +105,15 @@ div.recommend-img {
   position: relative;
 }
 
+.p-recommend__description {
+  word-break: keep-all;
+  text-align: center;
+}
+
+.u-display-inlineblock {
+  display: inline-block;
+}
+
 .studio-googlemap {
   text-align: center;
   margin: 4% 0%;
@@ -115,4 +124,3 @@ div.recommend-img {
     @media only screen and (min-width: 800px) {
         height: 540px;
     }
-}
