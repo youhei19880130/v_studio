@@ -10,7 +10,7 @@ class Studio < ApplicationRecord
   accepts_nested_attributes_for :studio_images
 
   scope :displayed, -> { where(status: Studio.statuses[:active]) }
-  scope :by_area, ->(area) { where(area_id: Area.find_by(slug: area).id) if area != 'all' }
+  scope :by_area, ->(area) { where(area_id: Area.find_by(slug: area).id) if area.present? && area != 'all' }
   scope :by_people, lambda { |people|
     array = select do |s|
       case People::VALUES[people]
@@ -37,6 +37,7 @@ class Studio < ApplicationRecord
   }
 
   enum status: { inactive: 0, active: 1 }
+  validates :slug, uniqueness: true
 
   def max_capacity
     rooms.maximum(:capacity)
