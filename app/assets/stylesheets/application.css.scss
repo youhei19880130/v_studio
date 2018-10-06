@@ -1,10 +1,13 @@
+// Import Bootstrap
 @import "bootstrap-sprockets";
 
-// Import sandstone variables
+// Import sandstone variables Bootswatch
 @import "bootswatch/sandstone/variables";
+
+// Import _bootstrap-custom.scss
 @import "bootstrap-custom";
 
-// Import dropzone
+// Import dropzone ファイルアップロードエリア
 @import "dropzone/basic";
 @import "dropzone/dropzone";
 
@@ -18,7 +21,7 @@
   }
 }
 
-// Import slick
+// Import slick カルーセルスライダー
 @import 'slick';
 @import 'slick-theme';
 
@@ -59,12 +62,16 @@ body { padding-top: 60px; }
 // And finally bootswatch style itself
 //@import "bootswatch/sandstone/bootswatch";
 
+// Import FontAwesome
 @import "font-awesome";
 @import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 * {
   font-family: 'Noto Sans Japanese', Meiryo, 'Noto Sans', Calibri, 'Open Sans', sans-serif;
 }
 
+// Foundation
+// Base
+// aタグ
 a {
   color: #888;
   text-decoration: none;
@@ -74,6 +81,9 @@ a {
   }
 }
 
+// Object
+// Project
+// スタジオ一覧のスタジオ単位
 div.studio-box {
   margin-bottom: 24px;
   color: #3E3F3A;
@@ -120,11 +130,14 @@ div.studio-box {
   }
 }
 
+// ヒットカウント
 div.hit-count {
   margin: 8px 15px;
   font-size: large;
 }
 
+// Object
+// Component
 button {
   .center {
     display: block;
@@ -133,14 +146,18 @@ button {
   }
 }
 
+// panelは詳細絞り込み用だけど今使ってないので保留
 div.col-xs-12.col-sm-4.panel.panel-info {
   padding-left: 0;
   padding-right: 0;
 }
 
+// pタグ&クラスセレクタ
 p.right { text-align: right;}
 .smaller { font-size: x-small; }
 
+// Layout
+// フッターコピーライト
 div.footer-copyright {
   background-color: #3E3F3A;
   color: #FFFFFF;
@@ -148,6 +165,7 @@ div.footer-copyright {
   padding: 40px 0;
 }
 
+// jQuery 無限スクロール：どこに入れるか謎
 #infscr-loading {
   img {
     display: block;
@@ -158,11 +176,13 @@ div.footer-copyright {
   }
 }
 
+// studio詳細スライダー部分
 div.studio-detail {
   max-width: 800px;
   margin: 36px auto 20px auto;
 }
 
+// studio詳細スライダー部分
 div.studio-detail-top {
   width: 100%;
   margin: 0 auto;
@@ -173,6 +193,7 @@ div.studio-detail-top {
   }
 }
 
+// studio詳細説明部分
 div.studio-detail-description {
   min-width: 320px;
   margin: 20px auto;
@@ -188,6 +209,7 @@ div.studio-detail-description {
   }
 }
 
+// studio詳細ボタン部分（スタジオのWEBサイトへ、電話番号）
 div.studio-detail-btn-box {
   min-width: 320px;
   margin: 20px auto;
@@ -204,6 +226,7 @@ div.studio-detail-btn-box {
   }
 }
 
+// studio詳細 営業時間,住所などリスト部分
 div.studio-detail-list {
   min-width: 320px;
   margin: 20px auto;
@@ -221,6 +244,7 @@ div.studio-detail-list {
   }
 }
 
+// FontAwesome電話アイコン
 .fa-phone:before { color: white; }
 
 // Import each page css
