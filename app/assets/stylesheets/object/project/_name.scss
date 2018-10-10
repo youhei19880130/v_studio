@@ -1,0 +1,9 @@
+// スタジオ一覧,スタジオレコメンド　スタジオ名
+div.studio-name {
+   margin: 8px 0px;
+   width: 100%;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   text-align: left;
+}

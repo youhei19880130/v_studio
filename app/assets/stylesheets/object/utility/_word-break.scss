@@ -1,0 +1,6 @@
+// レコメンド文言の改行指定(pタグ)
+.p-recommend__description {
+  word-break: keep-all;
+  text-align: center;
+}
+

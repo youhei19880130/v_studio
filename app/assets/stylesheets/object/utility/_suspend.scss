@@ -1,0 +1,35 @@
+// panelは詳細絞り込み用だけど今使ってないので保留
+div.col-xs-12.col-sm-4.panel.panel-info {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// jQuery 無限スクロール：どこに入れるか謎
+#infscr-loading {
+  img {
+    display: block;
+    margin: 10px auto;
+  }
+  div {
+    text-align: center;
+  }
+}
+
+// buttonタグcenter class 該当なし？
+button.center {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+}
+
+// ad-area class 該当なし？
+div.ad-area {
+  margin: 20px auto;
+  div.ad-box3 {
+    margin: 20px auto;
+    img {
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}

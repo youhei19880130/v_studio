@@ -1,0 +1,25 @@
+button {
+  .center {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+// studio詳細ボタン部分（スタジオのWEBサイトへ、電話番号）
+div.studio-detail-btn-box {
+  min-width: 320px;
+  margin: 20px auto;
+  padding: 0px 4%;
+  text-align: center;
+  @media only screen and (max-width: 800px) {
+    width: 80%;
+  }
+  @media only screen and (min-width: 800px) {
+    width: 50%;
+  }
+  p.studio-list {
+    text-align: left;
+  }
+}
+

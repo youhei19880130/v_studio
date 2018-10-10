@@ -1,0 +1,14 @@
+* {
+  font-family: 'Noto Sans Japanese', Meiryo, 'Noto Sans', Calibri, 'Open Sans', sans-serif;
+}
+
+// Bootstrap body padding for fixed navbar
+body { padding-top: 60px; }
+
+a {
+  color: #888;
+  text-decoration: none;
+  &:hover {
+    color: #888;
+    text-decoration: none;
+  }
