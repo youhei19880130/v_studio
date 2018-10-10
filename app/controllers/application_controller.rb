@@ -9,7 +9,11 @@ class ApplicationController < ActionController::Base
   private
 
   def set_search_info
-    session[:area] = params[:area] if params[:area].present?
+    session[:area] = if params[:area].present? && params[:area].to_i == 0
+                       params[:area]
+                     elsif params[:area].to_i > 0
+                       Area.find(params[:area].to_i).slug
+                     end
     session[:people] = params[:people] if params[:people].present?
   end
 

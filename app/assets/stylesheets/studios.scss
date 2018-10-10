@@ -125,3 +125,15 @@ div.recommend-img {
 .u-display-inlineblock {
   display: inline-block;
 }
+
+.studio-googlemap {
+  text-align: center;
+  margin: 4% 0%;
+  width: 100%;
+    @media only screen and (max-width: 800px) {
+        height: 621px;
+    }
+    @media only screen and (min-width: 800px) {
+        height: 540px;
+    }
+}
