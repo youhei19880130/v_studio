@@ -1,252 +1,56 @@
-// Import Bootstrap
-@import "bootstrap-sprockets";
-
-// Import sandstone variables Bootswatch
-@import "bootswatch/sandstone/variables";
-
-// Import _bootstrap-custom.scss
-@import "bootstrap-custom";
-
-// Import dropzone ファイルアップロードエリア
-@import "dropzone/basic";
-@import "dropzone/dropzone";
-
-.dropzone {
-  border: 2px dashed #b4bcc2;
-
-  .dz-message {
-    font-size: 16px;
-    text-align: center;
-    margin: 0
-  }
-}
-
-// Import slick カルーセルスライダー
-@import 'slick';
-@import 'slick-theme';
-
-.slick-slider {
-  margin-bottom: 0;
-}
-.slick-dots {
-  margin-bottom: 0;
-  bottom: 0;
-}
-.slide-arrow{
-  position: absolute;
-  top: 50%;
-  margin-top: -15px;
-}
-.prev-arrow{
-  left: -40px;
-  width: 0;
-  height: 0;
-  border-left: 0 solid transparent;
-  border-right: 15px solid #113463;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-}
-.next-arrow{
-  right: -40px;
-  width: 0;
-  height: 0;
-  border-right: 0 solid transparent;
-  border-left: 15px solid #113463;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-}
-
-// Bootstrap body padding for fixed navbar
-body { padding-top: 60px; }
-
-// And finally bootswatch style itself
-//@import "bootswatch/sandstone/bootswatch";
-
-// Import FontAwesome
-@import "font-awesome";
-@import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
-* {
-  font-family: 'Noto Sans Japanese', Meiryo, 'Noto Sans', Calibri, 'Open Sans', sans-serif;
-}
-
+// ==========================================================================
 // Foundation
-// Base
-// aタグ
-a {
-  color: #888;
-  text-decoration: none;
-  &:hover {
-    color: #888;
-    text-decoration: none;
-  }
-}
+// ==========================================================================
 
-// Object
-// Project
-// スタジオ一覧のスタジオ単位
-div.studio-box {
-  margin-bottom: 24px;
-  color: #3E3F3A;
-  .left {
-    height: 140px;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    img {
-      height: auto;
-      width: 100%;
-      top: 45%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      position: absolute;
-    }
-  }
-  .right {
-    margin: 0 0 24px 0;
-    padding: 0;
-    position: relative;
-    div.station {
-      font-size: small;
-    }
-    div.studio-button {
-      width: 92%;
-      margin: 8px auto;
-      text-align: center;
-    }
-  }
-  .bottom {
-    position: absolute;
-    bottom: 4px;
-    right: 8px;
-  }
-  ul {
-    padding-left: 8px;
-    li {
-      font-size: medium;
-      list-style: none;
-    }
-  }
-}
+@import "foundation/vendor/_bootstrap";
+@import "foundation/vendor/_dropzone";
+@import "foundation/vendor/_fonts";
+@import "foundation/vendor/_slickslider";
+@import "foundation/_base";
 
-// ヒットカウント
-div.hit-count {
-  margin: 8px 15px;
-  font-size: large;
-}
-
-// Object
-// Component
-button {
-  .center {
-    display: block;
-    width: 60%;
-    margin: 0 auto;
-  }
-}
-
-// panelは詳細絞り込み用だけど今使ってないので保留
-div.col-xs-12.col-sm-4.panel.panel-info {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-// pタグ&クラスセレクタ
-p.right { text-align: right;}
-.smaller { font-size: x-small; }
-
+// ==========================================================================
 // Layout
-// フッターコピーライト
-div.footer-copyright {
-  background-color: #3E3F3A;
-  color: #FFFFFF;
-  text-align: center;
-  padding: 40px 0;
-}
+// ==========================================================================
 
-// jQuery 無限スクロール：どこに入れるか謎
-#infscr-loading {
-  img {
-    display: block;
-    margin: 10px auto;
-  }
-  div {
-    text-align: center;
-  }
-}
+@import "layout/_footer";
 
-// studio詳細スライダー部分
-div.studio-detail {
-  max-width: 800px;
-  margin: 36px auto 20px auto;
-}
+// ==========================================================================
+// Object
+// ==========================================================================
 
-// studio詳細スライダー部分
-div.studio-detail-top {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  img {
-    width: 100%;
-    max-height: 500px;
-  }
-}
+// -----------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------
 
-// studio詳細説明部分
-div.studio-detail-description {
-  min-width: 320px;
-  margin: 20px auto;
-  margin-top: 0px;
-  padding: 0px 4%;
-  text-align: left;
-  @media only screen and (max-width: 800px) {
-    width: 80%;
-  }
-  @media only screen and (min-width: 800px) {
-    width: 50%;
-    float: left;
-  }
-}
+@import "object/component/_button";
+@import "object/component/_grid";
+@import "object/component/_slider";
 
-// studio詳細ボタン部分（スタジオのWEBサイトへ、電話番号）
-div.studio-detail-btn-box {
-  min-width: 320px;
-  margin: 20px auto;
-  padding: 0px 4%;
-  text-align: center;
-  @media only screen and (max-width: 800px) {
-    width: 80%;
-  }
-  @media only screen and (min-width: 800px) {
-    width: 50%;
-  }
-  p.studio-list {
-    text-align: left;
-  }
-}
 
-// studio詳細 営業時間,住所などリスト部分
-div.studio-detail-list {
-  min-width: 320px;
-  margin: 20px auto;
-  padding: 0px 4%;
-  text-align: center;
-  @media only screen and (max-width: 800px) {
-    width: 80%;
-  }
-  @media only screen and (min-width: 800px) {
-    width: 50%;
-    margin-left: 50%;
-  }
-  p.studio-list {
-    text-align: left;
-  }
-}
+// -----------------------------------------------------------------
+// Project
+// -----------------------------------------------------------------
 
-// FontAwesome電話アイコン
-.fa-phone:before { color: white; }
+@import "object/project/_box";
+@import "object/project/_breadcrumb";
+@import "object/project/_description";
+@import "object/project/_fonts";
+@import "object/project/_form";
+@import "object/project/_hit-count";
+@import "object/project/_image";
+@import "object/project/_list";
+@import "object/project/_map";
+@import "object/project/_name";
+@import "object/project/_price";
+@import "object/project/_top";
 
-// Import each page css
-@import "studios";
-@import "breadcrumb";
+// -----------------------------------------------------------------
+// Utility
+// -----------------------------------------------------------------
+
+@import "object/utility/_align";
+@import "object/utility/_display";
+@import "object/utility/_margin";
+@import "object/utility/_size";
+@import "object/utility/_word-break";
+@import "object/utility/_suspend";
