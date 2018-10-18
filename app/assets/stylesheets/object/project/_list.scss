@@ -1,5 +1,5 @@
 // studio詳細 営業時間,住所などリスト部分
-div.studio-detail-list {
+.studio-detail-list {
   min-width: 320px;
   margin: 20px auto;
   padding: 0px 4%;
@@ -11,7 +11,7 @@ div.studio-detail-list {
     width: 50%;
     margin-left: 50%;
   }
-  p.studio-list {
+  .studio-list {
     text-align: left;
   }
 }

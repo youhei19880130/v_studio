@@ -1,5 +1,5 @@
 // スタジオ一覧のスタジオ単位
-div.studio-box {
+.studio-box {
   margin-bottom: 24px;
   color: #3E3F3A;
   .left {
@@ -22,20 +22,22 @@ div.studio-box {
     margin: 0 0 24px 0;
     padding: 0;
     position: relative;
-    div.station {
+    .station {
       font-size: small;
     }
-    div.studio-button {
+    .studio-button {
       width: 92%;
       margin: 8px auto;
       text-align: center;
     }
   }
+  // FIXME remove later
   .bottom {
     position: absolute;
     bottom: 4px;
     right: 8px;
   }
+  // FIXME remove later
   ul {
     padding-left: 8px;
     li {
@@ -48,7 +50,7 @@ div.studio-box {
 // スタジオレコメンド全体
 div.recommend {
   margin: 40px 4px 10px 4px;
-  p.recommend-more-info {
+  .recommend-more-info {
     margin-bottom: 50px;
   }
 }
@@ -60,6 +62,6 @@ div.recommend-block {
 }
 
 // スタジオレコメンド1つずつ
-div.recommend-block-each {
+.recommend-block-each {
   padding: 0px 15px;
 }

@@ -1,5 +1,6 @@
 // TOPページ formタグ
-form.form-horizontal {
+// TODO modify stylesheet_link_tag in top.html.erb
+.form-horizontal {
   width: 60%;
   margin: 0 auto;
 }

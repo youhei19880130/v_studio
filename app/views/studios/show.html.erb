@@ -113,7 +113,7 @@
   <% if @recommend_studios.present? %>
     <div class="recommend"> 
       <p class="p-recommend__description"><span class="u-display-inlineblock"><%= @studio.name %>を見ている人は</span>こんなスタジオも検索して見ています</p>
-      <div class="u-recommend-block">
+      <div class="u-recommend-block"> <!-- FIXME class="recommend-block" -->
         <% @recommend_studios.each do |studio| %>
           <div class="col3 recommend-block-each">
             <%= link_to studio do %>

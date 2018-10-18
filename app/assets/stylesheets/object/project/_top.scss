@@ -1,5 +1,6 @@
 // TOPページ コンテンツエリア
-div.content {
+// TODO modify stylesheet_link_tag in top.html.erb
+.content {
   width: 100%;
   background-image: image-url("top.jpg");
   background-size: cover;
