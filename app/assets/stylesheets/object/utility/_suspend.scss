@@ -1,10 +1,10 @@
-// panelは詳細絞り込み用だけど今使ってないので保留
+// Suspend; panel class for narrowing the seach results
 div.col-xs-12.col-sm-4.panel.panel-info {
   padding-left: 0;
   padding-right: 0;
 }
 
-// jQuery 無限スクロール：どこに入れるか謎
+// Suspend; jQuery for scrolling
 #infscr-loading {
   img {
     display: block;
@@ -15,14 +15,14 @@ div.col-xs-12.col-sm-4.panel.panel-info {
   }
 }
 
-// buttonタグcenter class 該当なし？
+// Suspend; not found
 button.center {
   display: block;
   width: 60%;
   margin: 0 auto;
 }
 
-// ad-area class 該当なし？
+// Suspend; not found
 div.ad-area {
   margin: 20px auto;
   div.ad-box3 {

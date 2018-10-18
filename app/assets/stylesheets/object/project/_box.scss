@@ -1,4 +1,4 @@
-// スタジオ一覧のスタジオ単位
+// A studio box in the studio index page
 div.studio-box {
   margin-bottom: 24px;
   color: #3E3F3A;
@@ -45,7 +45,7 @@ div.studio-box {
   }
 }
 
-// スタジオレコメンド全体
+// Whole studio recommend area
 div.recommend {
   margin: 40px 4px 10px 4px;
   p.recommend-more-info {
@@ -53,13 +53,13 @@ div.recommend {
   }
 }
 
-// スタジオレコメンド3つまとめて
+// A unit of 3 studio recommend boxes
 div.recommend-block {
   display: inline-block;
   width: 100%;
 }
 
-// スタジオレコメンド1つずつ
+// A studio recommend box
 div.recommend-block-each {
   padding: 0px 15px;
 }
