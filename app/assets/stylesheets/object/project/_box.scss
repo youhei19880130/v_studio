@@ -1,5 +1,5 @@
 // A studio box in the studio index page
-.studio-box {
+.p-studio-box {
   margin-bottom: 24px;
   color: #3E3F3A;
   .left {
@@ -45,20 +45,20 @@
 }
 
 // Whole studio recommend area
-div.recommend {
+div.p-recommend {
   margin: 40px 4px 10px 4px;
-  .recommend-more-info {
+  .p-recommend__more-info {
     margin-bottom: 50px;
   }
 }
 
 // A unit of 3 studio recommend boxes
-div.recommend-block {
+div.p-recommend-block {
   display: inline-block;
   width: 100%;
 }
 
 // A studio recommend box
-.recommend-block-each {
+.p-recommend-block-each {
   padding: 0px 15px;
 }
