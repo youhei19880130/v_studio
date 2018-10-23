@@ -1,5 +1,5 @@
-<div class="studio-detail">
-  <div class="studio-detail-top">
+<div class="c-studio-detail">
+  <div class="c-studio-detail-top">
     <% if @studio.studio_images.size > 1 %>
       <div class="slick-box"%>
         <% @studio.studio_images.each do |image| %>
@@ -20,14 +20,14 @@
     <%= ", #{@studio.nearest_station_2}駅" if @studio.nearest_station_2.present? -%>
     <%= ", #{@studio.nearest_station_3}駅" if @studio.nearest_station_3.present? -%>
   </div>
-  <div class="studio-detail-top">
-    <div class="studio-detail-description">
+  <div class="c-studio-detail-top">
+    <div class="p-studio-detail-description">
       <%== @studio.feature %>
     </div>
-    <div class="studio-detail-list">
+    <div class="p-studio-detail-list">
       <!--<h2>スタジオ情報</h2>-->
-      <p class="studio-list">電話番号: <strong><%= tel_to @studio.tel, @studio.tel, onclick: "ga('send', 'event', 'studio', 'tel', '#{@studio.slug}', 0, {'nonInteraction': 1});" %></strong></p>
-      <p class="studio-list">営業時間:
+      <p class="p-studio-list">電話番号: <strong><%= tel_to @studio.tel, @studio.tel, onclick: "ga('send', 'event', 'studio', 'tel', '#{@studio.slug}', 0, {'nonInteraction': 1});" %></strong></p>
+      <p class="p-studio-list">営業時間:
         <strong>
           <% if @studio.late_night %>
             <%= "#{@studio.start_hours&.strftime("%H:%M")} - #{(@studio.end_hours.hour + 24 ).to_s + @studio.end_hours&.strftime(":%M")}" %>
@@ -37,13 +37,13 @@
         </strong>
       </p>
       <% if @studio.address.present? %>
-        <p class="studio-list">住所: <strong><%= @studio.address %></strong></p>
+        <p class="p-studio-list">住所: <strong><%= @studio.address %></strong></p>
       <% end %>
-      <p class="studio-list">深夜レンタル: <strong><%= @studio.late_night ? 'あり' : 'なし' %></strong></p>
-      <p class="studio-list">更衣室: <strong><%= @studio.locker_room ? 'あり' : 'なし' %></strong></p>
-      <p class="studio-list">駐車場: <strong><%= @studio.parking ? 'あり' : 'なし' %></strong></p>
-      <p class="studio-list">キャンセル期限: <strong><%= @studio.cancell_deadline.blank? ? '特になし' : @studio.cancell_deadline %></strong></p>
-      <p class="studio-list">備考: <strong><%= @studio.remarks.blank? ? '特になし' : @studio.remarks %></strong></p>
+      <p class="p-studio-list">深夜レンタル: <strong><%= @studio.late_night ? 'あり' : 'なし' %></strong></p>
+      <p class="p-studio-list">更衣室: <strong><%= @studio.locker_room ? 'あり' : 'なし' %></strong></p>
+      <p class="p-studio-list">駐車場: <strong><%= @studio.parking ? 'あり' : 'なし' %></strong></p>
+      <p class="p-studio-list">キャンセル期限: <strong><%= @studio.cancell_deadline.blank? ? '特になし' : @studio.cancell_deadline %></strong></p>
+      <p class="p-studio-list">備考: <strong><%= @studio.remarks.blank? ? '特になし' : @studio.remarks %></strong></p>
     </div>
   </div>
     <% if @studio.rooms.displayed.present? %>
@@ -53,7 +53,7 @@
             <th class="text-center">スタジオ名</th>
             <th class="text-center">広さ(㎡)</th>
             <th class="text-center">最大人数</th>
-            <th class="text-center">料金(1h)</th>
+            <th class="text-center":w>料金(1h)</th>
             <% if !request.variant.include?(:phone) %>
               <th class="text-center">鏡</th>
               <th class="text-center">床材</th>
@@ -99,50 +99,50 @@
         <% end %>
         </tbody>
       </table> 
-      <p class="right smaller">※最大人数、料金は目安です。詳細はスタジオにお問い合わせください。</p>
+      <p class="right u-smaller">※最大人数、料金は目安です。詳細はスタジオにお問い合わせください。</p>
     <% end %>
   <% if @studio.latlng.present? || @studio.address.present? %>
-    <div class="studio-googlemap">
+    <div class="p-studio-googlemap">
       <iframe src="https://www.google.com/maps/embed/v1/place?key=<%= Settings.google.api_key %>&q=<%= @studio.latlng || @studio.address %>" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
   <% end %>
-  <div class="studio-detail-btn-box">
+  <div class="c-studio-detail-btn-box">
     <%= link_to sanitize("<i class='fas fa-chevron-circle-right'></i> スタジオのWEBサイトへ"), @studio.url, class: "btn btn-info btn-lg btn-block", target: "_blank", onclick: "ga('send', 'event', 'studio', 'click', '', 0, {'nonInteraction': 1});" if @studio.url.present? %>
     <%= tel_to @studio.tel, sanitize("<i class='fa fa-phone'></i> #{@studio.tel}"), {class: 'btn btn-success btn-lg btn-block', onclick: "ga('send', 'event', 'studio', 'tel', '#{@studio.slug}', 0, {'nonInteraction': 1});"} if @studio.tel.present? %>
   </div>
   <% if @recommend_studios.present? %>
-    <div class="recommend"> 
+    <div class="p-recommend"> 
       <p class="p-recommend__description"><span class="u-display-inlineblock"><%= @studio.name %>を見ている人は</span>こんなスタジオも検索して見ています</p>
-      <div class="u-recommend-block"> <!-- FIXME class="recommend-block" -->
+      <div class="p-recommend-block">
         <% @recommend_studios.each do |studio| %>
-          <div class="col3 recommend-block-each">
+          <div class="col3 p-recommend-block-each">
             <%= link_to studio do %>
-              <div class="recommend-img">
+              <div class="p-recommend-img">
                 <% if studio.studio_images || studio.image %>
                   <% if studio.studio_images.present? %>
-                    <%= image_tag studio.studio_images.first.url.to_s, class: "recommend" %>
+                    <%= image_tag studio.studio_images.first.url.to_s, class: "p-recommend" %>
                   <% else %>
-                    <%= image_tag studio_image_studio_path(studio), class: "recommend" %>
+                    <%= image_tag studio_image_studio_path(studio), class: "p-recommend" %>
                   <% end %>
                   <% if studio.rooms.first.price != 0 %>
                     <% if studio.rooms.size == 1 %>
-                      <p class="price_unit"><%= format_jpy(studio.rooms.first.price) %> <small>/h</small></p>
+                      <p class="p-price-unit"><%= format_jpy(studio.rooms.first.price) %> <small>/h</small></p>
                     <% else %>
-                      <p class="price_unit"><%= format_jpy(studio.rooms.pluck(:price).min) %> ~ <%= format_jpy(studio.rooms.pluck(:price).max) %> <small>/h</small></p>
+                      <p class="p-price-unit"><%= format_jpy(studio.rooms.pluck(:price).min) %> ~ <%= format_jpy(studio.rooms.pluck(:price).max) %> <small>/h</small></p>
                     <% end %>
                   <% end %>
                 <% else %>
-                  <%= image_tag 'no_image.jpg', class: "recommend" %>
+                  <%= image_tag 'no_image.jpg', class: "p-recommend" %>
                 <% end %>
               </div>
             <% end %>
-            <div class="studio-name"><strong><%= studio.name %></strong></div>
+            <div class="p-studio-name"><strong><%= studio.name %></strong></div>
             <div class="p-station--recommend">
               <%= "#{studio.nearest_station_1}駅" -%>
               <%= ",#{studio.nearest_station_2}駅" if studio.nearest_station_2.present? -%>
               <%= ",#{studio.nearest_station_3}駅" if studio.nearest_station_3.present? -%>
             </div>
-            <p class="text-right recommend-more-info">
+            <p class="text-right p-recommend__more-info">
               <%= link_to studio_path(studio), method: :get do %>
                 <i class="fas fa-chevron-circle-right"></i> 詳細はこちら
               <% end %>
