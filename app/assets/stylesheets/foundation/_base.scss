@@ -3,7 +3,9 @@
 }
 
 // Bootstrap body padding for fixed navbar
-body { padding-top: 60px; }
+body {
+  padding-top: 60px;
+}
 
 a {
   color: #888;
@@ -11,5 +13,5 @@ a {
   &:hover {
     color: #888;
     text-decoration: none;
-    }
   }
+}
