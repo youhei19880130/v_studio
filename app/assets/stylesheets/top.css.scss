@@ -19,7 +19,7 @@ body { padding-top: 50px; }
   font-family: 'Noto Sans Japanese', Meiryo, 'Noto Sans', Calibri, 'Open Sans', sans-serif;
 }
 
-// TOPページ コンテンツエリア
+// Content area in the top page
 div.content {
   width: 100%;
   background-image: image-url("top.jpg");
@@ -28,13 +28,13 @@ div.content {
   padding-bottom: 12%;
 }
 
-// TOPページ formタグ
+// Form tag in the top page
 form.form-horizontal {
   width: 60%;
   margin: 0 auto;
 }
 
-// TOPページ,showページ フッターコピーライト
+// Footer copyright
 div.footer-copyright {
   background-color: #3E3F3A;
   color: #FFFFFF;
@@ -42,7 +42,7 @@ div.footer-copyright {
   padding: 40px 0;
 }
 
-// buttonタグcenter class 該当なし？
+// Search button
 button.center {
   display: block;
   width: 60%;
@@ -50,6 +50,7 @@ button.center {
 }
 
 // ad-area class 該当なし？
+// FIXME remove later
 div.ad-area {
   margin: 20px auto;
   div.ad-box3 {
