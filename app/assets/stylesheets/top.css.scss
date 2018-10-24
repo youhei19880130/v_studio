@@ -1,7 +1,14 @@
+// ==========================================================================
+// Foundation
+// ==========================================================================
+
+// Import Bootstrap
 @import "bootstrap-sprockets";
 
-// Import sandstone variables
+// Import sandstone variables Bootswatch
 @import "bootswatch/sandstone/variables";
+
+// Import _bootstrap-custom.scss
 @import "bootstrap-custom";
 
 // Bootstrap body padding for fixed navbar
@@ -10,11 +17,17 @@ body { padding-top: 50px; }
 // And finally bootswatch style itself
 @import "bootswatch/sandstone/bootswatch";
 
+// Import Noto Fonts
 @import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 * {
   font-family: 'Noto Sans Japanese', Meiryo, 'Noto Sans', Calibri, 'Open Sans', sans-serif;
 }
 
+// ==========================================================================
+// Layout
+// ==========================================================================
+
+// Content area in the top page
 div.content {
   width: 100%;
   background-image: image-url("top.jpg");
@@ -23,11 +36,7 @@ div.content {
   padding-bottom: 12%;
 }
 
-form.form-horizontal {
-  width: 60%;
-  margin: 0 auto;
-}
-
+// Footer copyright
 div.footer-copyright {
   background-color: #3E3F3A;
   color: #FFFFFF;
@@ -35,19 +44,31 @@ div.footer-copyright {
   padding: 40px 0;
 }
 
+// ==========================================================================
+// Object
+// ==========================================================================
+
+// -----------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------
+
+// Search button
 button.center {
   display: block;
   width: 60%;
   margin: 0 auto;
 }
 
-div.ad-area {
-  margin: 20px auto;
-  div.ad-box3 {
-    margin: 20px auto;
-    img {
-      margin: 0 auto;
-      display: block;
-    }
-  }
+// -----------------------------------------------------------------
+// Project
+// -----------------------------------------------------------------
+
+// Form tag in the top page
+form.form-horizontal {
+  width: 60%;
+  margin: 0 auto;
 }
+
+// -----------------------------------------------------------------
+// Utility
+// -----------------------------------------------------------------

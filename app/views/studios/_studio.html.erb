@@ -1,4 +1,4 @@
-<div class="studio studio-box col-xs-12 col-sm-4">
+<div class="studio p-studio-box col-xs-12 col-sm-4">
   <div class="left">
     <%= link_to studio_path(studio) do %>
       <% if studio.studio_images.present? %>
@@ -10,16 +10,16 @@
       <% end %>
       <% if studio.rooms.first.price != 0 %>
         <% if studio.rooms.size == 1 %>
-          <p class="price_unit"><%= format_jpy(studio.rooms.first.price) %> <small>/h</small></p>
+          <p class="p-price-unit"><%= format_jpy(studio.rooms.first.price) %> <small>/h</small></p>
         <% else %>
-          <p class="price_unit"><%= format_jpy(studio.rooms.pluck(:price).min) %> ~ <%= format_jpy(studio.rooms.pluck(:price).max) %> <small>/h</small></p> 
+          <p class="p-price-unit"><%= format_jpy(studio.rooms.pluck(:price).min) %> ~ <%= format_jpy(studio.rooms.pluck(:price).max) %> <small>/h</small></p> 
         <% end %>
       <% end %>
     <% end %>
   </div>
   <div class="right">
-    <div class="studio-name"><strong><%= studio.name %></strong></div>
-    <div class="station">
+    <div class="p-studio-name"><strong><%= studio.name %></strong></div>
+    <div class="p-station">
       <%= "#{studio.nearest_station_1}駅" -%>
       <%= " 他" if studio.nearest_station_2.present? %>
     </div>

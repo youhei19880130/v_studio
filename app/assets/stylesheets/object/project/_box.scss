@@ -1,0 +1,50 @@
+// A studio box in the studio index page
+.p-studio-box {
+  margin-bottom: 24px;
+  color: #3E3F3A;
+  .left {
+    height: 140px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    img {
+      height: auto;
+      width: 100%;
+      top: 45%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      position: absolute;
+    }
+  }
+  .right {
+    margin: 0 0 24px 0;
+    padding: 0;
+    position: relative;
+    .studio-button {
+      width: 92%;
+      margin: 8px auto;
+      text-align: center;
+    }
+  }
+}
+
+// Whole studio recommend area
+div.p-recommend {
+  margin: 40px 4px 10px 4px;
+  .p-recommend__more-info {
+    margin-bottom: 50px;
+  }
+}
+
+// A unit of 3 studio recommend boxes
+div.p-recommend-block {
+  display: inline-block;
+  width: 100%;
+}
+
+// A studio recommend box
+.p-recommend-block-each {
+  padding: 0px 15px;
+}

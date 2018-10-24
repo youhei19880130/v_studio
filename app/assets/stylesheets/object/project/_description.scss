@@ -1,0 +1,15 @@
+// Studio description area in the studio detail page
+.p-studio-detail-description {
+  min-width: 320px;
+  margin: 20px auto;
+  margin-top: 0px;
+  padding: 0px 4%;
+  text-align: left;
+  @media only screen and (max-width: 800px) {
+    width: 80%;
+  }
+  @media only screen and (min-width: 800px) {
+    width: 50%;
+    float: left;
+  }
+}

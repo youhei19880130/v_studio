@@ -1,0 +1,48 @@
+// Customize slick
+.slick-slider {
+  margin-bottom: 0;
+}
+.slick-dots {
+  margin-bottom: 0;
+  bottom: 0;
+}
+.slide-arrow{
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+}
+.prev-arrow{
+  left: -40px;
+  width: 0;
+  height: 0;
+  border-left: 0 solid transparent;
+  border-right: 15px solid #113463;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+.next-arrow{
+  right: -40px;
+  width: 0;
+  height: 0;
+  border-right: 0 solid transparent;
+  border-left: 15px solid #113463;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+// slider area in the studio detail page
+.c-studio-detail {
+  max-width: 800px;
+  margin: 36px auto 20px auto;
+}
+
+// slider area in the studio detail page
+.c-studio-detail-top {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  img {
+    width: 100%;
+    max-height: 500px;
+  }
+}

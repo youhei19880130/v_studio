@@ -1,0 +1,14 @@
+// More info & tell area in the studio detail page
+.c-studio-detail-btn-box {
+  min-width: 320px;
+  margin: 20px auto;
+  padding: 0px 4%;
+  text-align: center;
+  @media only screen and (max-width: 800px) {
+    width: 80%;
+  }
+  @media only screen and (min-width: 800px) {
+    width: 50%;
+  }
+}
+

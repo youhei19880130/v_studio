@@ -1,0 +1,16 @@
+// panel class for narrowing the seach results
+div.col-xs-12.col-sm-4.panel.panel-info {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// jQuery for scrolling
+#infscr-loading {
+  img {
+    display: block;
+    margin: 10px auto;
+  }
+  div {
+    text-align: center;
+  }
+}
