@@ -53,6 +53,7 @@
             <th class="text-center">スタジオ名</th>
             <th class="text-center">広さ(㎡)</th>
             <th class="text-center">最大人数</th>
+            <!-- FIXME remove ":w" later -->
             <th class="text-center":w>料金(1h)</th>
             <% if !request.variant.include?(:phone) %>
               <th class="text-center">鏡</th>
@@ -101,7 +102,7 @@
       </table> 
       <p class="right u-smaller">※最大人数、料金は目安です。詳細はスタジオにお問い合わせください。</p>
       <% if @is_sp %>
-        <p class="text-right"><a href="https://www.google.com/maps/search/?api=1&query=centurylink+field">地図アプリで見る</a></p>
+        <p class="text-right"><a href=<%= "https://www.google.com/maps/search/?api=1&query="+url_encode("#{@studio.latlng || @studio.address}") %>>地図アプリで見る</a></p>
       <% else %>
         <p class="text-right">地図アプリで見ない</p>
       <% end %>
