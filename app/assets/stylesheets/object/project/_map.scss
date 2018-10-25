@@ -10,3 +10,24 @@
         height: 540px;
     }
 }
+
+// Launching Map App for SP
+.p-launch-mapapp {
+  display: table;
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+}
+
+.p-launch-mapapp__address {
+  display: table-cell;
+  width: 60%;
+  white-space: pre-wrap;
+  vertical-align: middle;
+}
+
+.p-launch-mapapp__btn {
+  display: table-cell;
+  width: 40%;
+  text-align: right;
+  vertical-align: middle;
+}
