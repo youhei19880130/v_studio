@@ -105,8 +105,6 @@
         <div class="u-padding-right-10 u-padding-left-10">
           <p class="text-right"><a class="c-btn--app" href=<%= "https://www.google.com/maps/search/?api=1&query="+url_encode("#{@studio.latlng || @studio.address}") %>>地図アプリで見る</a></p>
         </div>
-      <% else %>
-        <p class="text-right">地図アプリで見ない</p>
       <% end %>
     <% end %>
   <% if @studio.latlng.present? || @studio.address.present? %>
