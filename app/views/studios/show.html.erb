@@ -101,7 +101,7 @@
         </tbody>
       </table> 
       <p class="right u-smaller">※最大人数、料金は目安です。詳細はスタジオにお問い合わせください。</p>
-      <% if @is_sp %>
+      <% if @is_sp && @studio.address.present? %>
         <p class="text-right"><a href=<%= "https://www.google.com/maps/search/?api=1&query="+url_encode("#{@studio.latlng || @studio.address}") %>>地図アプリで見る</a></p>
       <% else %>
         <p class="text-right">地図アプリで見ない</p>
