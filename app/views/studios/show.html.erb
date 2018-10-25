@@ -100,13 +100,13 @@
         </tbody>
       </table> 
       <p class="right u-smaller">※最大人数、料金は目安です。詳細はスタジオにお問い合わせください。</p>
-      <% if @is_sp && @studio.address.present? %>
-        <div class="u-padding-top-10 u-padding-right-10 u-padding-left-10">
-          <p class="text-right"><a class="c-btn--app" href=<%= "https://www.google.com/maps/search/?api=1&query="+url_encode("#{@studio.latlng || @studio.address}") %>>地図アプリで見る</a></p>
-        </div>
-      <% end %>
     <% end %>
   <% if @studio.latlng.present? || @studio.address.present? %>
+    <% if @is_sp %>
+      <div class="u-padding-top-10 u-padding-right-10 u-padding-left-10">
+        <p class="text-right"><a class="c-btn--app" href=<%= "https://www.google.com/maps/search/?api=1&query="+url_encode("#{@studio.latlng || @studio.address}") %>>地図アプリで見る</a></p>
+      </div>
+    <% end %>
     <div class="p-studio-googlemap">
       <iframe src="https://www.google.com/maps/embed/v1/place?key=<%= Settings.google.api_key %>&q=<%= @studio.latlng || @studio.address %>" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
