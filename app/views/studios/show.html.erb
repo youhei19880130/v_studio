@@ -104,7 +104,7 @@
   <% if @studio.latlng.present? || @studio.address.present? %>
     <% if @is_sp %>
       <div class="u-padding-top-10 u-padding-right-10 u-padding-left-10">
-        <p class="text-right"><a class="c-btn--app" href=<%= "https://www.google.com/maps/search/?api=1&query="+url_encode("#{@studio.latlng || @studio.address}") %>>地図アプリで見る</a></p>
+        <p class="text-right"><a class="c-btn--app" href=<%= "https://www.google.com/maps/search/?api=1&query=#{url_encode(@studio.latlng || @studio.address)}" %>>地図アプリで見る</a></p>
       </div>
     <% end %>
     <div class="p-studio-googlemap">
