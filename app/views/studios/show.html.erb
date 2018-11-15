@@ -6,12 +6,10 @@
           <div><%= image_tag image.url %></div>
         <% end %>
       </div>
+    <% elsif @studio.studio_images.present? %>
+      <%= image_tag @studio.studio_images.first.url %>
     <% else %>
-      <% if @studio.studio_images.present? %>
-        <%= image_tag @studio.studio_images.first.url %>
-      <% else %>
-        <%= image_tag 'no_image.jpg' %>
-      <% end %>
+      <%= image_tag 'no_image.jpg' %>
     <% end %>
     <h1><%= @studio.name %></h1>
     <%= "#{@studio.nearest_station_1}駅" -%>
