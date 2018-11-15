@@ -1,13 +1,15 @@
 <div class="c-studio-detail">
   <div class="c-studio-detail-top">
-    <% if @studio.studio_images.size > 1 %>
-      <div class="slick-box"%>
-        <% @studio.studio_images.each do |image| %>
-          <div><%= image_tag image.url %></div>
-        <% end %>
-      </div>
-    <% elsif @studio.studio_images.present? %>
-      <%= image_tag @studio.studio_images.first.url %>
+    <% if @studio.studio_images.present? %>
+      <% if @studio.studio_images.size > 1 %>
+        <div class="slick-box"%>
+          <% @studio.studio_images.each do |image| %>
+            <div><%= image_tag image.url %></div>
+          <% end %>
+        </div>
+      <% else %>
+        <%= image_tag @studio.studio_images.first.url %>
+      <% end %>
     <% else %>
       <%= image_tag 'no_image.jpg' %>
     <% end %>
