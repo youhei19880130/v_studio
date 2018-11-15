@@ -9,8 +9,6 @@
     <% else %>
       <% if @studio.studio_images.present? %>
         <%= image_tag @studio.studio_images.first.url %>
-      <% elsif @studio.image %>
-        <%= image_tag studio_image_studio_path(@studio) %>
       <% else %>
         <%= image_tag 'no_image.jpg' %>
       <% end %>
