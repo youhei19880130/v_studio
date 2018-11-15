@@ -70,11 +70,6 @@ class StudiosController < ApplicationController
     end
   end
 
-  def studio_image
-    @studio = Studio.friendly.find(params[:id])
-    send_data @studio.image, type: 'image/jpeg', disposition: 'inline'
-  end
-
   private
 
   # Use callbacks to share common setup or constraints between actions.

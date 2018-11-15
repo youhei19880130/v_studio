@@ -122,12 +122,8 @@
           <div class="col3 p-recommend-block-each">
             <%= link_to studio do %>
               <div class="p-recommend-img">
-                <% if studio.studio_images || studio.image %>
-                  <% if studio.studio_images.present? %>
-                    <%= image_tag studio.studio_images.first.url.to_s, class: "p-recommend" %>
-                  <% else %>
-                    <%= image_tag studio_image_studio_path(studio), class: "p-recommend" %>
-                  <% end %>
+                <% if studio.studio_images.present? %>
+                  <%= image_tag studio.studio_images.first.url.to_s, class: "p-recommend" %>
                   <% if studio.rooms.first.price != 0 %>
                     <% if studio.rooms.size == 1 %>
                       <p class="p-price-unit"><%= format_jpy(studio.rooms.first.price) %> <small>/h</small></p>
