@@ -1,13 +1,7 @@
 <div class="studio p-studio-box col-xs-12 col-sm-4">
   <div class="left">
     <%= link_to studio_path(studio) do %>
-      <% if studio.studio_images.present? %>
-        <%= image_tag studio.studio_images.first.url.to_s %>
-      <% elsif studio.image.present? %>
-        <%= image_tag studio_image_studio_path(studio) %>
-      <% else %>
-        <%= image_tag 'no_image.jpg' %>
-      <% end %>
+      <%= image_tag( studio.studio_images.first&.url&.to_s || 'no_image.jpg' ) %>
       <% if studio.rooms.first.price != 0 %>
         <% if studio.rooms.size == 1 %>
           <p class="p-price-unit"><%= format_jpy(studio.rooms.first.price) %> <small>/h</small></p>

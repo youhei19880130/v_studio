@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180927083453) do
+ActiveRecord::Schema.define(version: 20181114085207) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -82,7 +82,6 @@ ActiveRecord::Schema.define(version: 20180927083453) do
     t.boolean  "locker_room",                         default: false
     t.boolean  "parking",                             default: false
     t.string   "cancell_deadline"
-    t.binary   "image",              limit: 16777215
     t.string   "url"
     t.text     "feature",            limit: 65535
     t.text     "remarks",            limit: 65535
