@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181114085207) do
+ActiveRecord::Schema.define(version: 20181119065718) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20181114085207) do
     t.integer  "studio_id"
     t.string   "name"
     t.integer  "size"
-    t.integer  "capacity", null: false       default: 0
+    t.integer  "capacity",                   default: 0,           null: false
     t.integer  "price",                      default: 0
     t.string   "mirror"
     t.integer  "floor"
