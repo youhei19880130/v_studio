@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181119095505) do
+ActiveRecord::Schema.define(version: 20181114085207) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -32,18 +32,18 @@ ActiveRecord::Schema.define(version: 20181119095505) do
     t.integer  "studio_id"
     t.string   "name"
     t.integer  "size"
-    t.integer  "capacity",                   default: 0,     null: false
-    t.integer  "price",                      default: 0,     null: false
+    t.integer  "capacity",                   default: 0
+    t.integer  "price",                      default: 0
     t.string   "mirror"
     t.integer  "floor"
-    t.boolean  "speaker",                    default: false, null: false
-    t.boolean  "mixer",                      default: false, null: false
-    t.boolean  "cd",                         default: false, null: false
-    t.boolean  "md",                         default: false, null: false
-    t.boolean  "mp3",                        default: false, null: false
+    t.boolean  "speaker",                    default: false
+    t.boolean  "mixer",                      default: false
+    t.boolean  "cd",                         default: false
+    t.boolean  "md",                         default: false
+    t.boolean  "mp3",                        default: false
     t.string   "other_source"
-    t.boolean  "dimmable",                   default: false, null: false
-    t.boolean  "wifi",                       default: false, null: false
+    t.boolean  "dimmable",                   default: false
+    t.boolean  "wifi",                       default: false
     t.string   "image"
     t.text     "feature",      limit: 65535
     t.text     "remarks",      limit: 65535
@@ -78,21 +78,21 @@ ActiveRecord::Schema.define(version: 20181119095505) do
     t.string   "tel"
     t.time     "start_hours"
     t.time     "end_hours"
-    t.boolean  "late_night",                       default: false, null: false
-    t.boolean  "locker_room",                      default: false, null: false
-    t.boolean  "parking",                          default: false, null: false
+    t.boolean  "late_night",                          default: false
+    t.boolean  "locker_room",                         default: false
+    t.boolean  "parking",                             default: false
     t.string   "cancell_deadline"
     t.string   "url"
     t.text     "feature",            limit: 65535
     t.text     "remarks",            limit: 65535
     t.text     "memo",               limit: 65535
-    t.integer  "status",             limit: 1,     default: 0
+    t.integer  "status",             limit: 1,        default: 0
     t.string   "slug"
     t.string   "meta_title"
     t.string   "meta_description"
     t.string   "meta_ogp_image_url"
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
     t.text     "latlng",             limit: 65535
     t.index ["slug"], name: "index_studios_on_slug", unique: true, using: :btree
   end
