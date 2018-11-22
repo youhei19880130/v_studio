@@ -32,18 +32,18 @@ ActiveRecord::Schema.define(version: 20181114085207) do
     t.integer  "studio_id"
     t.string   "name"
     t.integer  "size"
-    t.integer  "capacity",                   default: 0
-    t.integer  "price",                      default: 0
+    t.integer  "capacity",                   default: 0,     null: false
+    t.integer  "price",                      default: 0,     null: false
     t.string   "mirror"
     t.integer  "floor"
-    t.boolean  "speaker",                    default: false
-    t.boolean  "mixer",                      default: false
-    t.boolean  "cd",                         default: false
-    t.boolean  "md",                         default: false
-    t.boolean  "mp3",                        default: false
+    t.boolean  "speaker",                    default: false, null: false
+    t.boolean  "mixer",                      default: false, null: false
+    t.boolean  "cd",                         default: false, null: false
+    t.boolean  "md",                         default: false, null: false
+    t.boolean  "mp3",                        default: false, null: false
     t.string   "other_source"
-    t.boolean  "dimmable",                   default: false
-    t.boolean  "wifi",                       default: false
+    t.boolean  "dimmable",                   default: false, null: false
+    t.boolean  "wifi",                       default: false, null: false
     t.string   "image"
     t.text     "feature",      limit: 65535
     t.text     "remarks",      limit: 65535
@@ -78,9 +78,9 @@ ActiveRecord::Schema.define(version: 20181114085207) do
     t.string   "tel"
     t.time     "start_hours"
     t.time     "end_hours"
-    t.boolean  "late_night",                          default: false
-    t.boolean  "locker_room",                         default: false
-    t.boolean  "parking",                             default: false
+    t.boolean  "late_night",                          default: false, null: false
+    t.boolean  "locker_room",                         default: false, null: false
+    t.boolean  "parking",                             default: false, null: false
     t.string   "cancell_deadline"
     t.string   "url"
     t.text     "feature",            limit: 65535

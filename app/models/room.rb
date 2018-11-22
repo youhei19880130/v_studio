@@ -2,6 +2,9 @@
 class Room < ApplicationRecord
   belongs_to :studio
 
+  validates :capacity, presence: true, numericality: { only_integer: true, greater_than: 0 }
+  validates :price, presence: true, numericality: { only_integer: true, greater_than: 0 }
+
   scope :displayed, -> { where(status: Room.statuses[:active]) }
   scope :by_studio, ->(studio_id) { where(studio_id: studio_id) if studio_id.present?}
 
