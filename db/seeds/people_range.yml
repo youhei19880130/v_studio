@@ -1,0 +1,349 @@
+---
+- !ruby/object:PeopleRange
+  raw_attributes:
+    id: 1
+    name: "~5人"
+    min: 1
+    max: 5
+    created_at: &2 2018-11-30 08:38:24.000000000 Z
+    updated_at: &4 2018-11-30 08:38:24.000000000 Z
+  attributes: !ruby/object:ActiveRecord::AttributeSet
+    attributes: !ruby/object:ActiveRecord::LazyAttributeHash
+      delegate_hash:
+        id: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: id
+          value_before_type_cast: 1
+          type: &1 !ruby/object:ActiveModel::Type::Integer
+            precision: 
+            scale: 
+            limit: 4
+            range: !ruby/range
+              begin: -2147483648
+              end: 2147483648
+              excl: true
+          original_attribute: 
+          value: 1
+        name: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: name
+          value_before_type_cast: "~5人"
+          type: &8 !ruby/object:ActiveRecord::ConnectionAdapters::AbstractMysqlAdapter::MysqlString
+            precision: 
+            scale: 
+            limit: 255
+          original_attribute: 
+          value: "~5人"
+        min: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: min
+          value_before_type_cast: 1
+          type: *1
+          original_attribute: 
+          value: 1
+        max: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: max
+          value_before_type_cast: 5
+          type: *1
+          original_attribute: 
+          value: 5
+        created_at: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: created_at
+          value_before_type_cast: *2
+          type: &10 !ruby/marshalable:ActiveRecord::AttributeMethods::TimeZoneConversion::TimeZoneConverter
+            :__v2__: []
+            []: &5 !ruby/object:ActiveRecord::Type::DateTime
+              precision: 0
+              scale: 
+              limit: 
+          original_attribute: 
+          value: !ruby/object:ActiveSupport::TimeWithZone
+            utc: &3 2018-11-30 08:38:24.000000000 Z
+            zone: &6 !ruby/object:ActiveSupport::TimeZone
+              name: Etc/UTC
+            time: *3
+        updated_at: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: updated_at
+          value_before_type_cast: *4
+          type: &13 !ruby/marshalable:ActiveRecord::AttributeMethods::TimeZoneConversion::TimeZoneConverter
+            :__v2__: []
+            []: *5
+          original_attribute: 
+          value: !ruby/object:ActiveSupport::TimeWithZone
+            utc: &7 2018-11-30 08:38:24.000000000 Z
+            zone: *6
+            time: *7
+  new_record: false
+  active_record_yaml_version: 1
+- !ruby/object:PeopleRange
+  raw_attributes:
+    id: 2
+    name: 6~10人
+    min: 6
+    max: 10
+    created_at: &9 2018-11-30 08:40:03.000000000 Z
+    updated_at: &12 2018-11-30 08:40:03.000000000 Z
+  attributes: !ruby/object:ActiveRecord::AttributeSet
+    attributes: !ruby/object:ActiveRecord::LazyAttributeHash
+      delegate_hash:
+        id: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: id
+          value_before_type_cast: 2
+          type: *1
+          original_attribute: 
+          value: 2
+        name: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: name
+          value_before_type_cast: 6~10人
+          type: *8
+          original_attribute: 
+          value: 6~10人
+        min: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: min
+          value_before_type_cast: 6
+          type: *1
+          original_attribute: 
+          value: 6
+        max: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: max
+          value_before_type_cast: 10
+          type: *1
+          original_attribute: 
+          value: 10
+        created_at: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: created_at
+          value_before_type_cast: *9
+          type: *10
+          original_attribute: 
+          value: !ruby/object:ActiveSupport::TimeWithZone
+            utc: &11 2018-11-30 08:40:03.000000000 Z
+            zone: *6
+            time: *11
+        updated_at: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: updated_at
+          value_before_type_cast: *12
+          type: *13
+          original_attribute: 
+          value: !ruby/object:ActiveSupport::TimeWithZone
+            utc: &14 2018-11-30 08:40:03.000000000 Z
+            zone: *6
+            time: *14
+  new_record: false
+  active_record_yaml_version: 1
+- !ruby/object:PeopleRange
+  raw_attributes:
+    id: 3
+    name: 11~20人
+    min: 11
+    max: 20
+    created_at: &15 2018-11-30 08:41:45.000000000 Z
+    updated_at: &17 2018-11-30 08:41:45.000000000 Z
+  attributes: !ruby/object:ActiveRecord::AttributeSet
+    attributes: !ruby/object:ActiveRecord::LazyAttributeHash
+      delegate_hash:
+        id: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: id
+          value_before_type_cast: 3
+          type: *1
+          original_attribute: 
+          value: 3
+        name: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: name
+          value_before_type_cast: 11~20人
+          type: *8
+          original_attribute: 
+          value: 11~20人
+        min: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: min
+          value_before_type_cast: 11
+          type: *1
+          original_attribute: 
+          value: 11
+        max: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: max
+          value_before_type_cast: 20
+          type: *1
+          original_attribute: 
+          value: 20
+        created_at: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: created_at
+          value_before_type_cast: *15
+          type: *10
+          original_attribute: 
+          value: !ruby/object:ActiveSupport::TimeWithZone
+            utc: &16 2018-11-30 08:41:45.000000000 Z
+            zone: *6
+            time: *16
+        updated_at: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: updated_at
+          value_before_type_cast: *17
+          type: *13
+          original_attribute: 
+          value: !ruby/object:ActiveSupport::TimeWithZone
+            utc: &18 2018-11-30 08:41:45.000000000 Z
+            zone: *6
+            time: *18
+  new_record: false
+  active_record_yaml_version: 1
+- !ruby/object:PeopleRange
+  raw_attributes:
+    id: 4
+    name: 21~30人
+    min: 21
+    max: 30
+    created_at: &19 2018-11-30 08:41:51.000000000 Z
+    updated_at: &21 2018-11-30 08:41:51.000000000 Z
+  attributes: !ruby/object:ActiveRecord::AttributeSet
+    attributes: !ruby/object:ActiveRecord::LazyAttributeHash
+      delegate_hash:
+        id: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: id
+          value_before_type_cast: 4
+          type: *1
+          original_attribute: 
+          value: 4
+        name: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: name
+          value_before_type_cast: 21~30人
+          type: *8
+          original_attribute: 
+          value: 21~30人
+        min: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: min
+          value_before_type_cast: 21
+          type: *1
+          original_attribute: 
+          value: 21
+        max: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: max
+          value_before_type_cast: 30
+          type: *1
+          original_attribute: 
+          value: 30
+        created_at: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: created_at
+          value_before_type_cast: *19
+          type: *10
+          original_attribute: 
+          value: !ruby/object:ActiveSupport::TimeWithZone
+            utc: &20 2018-11-30 08:41:51.000000000 Z
+            zone: *6
+            time: *20
+        updated_at: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: updated_at
+          value_before_type_cast: *21
+          type: *13
+          original_attribute: 
+          value: !ruby/object:ActiveSupport::TimeWithZone
+            utc: &22 2018-11-30 08:41:51.000000000 Z
+            zone: *6
+            time: *22
+  new_record: false
+  active_record_yaml_version: 1
+- !ruby/object:PeopleRange
+  raw_attributes:
+    id: 5
+    name: 31人~
+    min: 31
+    max: 99999
+    created_at: &23 2018-11-30 08:42:16.000000000 Z
+    updated_at: &25 2018-11-30 08:42:16.000000000 Z
+  attributes: !ruby/object:ActiveRecord::AttributeSet
+    attributes: !ruby/object:ActiveRecord::LazyAttributeHash
+      delegate_hash:
+        id: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: id
+          value_before_type_cast: 5
+          type: *1
+          original_attribute: 
+          value: 5
+        name: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: name
+          value_before_type_cast: 31人~
+          type: *8
+          original_attribute: 
+          value: 31人~
+        min: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: min
+          value_before_type_cast: 31
+          type: *1
+          original_attribute: 
+          value: 31
+        max: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: max
+          value_before_type_cast: 99999
+          type: *1
+          original_attribute: 
+          value: 99999
+        created_at: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: created_at
+          value_before_type_cast: *23
+          type: *10
+          original_attribute: 
+          value: !ruby/object:ActiveSupport::TimeWithZone
+            utc: &24 2018-11-30 08:42:16.000000000 Z
+            zone: *6
+            time: *24
+        updated_at: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: updated_at
+          value_before_type_cast: *25
+          type: *13
+          original_attribute: 
+          value: !ruby/object:ActiveSupport::TimeWithZone
+            utc: &26 2018-11-30 08:42:16.000000000 Z
+            zone: *6
+            time: *26
+  new_record: false
+  active_record_yaml_version: 1
+- !ruby/object:PeopleRange
+  raw_attributes:
+    id: 6
+    name: 指定しない
+    min: 1
+    max: 99999
+    created_at: &27 2018-11-30 08:42:40.000000000 Z
+    updated_at: &29 2018-11-30 08:42:40.000000000 Z
+  attributes: !ruby/object:ActiveRecord::AttributeSet
+    attributes: !ruby/object:ActiveRecord::LazyAttributeHash
+      delegate_hash:
+        id: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: id
+          value_before_type_cast: 6
+          type: *1
+          original_attribute: 
+          value: 6
+        name: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: name
+          value_before_type_cast: 指定しない
+          type: *8
+          original_attribute: 
+          value: 指定しない
+        min: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: min
+          value_before_type_cast: 1
+          type: *1
+          original_attribute: 
+          value: 1
+        max: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: max
+          value_before_type_cast: 99999
+          type: *1
+          original_attribute: 
+          value: 99999
+        created_at: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: created_at
+          value_before_type_cast: *27
+          type: *10
+          original_attribute: 
+          value: !ruby/object:ActiveSupport::TimeWithZone
+            utc: &28 2018-11-30 08:42:40.000000000 Z
+            zone: *6
+            time: *28
+        updated_at: !ruby/object:ActiveRecord::Attribute::FromDatabase
+          name: updated_at
+          value_before_type_cast: *29
+          type: *13
+          original_attribute: 
+          value: !ruby/object:ActiveSupport::TimeWithZone
+            utc: &30 2018-11-30 08:42:40.000000000 Z
+            zone: *6
+            time: *30
+  new_record: false
+  active_record_yaml_version: 1
