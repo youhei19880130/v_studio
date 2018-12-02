@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 20181202084316) do
     t.string   "name",             null: false
     t.integer  "min",              null: false
     t.integer  "max",              null: false
+    t.string   "search_query_str", null: false
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.string   "search_query_str", null: false
   end
 
   create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
