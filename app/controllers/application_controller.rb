@@ -14,7 +14,11 @@ class ApplicationController < ActionController::Base
                      elsif params[:area].to_i > 0
                        Area.find(params[:area].to_i).slug
                      end
-    session[:people] = params[:people] if params[:people].present?
+    session[:people] = if params[:people].present? && !params[:people].include?("-")
+                         params[:people]
+                       else
+                         session[:people]
+                       end
   end
 
   def basic_auth
