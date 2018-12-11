@@ -103,6 +103,6 @@ class StudiosController < ApplicationController
            else
              params[:area]
            end
-    redirect_to studios_path(area: area, people: view_context.people_range_format(params[:people]))
+    redirect_to studios_path(area: area, people: view_context.people_range_format(session[:people]))
   end
 end
