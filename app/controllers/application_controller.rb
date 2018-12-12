@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_search_info
-    if params[:area].present? && params[:area].to_i == 0
+    if params[:area].present?
       session[:area] = params[:area]
     end
     if params[:people].present? && !params[:people].include?("-")
