@@ -7,7 +7,7 @@ $ ->
       img:     "//sagasu.space/images/loader.gif"
       msgText: "loading..."
     }
-    navSelector: "nav.pagination" # selector for the paged navigation (it will be hidden)
-    nextSelector: "nav.pagination a[rel=next]" # selector for the NEXT link (to page 2)
+    navSelector: "ul.pagination" # selector for the paged navigation (it will be hidden)
+    nextSelector: "ul.pagination a[rel=next]" # selector for the NEXT link (to page 2)
     itemSelector: "#studios div.studio" # selector for all items you'll retrievejj:w
 
