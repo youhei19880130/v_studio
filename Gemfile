@@ -37,9 +37,6 @@ gem 'jbuilder', '~> 2.5'
 # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
 gem 'kaminari'
 
-# Kaminari Views for Twitter Bootstrap
-gem 'kaminari-bootstrap', '~> 3.0.1'
-
 # Use friendly id
 gem 'friendly_id'
 
