@@ -11,4 +11,9 @@ module StudiosHelper
       '×'
     end
   end
+
+  def people_range_format(people_range_id)
+    return '' if people_range_id.blank?
+    PeopleRange.find(people_range_id).search_query_str
+  end
 end
