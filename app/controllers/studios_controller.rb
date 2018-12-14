@@ -8,7 +8,7 @@ class StudiosController < ApplicationController
   # GET /studios.json
   def index # rubocop:disable Metrics/AbcSize
     @studios = Studio.displayed.by_late_night(params[:late_night]&.to_i).by_locker_room(params[:locker_room])
-                     .by_parking(params[:parking]).by_area(session[:area]).by_people(params[:people])
+                     .by_parking(params[:parking]).by_area(session[:area]).by_people(session[:people])
                      .page(params[:page])
     @area = params[:area] == 'all' ? '首都圏' : Area.find_by(slug: session[:area]).city
     @people = params[:people].blank? || params[:people] == 'all' ? '' : "#{People::LABELS[params[:people]]}で使える"
