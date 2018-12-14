@@ -12,11 +12,10 @@ class Studio < ApplicationRecord
   scope :displayed, -> { where(status: Studio.statuses[:active]) }
   scope :by_area, ->(area) { where(area_id: Area.find_by(slug: area).id) if area.present? && area != 'all' }
   scope :by_people, ->(people) {
-    return Studio.all unless people.present?
+    return all unless people.present?
     people_range = PeopleRange.find(people)
     candidate_ids = []
-    rooms = Room.all
-    rooms.each do |r|
+    Room.all.each do |r|
       candidate_ids.push(r.studio_id) if r.capacity.between?(people_range.min,people_range.max) && !candidate_ids.include?(r.studio_id)
     end
     Studio.where(id: candidate_ids)
