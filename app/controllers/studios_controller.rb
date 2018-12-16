@@ -18,7 +18,6 @@ class StudiosController < ApplicationController
   # GET /studios/1.json
   def show
     @recommend_studios = Studio.displayed.by_area(session[:area]).by_people(session[:people]).where.not(id: @studio.id).limit(3)
-    logger.info(request.variant)
   end
 
   # GET /studios/new
