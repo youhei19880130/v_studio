@@ -14,11 +14,7 @@ class Studio < ApplicationRecord
   scope :by_people, ->(people) {
     return all unless people.present?
     people_range = PeopleRange.find(people)
-    candidate_ids = []
-    Room.all.each do |r|
-      candidate_ids.push(r.studio_id) if r.capacity.between?(people_range.min,people_range.max) && !candidate_ids.include?(r.studio_id)
-    end
-    Studio.where(id: candidate_ids)
+    Studio.includes(:rooms).where(rooms: {capacity: people_range.min..people_range.max})
   }
   scope :by_late_night, ->(late_night) { where(late_night: late_night) if late_night.present? }
   scope :by_locker_room, ->(locker_room) { where(locker_room: locker_room) if locker_room.present? }
