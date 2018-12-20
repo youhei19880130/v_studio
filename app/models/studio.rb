@@ -11,22 +11,10 @@ class Studio < ApplicationRecord
 
   scope :displayed, -> { where(status: Studio.statuses[:active]) }
   scope :by_area, ->(area) { where(area_id: Area.find_by(slug: area).id) if area.present? && area != 'all' }
-  scope :by_people, lambda { |people|
-    array = select do |s|
-      case People::VALUES[people]
-      when 1..2
-        (People::VALUES[people] * 5).between?(s.min_capacity, s.max_capacity) ||
-          (s.min_capacity).between?(People::VALUES[people] * 5 - 4, People::VALUES[people] * 5)
-      when 3..4
-        (People::VALUES[people] * 10 - 10).between?(s.min_capacity, s.max_capacity) ||
-          (s.min_capacity).between?(People::VALUES[people] * 10 - 19, People::VALUES[people] * 10 - 10)
-      when 5
-        s.max_capacity > 30
-      else
-        true
-      end
-    end
-    Studio.where(id: array.map(&:id))
+  scope :by_people, ->(people) {
+    return all unless people.present?
+    people_range = PeopleRange.find(people)
+    Studio.includes(:rooms).where(rooms: {capacity: people_range.min..people_range.max})
   }
   scope :by_late_night, ->(late_night) { where(late_night: late_night) if late_night.present? }
   scope :by_locker_room, ->(locker_room) { where(locker_room: locker_room) if locker_room.present? }
