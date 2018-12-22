@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     end
   end
   resources :accounts
-  resources :admin, only: :index
   namespace :admin do
+    root 'top#index'
     resources :studios do
       get :upload
       resources :studio_images do
