@@ -23,7 +23,6 @@
       <%== @studio.feature %>
     </div>
     <div class="p-studio-detail-list">
-      <!--<h2>スタジオ情報</h2>-->
       <p class="p-studio-list">電話番号: <strong><%= tel_to @studio.tel, @studio.tel, onclick: "ga('send', 'event', 'studio', 'tel', '#{@studio.slug}', 0, {'nonInteraction': 1});" %></strong></p>
       <p class="p-studio-list">営業時間:
         <strong>
@@ -55,16 +54,9 @@
             <% if !request.variant.include?(:phone) %>
               <th class="text-center">鏡</th>
               <th class="text-center">床材</th>
-              <!--
-              <th class="text-center">スピーカー</th>
-              <th class="text-center">ミキサー</th>
-              -->
               <th class="text-center">CD</th>
               <th class="text-center">MD</th>
               <th class="text-center">mp3</th>
-              <!--
-                <th class="text-center">その他音源</th>
-              -->
               <th class="text-center">照明調光</th>
               <th class="text-center">wifi</th>
             <% end %>
@@ -80,16 +72,9 @@
             <% if !request.variant.include?(:phone) %>
               <td class="text-center"><%= table_format(room.mirror) %></td>
               <td class="text-center"><%= room.floor %></td>
-              <!--
-              <td class="center"><%= room.speaker %></td>
-              <td class="center"><%= room.mixer %></td>
-              -->
               <td class="text-center"><%= table_format(room.cd) %></td>
               <td class="text-center"><%= table_format(room.md) %></td>
               <td class="text-center"><%= table_format(room.mp3) %></td>
-              <!--
-                <td class="center"><%= room.other_source %></td>
-              -->
               <td class="text-center"><%= table_format(room.dimmable) %></td>
               <td class="text-center"><%= table_format(room.wifi) %></td>
             <% end %>
