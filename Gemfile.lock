@@ -134,6 +134,7 @@ GEM
     factory_bot_rails (4.11.1)
       factory_bot (~> 4.11.1)
       railties (>= 3.0.0)
+    ffaker (2.10.0)
     ffi (1.9.25)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
@@ -554,6 +555,7 @@ DEPENDENCIES
   device_detector
   dropzonejs-rails
   factory_bot_rails
+  ffaker
   fog
   font-awesome-rails
   friendly_id
