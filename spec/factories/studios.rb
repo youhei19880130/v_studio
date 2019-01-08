@@ -14,6 +14,6 @@ FactoryBot.define do
     url { FFaker::Internet.http_url }
     feature 'sample'
     status 1
-    slug { "#{name}".downcase }
+    slug { "#{name}".downcase.gsub(/\s/, '-') }
   end
 end
