@@ -1,4 +1,6 @@
 FactoryBot.define do
+  BooleanNumber = (0..1)
+  CancelDeadline = (0..14)
   factory :studio do
     name { FFaker::Food.fruit + " Studio" }
     # TODO: Edit after creating area factory
@@ -8,10 +10,10 @@ FactoryBot.define do
     tel { FFaker::PhoneNumber.short_phone_number }
     start_hours '09:00:00'
     end_hours '23:00:00'
-    late_night { Random.rand(0..1) }
-    locker_room { Random.rand(0..1) }
-    parking { Random.rand(0..1) }
-    cancell_deadline { Random.rand(1..14).to_s + "日前まで" }
+    late_night { Random.rand(BooleanNumber) }
+    locker_room { Random.rand(BooleanNumber) }
+    parking { Random.rand(BooleanNumber) }
+    cancell_deadline { Random.rand(CancelDeadline).to_s + "日前まで" }
     url { FFaker::Internet.http_url }
     feature 'sample'
     status 1
