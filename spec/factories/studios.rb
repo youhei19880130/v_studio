@@ -1,7 +1,8 @@
 FactoryBot.define do
   factory :studio do
     name { FFaker::Food.fruit + " Studio" }
-    area_id { (1..28).to_a.push(99)[rand(29)] }
+    # TODO: Edit after creating area factory
+    area_id 1
     address { FFaker::AddressJA.address }
     nearest_station_1 { FFaker::AddressJA.ward }
     tel { FFaker::PhoneNumber.short_phone_number }
