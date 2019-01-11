@@ -8,8 +8,8 @@ FactoryBot.define do
     address { FFaker::AddressJA.address }
     nearest_station_1 { FFaker::AddressJA.ward }
     tel { FFaker::PhoneNumber.short_phone_number }
-    start_hours '09:00:00'
-    end_hours '23:00:00'
+    start_hours { FFaker::Time.datetime.strftime('%H:%M:%S') }
+    end_hours { FFaker::Time.datetime.strftime('%H:%M:%S') }
     late_night { Random.rand(BooleanNumber) }
     locker_room { Random.rand(BooleanNumber) }
     parking { Random.rand(BooleanNumber) }
