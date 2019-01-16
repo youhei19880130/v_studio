@@ -13,7 +13,7 @@ FactoryBot.define do
     parking { Random.rand(FactoryConstants::BOOLEAN_NUMBER) }
     cancell_deadline { Random.rand(FactoryConstants::CANCEL_DEADLINE).to_s + "日前まで" }
     url { FFaker::Internet.http_url }
-    feature 'sample'
+    feature "a" * 100
     status { Random.rand(FactoryConstants::BOOLEAN_NUMBER) }
     slug { "#{name}".downcase.gsub(/\s/, '-') }
   end
