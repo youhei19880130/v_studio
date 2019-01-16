@@ -11,7 +11,7 @@ FactoryBot.define do
     late_night { Random.rand(FactoryConstants::BOOLEAN_NUMBER) }
     locker_room { Random.rand(FactoryConstants::BOOLEAN_NUMBER) }
     parking { Random.rand(FactoryConstants::BOOLEAN_NUMBER) }
-    cancell_deadline { Random.rand(FactoryConstants::CANCEL_DEADLINE).to_s + "日前まで" }
+    cancell_deadline { Random.rand(FactoryConstants::Studio::CANCEL_DEADLINE).to_s + "日前まで" }
     url { FFaker::Internet.http_url }
     feature "a" * 100
     status { Random.rand(FactoryConstants::BOOLEAN_NUMBER) }
