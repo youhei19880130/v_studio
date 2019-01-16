@@ -14,7 +14,7 @@ FactoryBot.define do
     cancell_deadline { Random.rand(FactoryConstants::CANCEL_DEADLINE).to_s + "日前まで" }
     url { FFaker::Internet.http_url }
     feature 'sample'
-    status 1
+    status { Random.rand(FactoryConstants::BOOLEAN_NUMBER) }
     slug { "#{name}".downcase.gsub(/\s/, '-') }
   end
 end
