@@ -3,7 +3,6 @@ class Studio < ApplicationRecord
   include FriendlyId
   friendly_id :slug
 
-  # belongs_to :account
   belongs_to :area
   has_many :studio_images
   has_many :rooms

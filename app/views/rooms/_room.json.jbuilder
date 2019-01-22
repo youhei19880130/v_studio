@@ -1,2 +1,0 @@
-json.extract! room, :id, :studio_id, :name, :size, :capacity, :mirror, :floor, :speaker, :mixer, :cd, :md, :mp3, :other_source, :dimmable, :wifi, :image, :feature, :remarks, :created_at, :updated_at
-json.url room_url(room, format: :json)
