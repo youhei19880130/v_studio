@@ -85,7 +85,7 @@ Rails.application.configure do
     # logger.formatter = config.log_formatter
   # end
 
-  config.logger = Logger.new("log/staging.log", 'daily')
+  config.logger = Logger.new("log/staging.log", 1000, 10 * 1024 * 1024)
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
