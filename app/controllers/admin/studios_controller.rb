@@ -7,7 +7,7 @@ module Admin
     # GET /studios
     # GET /studios.json
     def index
-      @studios = Studio.page(params[:page]).per(50)
+      @studios = Studio.page(params[:page]).per(1000)
     end
 
     # GET /studios/1
