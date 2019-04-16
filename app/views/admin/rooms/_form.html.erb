@@ -51,15 +51,15 @@
     <table class="table">
       <tr>
         <td>スピーカー</td>
-        <td><%= f.check_box :speaker, class: 'checkbox' %></td>
+        <td><%= f.select :speaker, [ [ '無', 0 ], [ '有', 1 ], [ '不明', 99 ]], class: 'form-control' %></td>
         <td>ミキサー</td>
-        <td><%= f.check_box :mixer, class: 'checkbox' %></td>
+        <td><%= f.select :mixer, [ [ '無', 0 ], [ '有', 1 ], [ '不明', 99 ]], class: 'form-control' %></td>
       </tr>
       <tr>
         <td>CD</td>
-        <td><%= f.check_box :cd, class: 'checkbox' %></td>
+        <td><%= f.select :cd, [ [ '無', 0 ], [ '有', 1 ], [ '不明', 99 ]], class: 'form-control' %></td>
         <td>音楽プレイヤー（iPhone等）接続</td>
-        <td><%= f.check_box :mp3, class: 'checkbox' %></td>
+        <td><%= f.select :mp3, [ [ '無', 0 ], [ '有', 1 ], [ '不明', 99 ]], class: 'form-control' %></td>
       </tr>
       <tr>
         <td colspan="6"><%= f.label 'その他音響情報', class: 'control-label' %></td>
