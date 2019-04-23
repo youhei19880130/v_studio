@@ -8,6 +8,8 @@ class ChangeColumnTypesInSomeTables < ActiveRecord::Migration[5.0]
     change_column :rooms, :cd, :tinyint, length: 4
     change_column :rooms, :md, :tinyint, length: 4
     change_column :rooms, :mp3, :tinyint, length: 4
+    change_column :rooms, :dimmable, :tinyint, length: 4
+    change_column :rooms, :wifi, :tinyint, length: 4
   end
 
   def down
@@ -19,5 +21,7 @@ class ChangeColumnTypesInSomeTables < ActiveRecord::Migration[5.0]
     change_column :rooms, :cd, :boolean
     change_column :rooms, :md, :boolean
     change_column :rooms, :mp3, :boolean
+    change_column :rooms, :dimmable, :boolean
+    change_column :rooms, :wifi, :boolean
   end
 end

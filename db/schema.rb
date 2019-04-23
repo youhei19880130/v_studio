@@ -33,25 +33,25 @@ ActiveRecord::Schema.define(version: 20190416144950) do
     t.integer  "studio_id"
     t.string   "name"
     t.integer  "size"
-    t.integer  "capacity",                   default: 0,     null: false
-    t.integer  "price",                      default: 0,     null: false
+    t.integer  "capacity",                   default: 0, null: false
+    t.integer  "price",                      default: 0, null: false
     t.string   "mirror"
     t.integer  "floor"
-    t.integer  "speaker",      limit: 1,     default: 0,     null: false
-    t.integer  "mixer",        limit: 1,     default: 0,     null: false
-    t.integer  "cd",           limit: 1,     default: 0,     null: false
-    t.integer  "md",           limit: 1,     default: 0,     null: false
-    t.integer  "mp3",          limit: 1,     default: 0,     null: false
+    t.integer  "speaker",      limit: 1,     default: 0, null: false
+    t.integer  "mixer",        limit: 1,     default: 0, null: false
+    t.integer  "cd",           limit: 1,     default: 0, null: false
+    t.integer  "md",           limit: 1,     default: 0, null: false
+    t.integer  "mp3",          limit: 1,     default: 0, null: false
     t.string   "other_source"
-    t.boolean  "dimmable",                   default: false, null: false
-    t.boolean  "wifi",                       default: false, null: false
+    t.integer  "dimmable",     limit: 1,     default: 0, null: false
+    t.integer  "wifi",         limit: 1,     default: 0, null: false
     t.string   "image"
     t.text     "feature",      limit: 65535
     t.text     "remarks",      limit: 65535
     t.text     "memo",         limit: 65535
     t.integer  "status",       limit: 1,     default: 0
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
   end
 
   create_table "studio_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
